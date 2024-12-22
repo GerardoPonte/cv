@@ -1,0 +1,144 @@
+/*
+ * jQuery Nivo Slider v3.2
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2012, Dev7studios
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+ 
+/* The Nivo Slider styles */
+
+
+
+/* -- ALTERA LAS IMAGENES DEL SLIDE
+*/
+.nivoSlider {
+	position:relative;
+	width:100%;
+	height:auto;/**/
+	overflow: hidden;
+	margin: 0px;
+	/*margin-top: 10px;/*VISUALIZADOR NO PREDETERMINADO*/
+	/*background-color: aqua;/*NO COLOREA*/
+}
+
+.nivoSlider img { 
+	position:absolute;/*position:absolute; PREDETERMINADO*/ 
+	top: 0px;/*top:0px; PREDETERMINADO*/
+	left: 0px;/*left:0px; PREDETERMINADO*/
+	max-width: none;/*max-width: none; PREDETERMINADO*/
+	max-height: 710px;/*NO PREDETERMINADO*/
+	/*margin: 0px;/*margin: 0px;*/
+	/*margin: 1em;/*VISUALIZADOR NO PREDETERMINADO*/
+	/*margin-top: 1em;/*VISUALIZADOR NO PREDETERMINADO*/
+	/*background-color: rgba(0, 58, 250, 0.26);/*VISUALIZADOR NO COLOREA*/
+}
+
+.nivo-main-image {
+	display: block !important;/**/
+	position: relative !important;/**/
+	width: 100% !important;/**/
+	/*padding-bottom: 40px;/*VISUALIZADOR*/
+	/*background-color: aqua;/*VISUALIZADOR NO COLOREA*/
+}
+
+/*If an image is wrapped in a link*/
+.nivoSlider a.nivo-imageLink {
+	position:absolute;/**/
+	top:0px;/*top:0px; PREDETERMINADO*/
+	left:0px;/*left:0px; PREDETERMINADO*/
+	width:100%;/*width:100%; PREDETERMINADO*/
+	height:100%;/*100% PREDETERMINADO*/
+	border:0;/*border:0; PREDETERMINADO*/
+	padding:0;/*padding:0; PREDETERMINADO*/
+	margin:0;/*margin:0; PREDETERMINADO*/
+	z-index:1;/*6 PREDETERMINADO*/
+	display:none;/*display:none; PREDETERMINADO*/
+	filter:alpha(opacity=0);/*filter:alpha(opacity=0); PREDETERMINADO*/
+	opacity:0;/*opacity:0; PREDETERMINADO*/
+	/*background: rgb(26, 187, 26);/*VISUALIZADOR NO COLOREA*/
+}
+
+
+/*THE SLICES AND BOXES IN THE SILDER .NIVO-SLICE*/
+.nivo-slice {
+	display:block;/*display:block; PREDETERMINADO*/
+	position:absolute;/*position:absolute; PREDETERMINADO*/
+	z-index:4;/*5 PREDETERMINADO*/
+	height: 100%;/*100% PREDETERMINADO*/
+	top: 0;/*0 PREDETERMINADO*/
+	/*background-color: rgb(255, 0, 0);/*VISUALIZADOR NO COLOREA*/
+}
+
+
+.nivo-box {
+	display:block;/*display:block; ACTIVADO PREDETERMINADO*/
+	position:absolute;/*position:absolute; PREDETERMINADO*/
+	z-index: 4;/*5 PREDETERMINADO*/	
+	overflow:hidden;/*overflow:hidden; PREDETERMINADO*/
+	/*padding-bottom: 10px;/*NO PREDETERMINADO*/
+	/*margin-top: 19px;/*ESTA LINEA SE INGRESO EL 22-SEP-24-NO POREDETERMINADO*/
+	/*height: 1000px;/*SE INGRESA LINEA 22-SEP-24-NO APLICA NADA, NO PREDETERMINADO*/
+	background-color: rgb(0, 58, 250);/*VISUALIZADOR COLOREA EL EFECTO NIVO*/
+}
+
+.nivo-box img {
+	display:block;/*display:block; PREDETERMINADO*/
+}
+
+
+/*CAPTION STYLES*/
+.nivo-caption {
+	position:absolute;/*position:absolute; PREDETERMINNADO*/
+	top: 0px;/*40% PREDETERMINADO*/
+	left:0px;/*0px PREDETERMINADO*/
+	bottom: 0px;/*bottom:0px; PREDETERMINADO*/
+	font-family: sans-serif;/*font-family: sans-serif; PREDERERMINADO*/
+	text-align: center;/*text-align: center; PREDETERMINADO*/
+	color:#fff;/*color:#fff; PREDETERMINADO*/
+	width:100%;/*100% PREDETERMINADO*/
+	z-index:11;/*8 PREDETERMINADO*/
+	padding: 0px;/*padding: 5px 10px; PREDETERMINADO, PERO NO HABILITAR*/
+	overflow: hidden;/*overflow: hidden; PREDETERMINADO*/
+	display: none;/*display: none; PREDETERMINADO*/
+	/*background-color: rgba(100, 250, 0, 0.863);/*VISUALIZADOR*/
+	filter:alpha(opacity=0);
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+
+/* --- --- --- 
+*/
+
+.nivo-caption p {
+	/*padding: .3rem;/*padding:5px; PREDETERMINADO SE MODIFICO A 1px POR PRUEBAS*/
+	/*margin: 0px;/*margin:0; PREDETERMINADO, SE DESACTIVO POR PRUEBAS*/
+	/*background-color: springgreen;/*VISUALIZADOR*/
+}
+.nivo-caption a {
+	display:inline !important;/**/
+}
+.nivo-html-caption {
+    display:none;/**/
+}
+/* Direction nav styles (e.g. Next & Prev) */
+
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav {
+	text-align:center;/**/
+	padding: 9px 0px;/*padding: 15px 0; PREDETERMINADO*/
+	/*background-color: aqua;/*VISUALIZADOR*/
+}
+.nivo-controlNav a {
+	cursor:pointer;/**/
+}
+.nivo-controlNav a.active {
+	font-weight:bold;/**/
+}
+
+
+/*
+*/
