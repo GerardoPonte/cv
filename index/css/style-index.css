@@ -16,7 +16,7 @@
   font-family: 'Syncopate-Bold';
   src: url('../syncopate/Syncopate-Bold.ttf') format('truetype');
   font-style: normal;
-  font-weight: normal;
+  font-weight: normal;<div class="slider-wrapper theme-mi-slider">
 }
 
 /* --- FINALIZA TIPOS DE LETRA PARA FOOTER Y CONTENIDO PRINCIPAL
@@ -28,8 +28,8 @@
 /* ---  INICIA HEADER-NAV-SLIDE: ESTA ES LA ETIQUETA HEADER. Y SE CONFIGURO
         UNA CLASS LLAMADA HEADER-NAV-SLIDE --- */
 .header-nav-slide {
-  margin: 0;
-  padding: 0;
+  /*margin: 0;/**/
+  /*padding: 0;/**/
   /*height: 100px;/*SE INGRESA EL 23 DE SEP 2004*/
   /*background-color: rgb(229, 255, 0);/*VISUALIZADOR*/
 }
@@ -251,15 +251,15 @@
     /*border-radius: 100%;/**/
     /*width: 100px;/**/
     /*height: 100px;/**/
-    margin-top: 2.5rem;
-    margin-bottom: -1.3rem;/**/
+    margin-top: 4rem;/*2.5rem;/**/
+    margin-bottom: .1 rem;/*-1.3rem;/**/
     /*border: solid 3px rgba(255, 255, 255, 0.247);/**/
     /*background-color: rgba(29, 56, 67, 0.541);/*Visualizador/**/
   }
 
   #footer-logo .figure-img-linux .img-linux {
     width: 100%;
-    height: 4rem;
+    height: 3rem;
   }
 
 /* FINALIZA FOOTERLOGO .FIGURE-IMG-LINUX
@@ -270,7 +270,7 @@
 
 /*--- INICIA .H6-RESERVADOS (DERECHOS RESERVADOS)
 */
-  .h6-reservados {
+  .reservados {
     width: 100%;
     text-align: center;
     color: white;
@@ -278,13 +278,13 @@
     margin-bottom: 1em;
   }
 
-  .h6-reservados .h6-footer-span {
+  .reservados .footer-span {
     color: #0756d4;
   }
 /*--- FINALIZA .H6-RESERVADOS (DERECHOS RESERVADOS)
 */
 
 
-.h6-reservados {
+.reservados {
   /*background-color: aqua;/*visualizador*/
 }

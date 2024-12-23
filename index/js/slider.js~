@@ -1,0 +1,13 @@
+<!-- Inicialización de Slick Slider -->
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.slider').slick({
+        dots: true,      // Habilita los puntos de navegación
+        arrows: true,    // Habilita las flechas de navegación
+        autoplay: true,  // Activa la reproducción automática
+        autoplaySpeed: 3000, // Intervalo entre imágenes
+        fade: true,      // Efecto de desvanecimiento
+        speed: 500       // Velocidad de transición
+    });
+});
+

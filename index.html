@@ -3,52 +3,37 @@
 <head>
     <title>Inicio</title>
     <meta charset="utf-8">
-    <meta name="description" content="Home, Dante digital, diseño web responsive">
-    <meta name="keywords" content="Desarrollo web, htlm 5, css, javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio profesional curricular, Soporte tecnico">
+    <meta name="keywords" content="Soporte tecnico, TI">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="./index/css/normalize.css">
     <link rel="stylesheet" href="./index/css/style-index.css">
     <link rel="stylesheet" href="./index/css/style-responsive.css">
-    <link rel="stylesheet" href="./index/css/style-efect.css">
-    <link rel="stylesheet" href="./index/css/styl-animation-nav.css">
-    <link rel="stylesheet" href="./index/css/style-text-nivo.css">
-    <link rel="stylesheet" href="./index/css/mi-slider.css">
-    <link rel="stylesheet" href="./index/css/nivo-slider.css">
-    <link rel="stylesheet" href="./index/css/nivo-slider-responsive.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
-    <script src="./index/js/jquery.nivo.slider.js"></script>
-    <script type="text/javascript">
-        $(window).on('load', function () {
-            $('#slider').nivoSlider();
-        }); 
-    </script>
-
-    <script src="./js/js-text.js"></script>
-    <!--<script src="./js/botonjs.js"></script>  Boton responsive -->
+    <link rel="stylesheet" href="./index/css/slider.css">
+    <link rel="stylesheet" href="./slick/slick/slick.css"/>
+    <link rel="stylesheet" href="./slick/slick/slick-theme.css"/>
 </head>
 <body>
-    <header class="header-nav-slide">   
+    <header>   
         <!-- INICIA SLIDER -->
-        <div class="slider-wrapper theme-mi-slider">
-            <div id="slider" class="nivoSlider">
-                <img class="img-slide" src="./index/img/01.jpg" title="#caption-1" alt="Primera imagen, 01"/> <!--tu mejor opcion 01-->
-                <img class="img-slide" src="./index/img/01.jpg" title="#caption-2" alt="Segunda imagen, 02"/> 
-                <img class="img-slide" src="./index/img/01.jpg" title="#caption-3" alt="Tercera imagen, 03"/>
-            </div>
-            <div id="caption-1" class="nivo-html-caption">
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="./index/img/01.jpg" title="#caption" alt="img-1 con texto 'Bienvenido a tu mejor"/>
                 <div class="div-caption">
-                    <p class="p-caption">Bienvenido a tu<br>mejor opción</br></p>
+                    <p class="p-caption">Bienvenido a tu<br>mejor opción</p>
                 </div>
             </div>
-        <div id="caption-2" class="nivo-html-caption">
+            <div class="img-containner">
+                <img src="./index/img/02.jpg" title="#caption" alt="img de bienvenida sin texto"/> 
                 <div class="div-caption">
-                    <p class="p-caption"></p><br> 
+                    <p class="p-caption">Tu mejor opcion</p> 
                 </div>
             </div>
-            <div id="caption-3" class="nivo-html-caption">
+            <div class="img-containner">
+                <img src="./index/img/03.jpg" title="#caption" alt="img con texto 'Bienvenido a tu mejor opción"/>
                 <div class="div-caption">
-                    <p class="p-caption">Bienvenido a tu<br>mejor opción</p><br>
+                    <p class="p-caption">Bienvenido a tu<br>mejor opción</p>
                 </div>
             </div>  
         </div>
@@ -72,30 +57,50 @@
                          
                 </article>
         </section>        
-        <!-- Este es el contenedor de fondo -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+        
     </main>
     
     <footer id="footer-logo">
         <div>
             <div class="div-dante-services">
                 <section class="section-dante-services">
-                    <h2 class="h2-footer">Gerardo Ponte</h2>
-                    <h5 class="h5-footer"><a href="experiencia-laboral.html" target="_blank" rel="noopener  noreferrer">EXPERIENCIA LABORAL</a></h5>
-                    <h5 class="h5-footer"><a href="ultimo-empleo" target="_blank" rel="noopener  noreferrer">ÚLTMO EMPLEO</a></h5>
-                    <h5 class="h5-footer"><a href="plan-de-capacitacion.html" target="_blank" rel="noopener  noreferrer">PLAN DE CAPACITACION</a></h5>
-                    <h5 class="h5-footer"><a href="soporte-it.html" target="_blank" rel="noopener  noreferrer">Soporte - IT</a></h5>
+                    <h2 class="h2-footer">Gerardo Ponte</h2>  
+                    <h5 class="h5-footer"><a href="" target="_blank" rel="noopener  noreferrer">Ver experiencia laboral</a></h5>
+                    <h5 class="h5-footer"><a href="" target="_blank" rel="noopener  noreferrer">Ver ultimo empleo</a></h5>
+                    <h5 class="h5-footer"><a href="" target="_blank" rel="noopener  noreferrer">Ver plan de capacitacion</a></h5>
+                    <h5 class="h5-footer"><a href="" target="_blank" rel="noopener  noreferrer">Ver soporte - TI</a></h5>
                 </section>
             </div>
             <figure class="figure-img-linux">
                 <img class="img-linux" src="./index/img/04.png" alt="Linux"/>
             </figure>
 
-            <h6 class="h6-reservados">
-                <span class="h6-footer-span">2024</span> DANTE DIGITAL &copy<br> MIGUEL HIDALGO, CDMX <span class="h6-footer-span">
-                    NOVIEMBRE 
+            <small class="reservados">
+                <span class="footer-span">2024</span> Dante Digital &copy<br> Miguel Hidalgo, CDMX <span class="footer-span">
+                    Diciembre 
                 </span>
-            </h6>
+            </small>    
         </div>
     </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+<script src="./index/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="./slick/slick/slick.min.js"></script>
+
+<!-- Inicialización de Slick Slider -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        // Inicializamos el slider
+        $('.slider').slick({
+            dots: true,  // Habilita los puntos de navegación
+            arrows: false,  // Habilita las flechas de navegación
+            autoplay: true,  // Activa la reproducción automática
+            autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+            fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+            speed: 550,  // Tiempo de la transición entre las imágenes
+        });
+    });
+</script>
+
 </body>
 </html>
