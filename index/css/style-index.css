@@ -43,7 +43,7 @@
   display: flex;/**/
   justify-content: center;/**/
   /*max-width: 700px;/**/
-  margin-top: 30px;
+  margin-top: 17px;
   /*background-color: rgb(136, 15, 218);/*VISUALIZADOR*/
 }
 
@@ -83,7 +83,7 @@
   /*width: 99%;/**/ 
   display: flex;/**/
   justify-content: center;/**/
-  margin-top: 40px;/**/
+  margin-top: 30px;/**/
   margin-bottom: 60px;
   /*background-color: rgb(188, 226, 17);/*VISUALIZADOR*/
 }
@@ -98,7 +98,6 @@
 
 .section-2 .article-texto .text-principal {
   width: 95%;
-  /*font-size: 1.3em;/*PREDETERMINADO font-size: 1.3em;*/
   text-align: center;/**/
   letter-spacing: .3px;/**/
   text-transform: uppercase;/**/
@@ -117,13 +116,9 @@
   flex-direction: column;
   align-items: center;
   justify-items: stretch;
-
   width: 95%;/**/
   height: 100%;
   margin-top: 50px;
-  /*border-radius: 3rem;/**/
-  /*border: solid rgb(57, 60, 59) 1.5px;/**/
-
   /*background-color: rgba(179, 175, 177, 0.107);/**/
 }
 /*--- FINALIZA SECTION
@@ -134,11 +129,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*max-width: 185px;/**/
   height: 160px;
   margin: 10px;
   border-radius: 100%;/**/
-  border: solid rgb(57, 60, 59) 1.5px;/**/
+  border: solid rgb(30, 45, 103) 1.5px;/**/
   /*background-color: blue;/**/
 }
 /*--- FINALIZA ARTICLE
@@ -149,16 +143,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 90%;
   height: 180px;
   margin: 10px;
-
   padding: 25px;/**/
   text-decoration: none;
   text-align: center;
   border-radius: 100%;/**/
-  border: solid rgb(57, 60, 59) 1.5px;/**/
+  border: solid rgb(30, 45, 103) 1.5px;/**/
   /*background-color: aqua;/*Visualizador*/
 }  
 
@@ -166,7 +158,6 @@
   text-decoration: none;
   color: black;
   font-family: 'Syncopate-Regular';
-  /*letter-spacing: .3em;/**/
 }
 
 /*--- FINALIZA H5 Circulos
