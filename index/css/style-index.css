@@ -127,18 +127,38 @@
 */
 
 
-/*--- inicia la seccion con los 4 circulos principales*/
+/*--- inicia la seccion contenedor de los 4 circulos principales*/
 .section-3 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: stretch;
 
-  width: 90%;
+  width: 95%;/**/
   border-radius: 3rem;/**/
-  border: solid rgb(241, 11, 11) 1.5px;/**/
+  border: solid rgb(57, 60, 59) 1.5px;/**/
 
-  /*background-color: aqua;/**/
+  /*background-color: rgba(255, 15, 163, 0.107);/**/
+}
+
+/*--- FINALIZA ARTICLE
+*/
+
+/*
+*/
+
+/*--- inician los articulos de los 4 circulos principales*/
+.article-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 1300px;
+  height: 190px;
+  margin: 10px;
+  border-radius: 100%;/**/
+  border: solid rgb(57, 60, 59) 1.5px;/**/
+  /*background-color: blue;/**/
 }
 
 /*--- FINALIZA ARTICLE
@@ -150,25 +170,25 @@
 */
 
 
-
-/*--- inician los articulos de los 4 circulos principales*/
-.article-3 {
+/*--- inician los H5 de los articulos de los 4 circulos principales*/
+.h5-circulos {
   display: flex;
+  justify-content: center;
   align-items: center;
 
+  width: 99%;
+  height: 170px;
+  margin: 10px;
+  padding: 25px;
+  text-align: center;
   border-radius: 100%;/**/
-  height: 160px;
-  border: solid rgb(241, 11, 11) 1.5px;/**/ 
-  /*background-color: blue;/**/
-}
+  border: solid rgb(57, 60, 59) 1.5px;/**/
+  /*background-color: aqua;/*Visualizador*/
+}  
 
 
-
-
-
-/*--- FINALIZA ARTICLE
+/*--- FINALIZA H5 Circulos
 */
-
 
 
 /*INICIA ETIQUETA FOOTER*/
