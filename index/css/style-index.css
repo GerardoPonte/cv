@@ -42,19 +42,20 @@
 .section-1 {
   display: flex;/**/
   justify-content: center;/**/
-  max-width: 700px;/**/
+  /*max-width: 700px;/**/
   margin-top: 30px;
   /*background-color: rgb(136, 15, 218);/*VISUALIZADOR*/
 }
 
-.section-1 .article-bienvenidos {
+.article-bienvenidos {
   display: flex;/**/
   justify-content: center;/**/
-  
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
  
-.section-1 .article-bienvenidos .h2-bienvenidos {
+.h2-bienvenidos {
+  width: 97%;
+  
   text-align: center;/**/
   letter-spacing: .2em;/**/
   text-transform: uppercase;
@@ -82,7 +83,7 @@
   /*width: 99%;/**/ 
   display: flex;/**/
   justify-content: center;/**/
-  margin-top: 60px;/**/
+  margin-top: 40px;/**/
   margin-bottom: 60px;
   /*background-color: rgb(188, 226, 17);/*VISUALIZADOR*/
 }
@@ -96,6 +97,7 @@
 }
 
 .section-2 .article-texto .text-principal {
+  width: 95%;
   /*font-size: 1.3em;/*PREDETERMINADO font-size: 1.3em;*/
   text-align: center;/**/
   letter-spacing: .3px;/**/
