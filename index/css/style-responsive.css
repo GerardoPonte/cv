@@ -61,6 +61,31 @@
 
 @media screen and (min-width: 1100px) {/*@media screen and (min-width: 1320px)*/
 
+  /*--- inicia la seccion contenedor de los 4 circulos principales*/
+.section-3 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-items: stretch;
+
+  /*width: 30%;/**/
+  height: 100%;
+  margin-top: 15%;
+  /*border-radius: 3rem;/**/
+  /*border: solid rgb(57, 60, 59) 1.5px;/**/
+
+  /*background-color: rgba(179, 175, 177, 0.107);/**/
+}
+/*--- FINALIZA SECTION
+*/
+
+
+/*\
+*/
+
+
+
 /*ESTE ES EL CONTENEDOR DE GERARDO PONTE Y CIRCULOS*/
 #footer-logo .div-dante-services{
 max-width: 1400px;

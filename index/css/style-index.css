@@ -16,29 +16,12 @@
   font-family: 'Syncopate-Bold';
   src: url('../syncopate/Syncopate-Bold.ttf') format('truetype');
   font-style: normal;
-  font-weight: normal;<div class="slider-wrapper theme-mi-slider">
+  font-weight: normal;
 }
 
 /* --- FINALIZA TIPOS DE LETRA PARA FOOTER Y CONTENIDO PRINCIPAL
 */
 
-/*
-*/
-
-/* ---  INICIA HEADER-NAV-SLIDE: ESTA ES LA ETIQUETA HEADER. Y SE CONFIGURO
-        UNA CLASS LLAMADA HEADER-NAV-SLIDE --- */
-.header-nav-slide {
-  /*margin: 0;/**/
-  /*padding: 0;/**/
-  /*height: 100px;/*SE INGRESA EL 23 DE SEP 2004*/
-  /*background-color: rgb(229, 255, 0);/*VISUALIZADOR*/
-}
-
-/* --- FINALIZA HEADER-NAV-SLIDE  
-*/
-
-/*
-*/
 
 /*--- inicia main div contenido principal
 */
@@ -54,25 +37,24 @@
 /*
 */
 
-/*inicia section*/
+/*--- Inicia section-1 Primer Texto
+*/
 .section-1 {
   display: flex;/**/
   justify-content: center;/**/
-  margin-top: 40px;
-  /*width: 99%;/**/
+  max-width: 700px;/**/
+  margin-top: 30px;
   /*background-color: rgb(136, 15, 218);/*VISUALIZADOR*/
 }
 
 .section-1 .article-bienvenidos {
   display: flex;/**/
   justify-content: center;/**/
-  /*margin-top: 4rem;/**/
-  max-width: 700px;/**/
+  
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
  
 .section-1 .article-bienvenidos .h2-bienvenidos {
-  /*font-size: 1.6em;/*1.6em PREDETERMINADO*/
   text-align: center;/**/
   letter-spacing: .2em;/**/
   text-transform: uppercase;
@@ -108,7 +90,7 @@
 .section-2 .article-texto {
   display: flex;/**/
   justify-content: center;/**/
-  max-width: 1200px;/**/
+  max-width: 1000px;/**/
   /*margin: 20px 20px 180px 20px;/*superior, derecho, inferior, izquierdo*/ 
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
@@ -135,65 +117,67 @@
   justify-items: stretch;
 
   width: 95%;/**/
-  border-radius: 3rem;/**/
-  border: solid rgb(57, 60, 59) 1.5px;/**/
+  height: 100%;
+  margin-top: 50px;
+  /*border-radius: 3rem;/**/
+  /*border: solid rgb(57, 60, 59) 1.5px;/**/
 
-  /*background-color: rgba(255, 15, 163, 0.107);/**/
+  /*background-color: rgba(179, 175, 177, 0.107);/**/
 }
-
-/*--- FINALIZA ARTICLE
+/*--- FINALIZA SECTION
 */
 
-/*
-*/
-
-/*--- inician los articulos de los 4 circulos principales*/
+/*--- inicia article de los 4 circulos principales*/
 .article-3 {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  max-width: 1300px;
-  height: 190px;
+  /*max-width: 185px;/**/
+  height: 160px;
   margin: 10px;
   border-radius: 100%;/**/
   border: solid rgb(57, 60, 59) 1.5px;/**/
   /*background-color: blue;/**/
 }
-
 /*--- FINALIZA ARTICLE
 */
 
-
-
-/*
-*/
-
-
 /*--- inician los H5 de los articulos de los 4 circulos principales*/
-.h5-circulos {
+.h3-circulos {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 99%;
-  height: 170px;
+  width: 90%;
+  height: 180px;
   margin: 10px;
-  padding: 25px;
+
+  padding: 25px;/**/
+  text-decoration: none;
   text-align: center;
   border-radius: 100%;/**/
   border: solid rgb(57, 60, 59) 1.5px;/**/
   /*background-color: aqua;/*Visualizador*/
 }  
 
+.h3-circulos a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Syncopate-Regular';
+  /*letter-spacing: .3em;/**/
+}
 
 /*--- FINALIZA H5 Circulos
 */
 
 
+/*
+*/
+
+
 /*INICIA ETIQUETA FOOTER*/
 #footer-logo {
-  margin-top: 25%;
+  margin-top: 40%;
   background-color: rgb(0, 0, 0);/*V*/  
 }
 /* --- FINALIZA FOOTER LOGO
@@ -225,7 +209,7 @@
     align-items: center;
     justify-content: center;
     
-   width: 100%;
+    width: 100%;
     margin-top: 2.5rem;/**/
     color: white;/**/
     font-family: 'Syncopate-Regular';
@@ -246,7 +230,7 @@
     align-items: center;
     justify-content: center;
     
-    width: 78%;/*width: 90%;*/
+    width: 75%;/*width: 90%;*/
     border-radius: 3rem;
     padding: 1.7rem;
     border: solid rgba(255, 255, 255, 0.692) 0.1px;/**/
@@ -265,10 +249,9 @@
     flex-direction: column;/**/
     align-items: center;/**/
     justify-content: center;/**/
-    /*width: 100%;/**/
+    width: 100%;/**/
     margin-top: 0rem;/**/
-    font-size: 1.4em;/**/
-    /*padding: .8rem 0rem .6rem 0rem;/**/
+    font-size: 1.3em;/**/
     border-radius: 3rem;
     /*background-color: aqua;/*VISUALIZADOR*/
   }
@@ -290,9 +273,7 @@
     margin: 1.1rem; /*margin: 1.5rem; /*PREDETERMINADO*/
     padding: 1.3rem .2rem .8rem .2rem;
     border-radius: 1rem;/*border-radius: 3rem; PREDETERMINADO*/
-    /*border: solid 1px white;/**/
     background-color: rgba(29, 56, 67, 0.623);/**/
-    /*background-color: aqua;/*VISUALIZADOR*/
   }
 
 
@@ -313,12 +294,8 @@
     flex-direction: row;/**/
     justify-content: center;
     align-items: center;
-    /*border-radius: 100%;/**/
-    /*width: 100px;/**/
-    /*height: 100px;/**/
-    margin-top: 4rem;/*2.5rem;/**/
-    margin-bottom: .1 rem;/*-1.3rem;/**/
-    /*border: solid 3px rgba(255, 255, 255, 0.247);/**/
+    margin-top: 70px;/*2.5rem;/**/
+    margin-bottom: 0;/*-1.3rem;/**/
     /*background-color: rgba(29, 56, 67, 0.541);/*Visualizador/**/
   }
 
@@ -349,7 +326,3 @@
 /*--- FINALIZA .H6-RESERVADOS (DERECHOS RESERVADOS)
 */
 
-
-.reservados {
-  /*background-color: aqua;/*visualizador*/
-}
