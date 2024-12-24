@@ -126,6 +126,51 @@
 /*
 */
 
+
+/*--- inicia la seccion con los 4 circulos principales*/
+.section-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: stretch;
+
+  width: 90%;
+  border-radius: 3rem;/**/
+  border: solid rgb(241, 11, 11) 1.5px;/**/
+
+  /*background-color: aqua;/**/
+}
+
+/*--- FINALIZA ARTICLE
+*/
+
+
+
+/*
+*/
+
+
+
+/*--- inician los articulos de los 4 circulos principales*/
+.article-3 {
+  display: flex;
+  align-items: center;
+
+  border-radius: 100%;/**/
+  height: 160px;
+  border: solid rgb(241, 11, 11) 1.5px;/**/ 
+  /*background-color: blue;/**/
+}
+
+
+
+
+
+/*--- FINALIZA ARTICLE
+*/
+
+
+
 /*INICIA ETIQUETA FOOTER*/
 #footer-logo {
   margin-top: 25%;
