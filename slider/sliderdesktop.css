@@ -1,0 +1,127 @@
+@media screen and (min-width: 350px) {/*@media screen and (min-width: 1320px)*/
+.p-caption {
+  font-size: 1.7em; /* Tamaño de texto */
+}
+
+}
+
+
+@media screen and (min-width: 385px) {/*@media screen and (min-width: 1320px)*/
+.p-caption {
+    font-size: 1.9em; /* Tamaño de texto */
+  }
+  
+  }
+
+
+  @media screen and (min-width: 420px) {/*@media screen and (min-width: 1320px)*/
+    .p-caption {
+        font-size: 2em; /* Tamaño de texto */
+      }
+      
+      }
+
+@media screen and (min-width: 490px) {/*@media screen and (min-width: 1320px)*/
+  .p-caption {
+    font-size: 2.3em; /* Tamaño de texto */
+  }
+        
+}
+
+
+@media screen and (min-width: 566px) {/*@media screen and (min-width: 1320px)*/
+  .p-caption {
+    font-size: 2.6em; /* Tamaño de texto */
+  }
+        
+}
+
+
+@media screen and (min-width: 666px) {/*@media screen and (min-width: 1320px)*/
+  .p-caption {
+    font-size: 2.9em; /* Tamaño de texto */
+  }
+        
+}
+
+
+@media screen and (min-width: 666px) {/*@media screen and (min-width: 1320px)*/
+  .p-caption {
+    font-size: 3em; /* Tamaño de texto */
+  }
+        
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1100px) {/*@media screen and (min-width: 1320px)*/
+.img-containner {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  /*background-color: crimson;/*Visualizador*/
+}
+
+.slider img {
+  width: 100%; /* Hace que las imágenes se ajusten al 100% del ancho del contenedor */
+  max-height: 676px; /*810px Mantiene la relación de aspecto de las imágenes */
+  display: block; /* Elimina los espacios blancos debajo de las imágenes */
+  object-fit: cover; /* Asegura que las imágenes se ajusten sin deformarse */
+}
+
+.div-caption {
+  position: absolute;/**/
+  bottom: 25%; /* Alinea las captions cerca de la parte inferior */
+  /*left: 5%; /* Deja un margen a la izquierda */
+  
+  width: 100%; /* Ajusta el ancho de la caption */
+  text-align: center; /* Centra el texto de la caption */
+  color: #fff; /* Blanco para el texto */
+  /*background: rgba(0, 0, 0, 0.257); /* Fondo semitransparente para que el texto sea legible */
+  /*padding: 50px;/**/
+  font-size: 1.9rem; /* Tamaño de texto */
+  display: none; /* Oculta las captions al inicio */
+  /*background-color: blue/*Visualizador*/;
+}
+
+
+
+
+
+
+
+.p-caption {
+ width: 50%;
+  float: right;
+  /*margin-top: 0;/**/
+  /*margin-left: 50px;/**/
+  margin-bottom: 150px;
+  width: 60%;
+  font-size: 1.5em;
+  /*background-color: aqua;/*Visualizador*/
+}
+
+
+
+
+}
+
+@media screen and (min-width: 1420px) {/*@media screen and (min-width: 1320px)*/
+
+.p-caption {
+  /*width: 50%;/**/
+   /*float: right;/**/
+   /*margin-top: 0;/**/
+   /*margin-left: 50px;/**/
+   /*margin-bottom: 150px;/**/ 
+   /*width: 60%;/**/
+   font-size: 1.8em;
+   /*background-color: aqua;/*Visualizador*/
+ }
+
+}

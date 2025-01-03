@@ -1,0 +1,237 @@
+  /* --- INICIAN TIPOS DE LETRA PARA FOOTER Y CONTENIDO PRINCIPAL 
+*/
+
+/* --- FUENTE PARA LETRA DEL CONTENIDO PRINCIPAL Y EL FOOTER
+*/
+@font-face {
+  font-family: 'Syncopate-Regular';
+  src: url('/tipografia/syncopate/Syncopate-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* --- FUENTE PARA EL MENU DE NAVEGACION 
+*/
+
+@font-face {
+  font-family: 'Syncopate-Bold';
+  src: url('/tipografia/syncopate/Syncopate-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+/* --- FINALIZA TIPOS DE LETRA PARA FOOTER Y CONTENIDO PRINCIPAL
+*/
+
+
+/* --- FUENTE PARA LETRA DEL CONTENIDO PRINCIPAL Y EL FOOTER
+*/
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url('/Lato/Lato/Lato-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* --- FUENTE PARA EL MENU DE NAVEGACION 
+*/
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('/Lato/Lato-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+/* --- FINALIZA TIPOS DE LETRA PARA FOOTER Y CONTENIDO PRINCIPAL
+*/
+
+
+
+
+
+/*
+*/
+
+/*--- inicia main div contenido principal
+*/
+  main {
+  display: flex;/**/
+  flex-direction: column;/**/
+  align-items: center;/**/
+  justify-content: center;/**/
+  width: 100%;/**/
+  /*background-color: rgb(18, 228, 63);/*VISUALIZADOR*/
+}
+
+/*
+*/
+
+/* --- --- INICIA SECTION 1 section-1
+*/
+.section-1 {
+  display: flex;/**/
+  align-items: center;
+  flex-direction: column;
+  /*background-color: rgb(136, 15, 218);/*VISUALIZADOR*/
+}
+
+.article-1 {
+  
+  width: 90%;/**/
+  margin-top: 20px;
+  padding-top: 3px;/**/
+  border-top: 1.2px solid #00000052; /* Línea de 2px de grosor y color negro */
+  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
+}
+ 
+.p-texto-1 {
+  width: 100%;/**/
+  font-size: 20px;/**/
+  /*background-color: r gb(167, 189, 45);/*visualizador*/
+}
+
+/*ESTA ES KA ETIQUETA li CON CLASS li-1*/
+.li-1 {
+  list-style: none; /* Elimina los puntos */
+  
+}
+
+/*ESTA ES LA ETIQUETA SPAN CON CLASS .bold-li-1*/
+.bold-li-1 { 
+  font-weight: bold;/**/  
+}
+
+ /* Estilo del botón */
+ .back-button {
+  margin-top: 69px;
+  padding: 10px 20px;
+  background-color: #007BFF; /* Azul */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #f30909;
+}
+
+p, li {
+  font-family: 'Lato-Regular';
+}
+
+/*
+*/  
+
+
+/*
+   --- --- INICIA ETIQUETA FOOTER
+*/
+.footer-logo {
+  margin-top: 100px;/**/
+  /*background-color: rgb(0, 0, 0);/*V*/  
+}
+
+/* INICIA FOOTERLOGO Y DIV*/  
+.footer-logo > div {
+  display: flex;/**/
+  flex-direction: column;/**/
+  align-items: center;/**/
+  
+  width: 100%;/**/
+  background-color: rgb(0, 0, 0);/*visualizador*/
+}
+/* FINALIZA FOOTERLOGO Y DIV
+*/
+
+
+/* --- INICIA SECTION-1-FOOTER
+*/
+.section-1-footer {
+  display: flex;/**/
+  flex-direction: column;/**/
+  align-items: center;/**/
+  
+  width: 95%;
+  margin-top: 20px;/**/
+  margin-bottom: 100px;
+} 
+
+.article-1-footer {
+  width:  100%;/**/
+  margin-bottom: 20px;/**/
+}
+
+.h2-gps-footer {
+  color: white;/**/
+  text-align: center;
+  font-family: 'Syncopate-Regular';/**/
+}
+
+.li-1, .li-2, .li-3, .li-4, .li-5, .li-6, .li-7 {
+  font-size: 20px;
+}
+
+
+
+/* --- INICIA ARTICLE-2-FOOTER
+  */
+.article-2-footer {
+  display: flex;/**/
+  flex-direction: column;/**/
+  align-items: center;/**/
+    
+  width: 85%;/**/
+}
+
+.h4-wrapper-footer {
+  display: flex;/**/
+  justify-content: center;/**/
+  
+  width: 100%;/**/
+  margin: 15px;/*margen para separar los bloques*/
+  border-radius: 20px;/**/
+  background-color: rgba(29, 56, 67, 0.541);/*No borrar*/
+}
+
+/*INICIA ETIQUETA H5 FOOTER DESARROLLO, SQL, WSERVER*/
+.h4-footer {
+  color: white;/**/
+  text-align: center;/**/
+  font-family: 'Syncopate-Regular';/**/
+}
+
+/*
+
+*/
+
+/* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/
+.figure-img-linux {
+  padding: 0;/**/  
+  margin-bottom: 0;/**/
+}
+
+/*INICIA LA IMAGEN DE LINUX*/  
+.img-linux {
+  width: 50px;/**/
+  height: 50px;/**/
+}
+
+/*INICIA .reservados (DERECHOS RESERVADOS)*/
+.reservados {
+  width: 100%;/**/
+  text-align: center;/**/
+  color: white;/**/
+  line-height: 1.5; /* Ajusta la altura de línea si es necesario */
+  font-family: 'Syncopate-Regular';/**/
+}
+
+/*INICIA .line-break SALTO DE LINEA*/
+.line-break {
+  display: block; /* Forzar un salto de línea */
+}
+
+/*INICIA .footer-span (DERECHOS RESERVADOS)*/
+.footer-span {
+  color: #0756d4;/**/
+}

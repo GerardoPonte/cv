@@ -1,0 +1,69 @@
+/* Ajustes básicos para el slider */
+.slider {
+  width: 100%; /* Asegura que el slider ocupe todo el ancho */
+  margin: 0 auto; /* Centra el slider en la página */
+}
+
+
+.img-containner {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  /*background-color: crimson;/*Visualizador*/
+}
+
+
+  
+
+.slider img {
+  width: 100%; /* Hace que las imágenes se ajusten al 100% del ancho del contenedor */
+  height: auto; /* Mantiene la relación de aspecto de las imágenes */
+  display: block; /* Elimina los espacios blancos debajo de las imágenes */
+  object-fit: cover; /* Asegura que las imágenes se ajusten sin deformarse */
+}
+
+.div-caption {
+  position: absolute;/**/
+  bottom: 25%; /* Alinea las captions cerca de la parte inferior */
+  /*left: 5%; /* Deja un margen a la izquierda */
+  width: 100%; /* Ajusta el ancho de la caption */
+  text-align: center; /* Centra el texto de la caption */
+  color: #fff; /* Blanco para el texto */
+  /*background: rgba(0, 0, 0, 0.257); /* Fondo semitransparente para que el texto sea legible */
+  /*padding: 50px;/**/
+  
+  display: none; /* Oculta las captions al inicio */
+  /*background-color: blue/*Visualizador*/;
+}
+
+
+.p-caption {
+  /*margin: 0;/*Predeterminado*/
+  font-size: 1.6rem; /* Tamaño de texto */
+  font-weight: bold;
+  font-family: 'Syncopate-Regular';
+  /*background-color: aqua;/*Visualizador*/
+}
+
+/* Activar la caption solo cuando la imagen esté activa */
+.slick-current .div-caption {
+  display: block;
+}
+
+/* Estilización de los puntos de navegación */
+.slick-dots {
+  position: absolute;
+  bottom: 10px; /* Coloca los puntos de navegación en la parte inferior */
+  width: 100%; /* Asegura que los puntos se alineen correctamente */
+  text-align: center; /* Centra los puntos */
+}
+
+
+
+.p-caption {
+  /*margin: 0;/*Predeterminado*/
+  font-size: 1.6rem; /* Tamaño de texto */
+  font-weight: bold;
+  font-family: 'Syncopate-Regular';
+  /*background-color: aqua;/*Visualizador*/
+}
