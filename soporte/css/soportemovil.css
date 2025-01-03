@@ -22,6 +22,20 @@
 /* --- FINALIZA TIPOS DE LETRA PARA FOOTER Y CONTENIDO PRINCIPAL
 */
 
+
+@font-face {
+  font-family: 'Montserrat-VariableFont_wght';
+  src: url('../Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+
+/* --- FUENTE PARA EL MENU DE NAVEGACION 
+*/
+
+
 /*
 */
 
@@ -43,15 +57,18 @@
 */
 .section-1 {
   display: flex;/**/
-  align-items: center;
   flex-direction: column;
+  width: 95%;
   /*background-color: rgb(136, 15, 218);/*VISUALIZADOR*/
 }
 
 .article-1 {
-  
-  width: 90%;/**/
-  margin-top: 20px;
+  /*display: flex;/**/
+  /*flex-direction: column;/**/
+  /*align-items: center;/**/
+  width: 100%;/**/
+  max-width: 100  0px;
+  /*margin-top: 20px;/**/
   padding-top: 3px;/**/
   border-top: 1.2px solid #00000052; /* Línea de 2px de grosor y color negro */
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
@@ -59,15 +76,10 @@
  
 .p-texto-1 {
   width: 100%;/**/
-  font-size: 20px;/**/
+  /*font-size: 16px;/**/
   /*background-color: r gb(167, 189, 45);/*visualizador*/
 }
 
-/*ESTA ES KA ETIQUETA li CON CLASS li-1*/
-.li-1 {
-  list-style: none; /* Elimina los puntos */
-  
-}
 
 /*ESTA ES LA ETIQUETA SPAN CON CLASS .bold-li-1*/
 .bold-li-1 { 
@@ -76,7 +88,11 @@
 
  /* Estilo del botón */
  .back-button {
+  width: 100%;
+  max-width: 100px;
+  
   margin-top: 69px;
+  margin-left: 15px;
   padding: 10px 20px;
   background-color: #007BFF; /* Azul */
   color: white;
@@ -84,19 +100,47 @@
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  font-family: 'Montserrat-VariableFont_wght';/**/
   transition: background-color 0.3s ease;
 }
 
 .back-button:hover {
-  background-color: #f30909;
+  background-color: #f30909;/**/
 }
 
 p, li {
-  font-family: 'Lato-Regular';
+  font-family: 'Montserrat-VariableFont_wght';
+}
+
+.h2-titulo {
+  text-align: center;
+  font-family: 'Montserrat-VariableFont_wght';
+}
+
+.h2-titulo-1 {
+  text-align: left;
+  font-family: 'Montserrat-VariableFont_wght';
+}
+
+.h2-slider {
+  font-family: 'Montserrat-VariableFont_wght';
 }
 
 /*
 */  
+
+
+.section-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 98%;
+  max-width: 800px;
+  /*background-color: #f30909;/*Visualizador*/
+}
+
+
+
 
 
 /*
