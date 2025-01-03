@@ -5,7 +5,7 @@
 */
 @font-face {
   font-family: 'Syncopate-Regular';
-  src: url('/tipografia/syncopate/Syncopate-Regular.ttf') format('truetype');
+  src: url('tipografia/syncopate/Syncopate-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }
@@ -14,7 +14,7 @@
 */
 @font-face {
   font-family: 'Syncopate-Bold';
-  src: url('/tipografia/syncopate/Syncopate-Bold.ttf') format('truetype');
+  src: url('tipografia/syncopate/Syncopate-Bold.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }
