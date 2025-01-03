@@ -5,7 +5,7 @@
 */
 @font-face {
   font-family: 'Syncopate-Regular';
-  src: url('tipografia/syncopate/Syncopate-Regular.ttf') format('truetype');
+  src: url('/syncopate/Syncopate-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }
@@ -15,40 +15,17 @@
 
 @font-face {
   font-family: 'Syncopate-Bold';
-  src: url('tipografia/syncopate/Syncopate-Bold.ttf') format('truetype');
+  src: url('/syncopate/Syncopate-Bold.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }
 /* --- FINALIZA TIPOS DE LETRA PARA FOOTER Y CONTENIDO PRINCIPAL
 */
-
-
-/* --- FUENTE PARA LETRA DEL CONTENIDO PRINCIPAL Y EL FOOTER
-*/
-@font-face {
-  font-family: 'Lato-Bold';
-  src: url('/Lato/Lato/Lato-Bold.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-}
-
-/* --- FUENTE PARA EL MENU DE NAVEGACION 
-*/
-@font-face {
-  font-family: 'Lato-Regular';
-  src: url('/Lato/Lato-Regular.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-}
-/* --- FINALIZA TIPOS DE LETRA PARA FOOTER Y CONTENIDO PRINCIPAL
-*/
-
-
-
 
 
 /*
 */
+
 
 /*--- inicia main div contenido principal
 */
