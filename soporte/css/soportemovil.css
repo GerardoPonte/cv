@@ -78,14 +78,13 @@
   
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
- 
-.p-texto-1 {
-  width: 100%;/**/
-  /*font-size: 16px;/**/
-  /*background-color: r gb(167, 189, 45);/*visualizador*/
+
+.h2-titulo-principal {
+  text-align: center;
+  font-family: 'Montserrat-VariableFont_wght';
 }
 
-
+ 
 /*ESTA ES LA ETIQUETA SPAN CON CLASS .bold-li-1*/
 .bold-li-1 { 
   font-weight: bold;/**/  
@@ -93,17 +92,14 @@
 
  
 
-li {
+.li-1 {
+  font-size: 1px;
   font-family: 'Montserrat-VariableFont_wght';
 }
 
-.h2-titulo {
-  text-align: center;
-  font-family: 'Montserrat-VariableFont_wght';
-}
 
-.h2-titulo-1 {
-  text-align: left;
+.h3-titulo {
+  /*text-align: left;/**/
   font-family: 'Montserrat-VariableFont_wght';
 }
 
@@ -157,6 +153,11 @@ li {
 .back-button:hover {
   background-color: #f30909;/**/
 }
+
+
+
+
+
 
 /*
    --- --- INICIA ETIQUETA FOOTER
