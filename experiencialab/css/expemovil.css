@@ -23,6 +23,16 @@
 */
 
 
+/* --- FUENTE PARA LETRA DEL CONTENIDO PRINCIPAL Y EL FOOTER
+*/
+@font-face {
+  font-family: 'Montserrat-VariableFont_wght';
+  src: url('../Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+
 /*
 */
 
@@ -84,7 +94,8 @@
   border: none;
   border-radius: 5px;
   font-size: 16px;
-  cursor: pointer;
+  font-family: 'Montserrat-VariableFont_wght';/**/
+  cursor: pointer;  
   transition: background-color 0.3s ease;
 }
 
@@ -93,7 +104,7 @@
 }
 
 p, li {
-  font-family: 'Lato-Regular';
+  font-family: 'Montserrat-VariableFont_wght';
 }
 
 /*

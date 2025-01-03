@@ -19,6 +19,16 @@
   font-weight: normal;
 }
 
+
+/* --- FUENTE PARA LETRA DEL CONTENIDO PRINCIPAL Y EL FOOTER
+*/
+@font-face {
+  font-family: 'Montserrat-VariableFont_wght';
+  src: url('../Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
 /* --- FINALIZA TIPOS DE LETRA PARA FOOTER Y CONTENIDO PRINCIPAL
 */
 
