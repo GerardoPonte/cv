@@ -12,20 +12,6 @@
 }
 
 
-@media screen and (min-width: 600px) {
-  .article-1 {
-    /*max-width: 800px;/**/
-    /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
-  }
-
-
-}
-
-
-
-
-
-
 @media screen and (min-width: 1100px) {
  
   .h2-bienvenidos {/*Bienvenidos a mi sitio web*/
@@ -55,8 +41,7 @@
   /* ---- FINALIZAN LOS CIRCULOS PRINCIPALES
   */
 
-  /*
-  
+  /*  
   */
 
   /* ---- INICIA CONTENIDO FOOTER

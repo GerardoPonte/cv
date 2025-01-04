@@ -80,24 +80,20 @@
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
 
-
 .h3-titulo {/*SUBTITULOS DE LI*/
   margin-top: 45px;/**/
   text-align: left;/**/
   font-family: 'Montserrat-VariableFont_wght';
 }   
 
-
 .bold-li-1 { 
   font-weight: bold;/*NEGRITAS PARA TITULO LI*/  
 }
-
 
 .ol-li .li-1 {/*LI TEXTO PRINCIPAL*/
   font-size: 19px;/**/
   font-family: 'Montserrat-VariableFont_wght';
 }
-
 
 /*
 */  
@@ -121,7 +117,6 @@
   margin-bottom: 0;
   font-size: 18px;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
-
 }
 
 /* Estilo del botón */
@@ -167,7 +162,6 @@
 /* FINALIZA FOOTERLOGO Y DIV
 */
 
-
 /* --- INICIA SECTION-1-FOOTER
 */
 .section-1-footer {
@@ -195,10 +189,11 @@
   font-size: 20px;
 }
 
-
+/*
+*/
 
 /* --- INICIA ARTICLE-2-FOOTER
-  */
+*/
 .article-2-footer {
   display: flex;/**/
   flex-direction: column;/**/
@@ -225,7 +220,6 @@
 }
 
 /*
-
 */
 
 /* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/

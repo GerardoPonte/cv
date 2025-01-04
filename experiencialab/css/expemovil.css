@@ -32,7 +32,6 @@
   font-weight: normal;
 }
 
-
 /*
 */
 
@@ -54,8 +53,6 @@
 */
 .section-titulo { /*SECTION TITULO PRINCIPAL*/
   width: 95%;/**/
-  /*border-top: 1.6px solid #00000052; /* Línea de 2px de grosor y color negro */
-  /*margin-bottom: 20px;/**/
 }
 
 .h2-titulo-principal {
@@ -78,13 +75,8 @@
 .article-1 {
   width: 100%;/**/
   max-width: 999px;/**/
-  
-  /*margin-top: 20px;/**/
-  /*padding-top: 3px;/**/
-  /*border-top: 1.2px solid #00000052; /* Línea de 2px de grosor y color negro */
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
-
 
 .h3-titulo {/*SUBTITULOS DE LI*/
   margin-top: 45px;/**/
@@ -92,11 +84,9 @@
   font-family: 'Montserrat-VariableFont_wght';
 }   
 
-
 /*ESTA ES KA ETIQUETA li CON CLASS li-1*/
 .li-1 {
   list-style: none; /* Elimina los puntos */
-  
 }
 
 /*ESTA ES LA ETIQUETA SPAN CON CLASS .bold-li-1*/
@@ -104,12 +94,7 @@
   font-weight: bold;/**/  
 }
 
-
-
-
-
 .p-texto {
-  /*width: 100%;/**/
   font-size: 19px;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
   /*background-color: r gb(167, 189, 45);/*visualizador*/
@@ -120,20 +105,10 @@
   font-family: 'Montserrat-VariableFont_wght';/**/
 }
 
+/*
+*/
 
-
-
-
-
-
-
-
-
-
-
-
-
- /* Estilo del botón */
+/* Estilo del botón */
  .back-button {
   margin-top: 69px;
   padding: 10px 20px;
@@ -158,9 +133,7 @@ p, li {
 /*
 */  
 
-
-/*
-   --- --- INICIA ETIQUETA FOOTER
+/*--- --- INICIA ETIQUETA FOOTER
 */
 .footer-logo {
   margin-top: 100px;/**/
@@ -178,7 +151,6 @@ p, li {
 }
 /* FINALIZA FOOTERLOGO Y DIV
 */
-
 
 /* --- INICIA SECTION-1-FOOTER
 */
@@ -207,8 +179,6 @@ p, li {
   font-size: 20px;
 }
 
-
-
 /* --- INICIA ARTICLE-2-FOOTER
   */
 .article-2-footer {
@@ -235,10 +205,6 @@ p, li {
   text-align: center;/**/
   font-family: 'Syncopate-Regular';/**/
 }
-
-/*
-
-*/
 
 /* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/
 .figure-img-linux {

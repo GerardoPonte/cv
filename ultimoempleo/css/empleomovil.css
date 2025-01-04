@@ -26,7 +26,7 @@
 
 /* --- FUENTE PARA LETRA DEL CONTENIDO PRINCIPAL Y EL FOOTER
 */
-@font-face {
+@font-face {    
   font-family: 'Montserrat-VariableFont_wght';
   src: url('../Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
   font-style: normal;
@@ -52,35 +52,53 @@
 /*
 */
 
+/* --- --- INICIA SECTION CONTENIDO GENERAL
+*/
+.section-titulo { /*SECTION TITULO PRINCIPAL*/
+  width: 95%;/**/
+  /*border-top: 1.6px solid #00000052; /* Línea de 2px de grosor y color negro */
+  /*margin-bottom: 20px;/**/
+}
+
+.h2-titulo-principal {
+  margin-top: 50px;
+  text-align: center;/**/
+  font-family: 'Montserrat-VariableFont_wght';/**/
+}
+
+
+/*
+*/
+
+
 /* --- --- INICIA SECTION 1 section-1
 */
 .section-1 {
   display: flex;/**/
-  align-items: center;
   flex-direction: column;
+  width: 95%;
   /*background-color: rgb(136, 15, 218);/*VISUALIZADOR*/
 }
 
 .article-1 {
   
-  width: 90%;/**/
-  margin-top: 20px;
-  padding-top: 3px;/**/
-  border-top: 1.2px solid #00000052; /* Línea de 2px de grosor y color negro */
-  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
+  width: 100%;/**/
+  max-width: 999px;/**/
+  /*margin-top: 20px;/**/
+  /*padding-top: 3px;/**/
+  /*border-top: 1.2px solid #00000052; /* Línea de 2px de grosor y color negro */
+  /*background-color: rgb(218, 32, 32);/*Visualizador*/
 }
  
-.p-texto-1 {
-  width: 100%;/**/
-  font-size: 20px;/**/
-  font-family: 'Montserrat-VariableFont_wght';/**/
-  /*background-color: r gb(167, 189, 45);/*visualizador*/
+
+.div-li {
+  margin-top: 40px;
+  /*background-color: #007BFF;/**/
 }
 
 /*ESTA ES KA ETIQUETA li CON CLASS li-1*/
-.li-1 {
-  list-style: none; /* Elimina los puntos */
-  
+.div-li .li-1 {
+  list-style: none;/*Elimina los puntos*/
 }
 
 /*ESTA ES LA ETIQUETA SPAN CON CLASS .bold-li-1*/
@@ -88,22 +106,23 @@
   font-weight: bold;/**/  
 }
 
- /* Estilo del botón */
- .back-button {
-  margin-top: 69px;
-  padding: 10px 20px;
-  background-color: #007BFF; /* Azul */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+
+.h3-titulo {/*SUBTITULOS DE LI*/
+  margin-top: 45px;/**/
+  text-align: left;/**/
+  font-family: 'Montserrat-VariableFont_wght';
+}   
+
+
+.p-texto {
+  width: 100%;/**/
+  font-size: 19px;/**/
+  font-family: 'Montserrat-VariableFont_wght';/**/
+  /*background-color: r gb(167, 189, 45);/*Visualizador*/
 }
 
-.back-button:hover {
-  background-color: #f30909;
-}
+
+
 
 p, li {
   font-family: 'Montserrat-VariableFont_wght';/**/
@@ -112,13 +131,29 @@ p, li {
 /*
 */  
 
+ /* Estilo del botón */
+ .back-button {
+  margin-top: 69px;/**/
+  padding: 10px 20px;/**/
+  background-color: #007BFF; /* Azul */
+  color: white;/**/
+  border: none;/**/
+  border-radius: 5px;/**/
+  font-size: 16px;/**/
+  cursor: pointer;/**/
+  transition: background-color 0.3s ease;/**/
+}
+
+.back-button:hover {
+  background-color: #f30909;/**/
+}
 
 /*
    --- --- INICIA ETIQUETA FOOTER
 */
 .footer-logo {
   margin-top: 100px;/**/
-  /*background-color: rgb(0, 0, 0);/*V*/  
+  /*background-color: rgb(0, 0, 0);/*Visualizador*/  
 }
 
 /* INICIA FOOTERLOGO Y DIV*/  
@@ -126,7 +161,6 @@ p, li {
   display: flex;/**/
   flex-direction: column;/**/
   align-items: center;/**/
-  
   width: 100%;/**/
   background-color: rgb(0, 0, 0);/*visualizador*/
 }
@@ -143,7 +177,7 @@ p, li {
   
   width: 95%;
   margin-top: 20px;/**/
-  margin-bottom: 100px;
+  margin-bottom: 100px;/**/
 } 
 
 .article-1-footer {
@@ -153,12 +187,12 @@ p, li {
 
 .h2-gps-footer {
   color: white;/**/
-  text-align: center;
+  text-align: center;/**/
   font-family: 'Syncopate-Regular';/**/
 }
 
 .li-1, .li-2, .li-3, .li-4, .li-5, .li-6, .li-7 {
-  font-size: 20px;
+  font-size: 20px;/**/
 }
 
 
@@ -191,7 +225,6 @@ p, li {
 }
 
 /*
-
 */
 
 /* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/
@@ -211,7 +244,7 @@ p, li {
   width: 100%;/**/
   text-align: center;/**/
   color: white;/**/
-  line-height: 1.5; /* Ajusta la altura de línea si es necesario */
+  line-height: 1.5; /*Ajusta la altura de línea si es necesario*/
   font-family: 'Syncopate-Regular';/**/
 }
 
