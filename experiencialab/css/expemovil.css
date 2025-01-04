@@ -50,29 +50,48 @@
 /*
 */
 
-/* --- --- INICIA SECTION 1 section-1
+/* --- --- INICIA SECTION CONTENIDO GENERAL
 */
+.section-titulo { /*SECTION TITULO PRINCIPAL*/
+  width: 95%;/**/
+  /*border-top: 1.6px solid #00000052; /* Línea de 2px de grosor y color negro */
+  /*margin-bottom: 20px;/**/
+}
+
+.h2-titulo-principal {
+  margin-top: 30px;
+  text-align: center;/**/
+  font-family: 'Montserrat-VariableFont_wght';/**/
+}
+
+/*
+*/
+
 .section-1 {
   display: flex;/**/
-  align-items: center;
   flex-direction: column;
+  
+  width: 95%;/**/
   /*background-color: rgb(136, 15, 218);/*VISUALIZADOR*/
 }
 
 .article-1 {
+  width: 100%;/**/
+  max-width: 999px;/**/
   
-  width: 90%;/**/
-  margin-top: 20px;
-  padding-top: 3px;/**/
-  border-top: 1.2px solid #00000052; /* Línea de 2px de grosor y color negro */
+  /*margin-top: 20px;/**/
+  /*padding-top: 3px;/**/
+  /*border-top: 1.2px solid #00000052; /* Línea de 2px de grosor y color negro */
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
- 
-.p-texto-1 {
-  width: 100%;/**/
-  font-size: 20px;/**/
-  /*background-color: r gb(167, 189, 45);/*visualizador*/
-}
+
+
+.h3-titulo {/*SUBTITULOS DE LI*/
+  margin-top: 45px;/**/
+  text-align: left;/**/
+  font-family: 'Montserrat-VariableFont_wght';
+}   
+
 
 /*ESTA ES KA ETIQUETA li CON CLASS li-1*/
 .li-1 {
@@ -84,6 +103,35 @@
 .bold-li-1 { 
   font-weight: bold;/**/  
 }
+
+
+
+
+
+.p-texto {
+  /*width: 100%;/**/
+  font-size: 19px;/**/
+  font-family: 'Montserrat-VariableFont_wght';/**/
+  /*background-color: r gb(167, 189, 45);/*visualizador*/
+}
+
+.ul-expe-1 .li-1 {
+  font-size: 19px;/**/
+  font-family: 'Montserrat-VariableFont_wght';/**/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  /* Estilo del botón */
  .back-button {
