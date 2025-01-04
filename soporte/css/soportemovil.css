@@ -54,7 +54,7 @@
 */
 .section-titulo { /*SECTION TITULO PRINCIPAL*/
   width: 95%;/**/
-  border-top: 1.6px solid #00000052; /* Línea de 2px de grosor y color negro */
+  /*border-top: 1.6px solid #00000052; /* Línea de 2px de grosor y color negro */
   /*margin-bottom: 20px;/**/
 }
 
@@ -81,37 +81,34 @@
 
 
 .h3-titulo {
-  margin-top: 45px;/**/
+  /*margin-top: 45px;/**/
   text-align: left;/**/
   font-family: 'Montserrat-VariableFont_wght';
 }
 
-
-.li-1 {
-  font-size: 1px;
-  font-family: 'Montserrat-VariableFont_wght';
-}
-
-/*ESTA ES LA ETIQUETA SPAN CON CLASS .bold-li-1*/
 .bold-li-1 { 
   font-weight: bold;/**/  
 }
 
- 
 
+.ol-li .li-1 {
+  font-size: 17px;/**/
+  font-family: 'Montserrat-VariableFont_wght';
+}
+
+/*ESTA ES LA ETIQUETA SPAN CON CLASS .bold-li-1*/
 
 
 /*
 */  
 
-
 .section-slider {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 98%;
+  width: 99%;
   max-width: 800px;
-  margin-top: 50px;
+  margin-top: 20px;
   /*background-color: #f30909;/*Visualizador*/
 }
 
@@ -121,19 +118,15 @@
 }
 
 .p-texto-slider {
-  /*font-size: 100px;/**/
+  font-size: 16px;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
 
 }
-
-
-
 
 /* Estilo del botón */
 .back-button {
   width: 100%;
   max-width: 100px;
-  
   margin-top: 69px;
   margin-left: 15px;
   padding: 10px 20px;
@@ -151,13 +144,10 @@
   background-color: #f30909;/**/
 }
 
-
-
-
-
-
 /*
-   --- --- INICIA ETIQUETA FOOTER
+*/
+
+/*--- --- INICIA ETIQUETA FOOTER
 */
 .footer-logo {
   margin-top: 100px;/**/
