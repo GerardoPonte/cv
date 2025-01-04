@@ -83,8 +83,9 @@
 .h3-titulo {/*SUBTITULOS DE LI*/
   margin-top: 45px;/**/
   text-align: left;/**/
-    
-}
+  font-family: 'Montserrat-VariableFont_wght';
+}   
+
 
 .bold-li-1 { 
   font-weight: bold;/*NEGRITAS PARA TITULO LI*/  
@@ -95,8 +96,6 @@
   font-size: 18px;/**/
   font-family: 'Montserrat-VariableFont_wght';
 }
-
-/*ESTA ES LA ETIQUETA SPAN CON CLASS .bold-li-1*/
 
 
 /*
