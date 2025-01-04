@@ -80,19 +80,19 @@
 }
 
 
-.h3-titulo {
+.h3-titulo {/*SUBTITULOS DE LI*/
   margin-top: 45px;/**/
   text-align: left;/**/
     
 }
 
 .bold-li-1 { 
-  font-weight: bold;/**/  
+  font-weight: bold;/*NEGRITAS PARA TITULO LI*/  
 }
 
 
-.ol-li .li-1 {
-  font-size: 17px;/**/
+.ol-li .li-1 {/*LI TEXTO PRINCIPAL*/
+  font-size: 18px;/**/
   font-family: 'Montserrat-VariableFont_wght';
 }
 
