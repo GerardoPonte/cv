@@ -3,6 +3,7 @@
         position: relative;
         width: 100%;
         max-width: 650px;
+        height: 380px;
         overflow: hidden;
         /*margin: auto;/**/
         margin-top: 50px;
@@ -10,17 +11,17 @@
         /*background-color: blue;/*Visualizador*/
     }
     .carousel-images {
-        display: flex;
-        border-radius: 20px;
-        transition: transform 0.3s ease-in-out;
+        display: flex;/**/
+        border-radius: 20px;/**/
+        transition: transform 0.3s ease-in-out;/**/
         /*background-color: darkgoldenrod;/*Visualizador*/
     }
     .carousel-images img {
-        width: 100%;
-        flex-shrink: 0;
-        /*height: 100%;/**/
-        max-height: 600px;
-        border-radius: 20px;
+        width: 100%;/**/
+        flex-shrink: 0;/**/
+        /*height: 0%;/**/
+        /*max-height: 600px;/**/
+        border-radius: 20px;/**/
     }
     .carousel-button {
         position: absolute;

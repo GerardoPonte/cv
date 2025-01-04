@@ -108,17 +108,18 @@
   align-items: center;
   width: 99%;
   max-width: 800px;
-  margin-top: 20px;
+  margin-top: 20px;/**/
   /*background-color: #f30909;/*Visualizador*/
 }
 
-.h2-slider {
+.h2-slider {/*TITULO DEL SLIDER*/
   text-align: center;
   font-family: 'Montserrat-VariableFont_wght';
 }
 
 .p-texto-slider {
-  font-size: 16px;/**/
+  margin-bottom: 0;
+  font-size: 18px;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
 
 }
