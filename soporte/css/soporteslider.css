@@ -1,13 +1,12 @@
 
 .carousel {
-        position: relative;
-        width: 100%;
-        max-width: 650px;
-        max-height: 450px;
-        overflow: hidden;
-        /*margin: auto;/**/
-        margin-top: 50px;
-        border-radius: 20px;
+        position: relative;/**/
+        width: 100%;/**/
+        max-width: 700px;/**/
+        /*max-height: 550px;/**/
+        overflow: hidden;/**/
+        margin-top: 50px;/**/
+        border-radius: 20px;/**/
         /*background-color: blue;/*Visualizador*/
     }
     .carousel-images {
@@ -19,24 +18,23 @@
     .carousel-images img {
         width: 100%;/**/
         flex-shrink: 0;/**/
-        /*height: 0%;/**/
-        /*max-height: 600px;/**/
+        max-height: 600px;/**/
         border-radius: 20px;/**/
     }
     .carousel-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
+        position: absolute;/**/
+        top: 50%;/**/
+        transform: translateY(-50%);/**/
+        background: rgba(0, 0, 0, 0.5);/**/
+        color: white;/**/
         border: none;/**/
-        font-size: 2rem;
-        cursor: pointer;
-        z-index: 1;
+        font-size: 2rem;/**/
+        cursor: pointer;/**/
+        z-index: 1;/**/
     }
     .carousel-button.prev {
-        left: 0;
+        left: 0;/**/
     }
     .carousel-button.next {
-        right: 0;
+        right: 0;/**/
     }
