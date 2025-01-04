@@ -50,41 +50,48 @@
 /*
 */
 
-/* --- --- INICIA SECTION 1 section-1
+/* --- --- INICIA SECTION CONTENIDO GENERAL
 */
-.section-titulo {
-  width: 95%;
-  border-top: 1.2px solid #00000052; /* Línea de 2px de grosor y color negro */
-  margin-bottom: 20px;
+.section-titulo { /*SECTION TITULO PRINCIPAL*/
+  width: 95%;/**/
+  border-top: 1.6px solid #00000052; /* Línea de 2px de grosor y color negro */
+  /*margin-bottom: 20px;/**/
 }
 
+.h2-titulo-principal {
+  text-align: center;/**/
+  font-family: 'Montserrat-VariableFont_wght';/**/
+}
 
+/*
+*/
 
 .section-1 {
   display: flex;/**/
   flex-direction: column;
   width: 95%;
-  /*background-color: rgb(136, 15, 218);/*VISUALIZADOR*/
+  /*background-color: cadetblue;/*Visualizador*/
 }
 
 .article-1 {
-  /*display: flex;/**/
-  /*flex-direction: column;/**/
-  /*align-items: center;/**/
   width: 100%;/**/
-  max-width: 1000px;
-  /*margin-top: 20px;/**/
-  padding-top: 3px;/**/
-  
+  max-width: 1000px;/**/
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
 
-.h2-titulo-principal {
-  text-align: center;
+
+.h3-titulo {
+  margin-top: 45px;/**/
+  text-align: left;/**/
   font-family: 'Montserrat-VariableFont_wght';
 }
 
- 
+
+.li-1 {
+  font-size: 1px;
+  font-family: 'Montserrat-VariableFont_wght';
+}
+
 /*ESTA ES LA ETIQUETA SPAN CON CLASS .bold-li-1*/
 .bold-li-1 { 
   font-weight: bold;/**/  
@@ -92,16 +99,6 @@
 
  
 
-.li-1 {
-  font-size: 1px;
-  font-family: 'Montserrat-VariableFont_wght';
-}
-
-
-.h3-titulo {
-  /*text-align: left;/**/
-  font-family: 'Montserrat-VariableFont_wght';
-}
 
 
 /*
