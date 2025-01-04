@@ -59,6 +59,7 @@
 }
 
 .h2-titulo-principal {
+  margin-top: 30px;
   text-align: center;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
 }
@@ -75,7 +76,7 @@
 
 .article-1 {
   width: 100%;/**/
-  max-width: 1000px;/**/
+  max-width: 999px;/**/
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
 
