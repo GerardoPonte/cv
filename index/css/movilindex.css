@@ -32,8 +32,7 @@
   align-items: center;/**/
   justify-content: center;/**/
   width: 100%;/**/
-  /*background-color: rgb(18, 228, 63);/*VISUALIZADOR*/
-}
+ }
 
 /*
 */
@@ -46,14 +45,12 @@
   width: 100%;
   max-width: 630px;/**/
   margin-top: 35px;/**/
-  /*background-color: rgb(136, 15, 218);/*VISUALIZADOR*/
-}
+ }
 
 .article-bienvenidos {
   display: flex;/**/
   justify-content: center;/**/
-  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
-}
+ }
  
 .h2-bienvenidos {
   width: 100%;/**/
@@ -61,8 +58,7 @@
   font-family: 'Syncopate-Regular';
   letter-spacing: .2px;/**/
   text-transform: uppercase;/**/
-  /*background-color: rgb(167, 189, 45);/*visualizador*/
-}
+ }
 /*------- finaliza primer article conel texto responsive web desing
 */
 
@@ -77,8 +73,7 @@
   
   height: auto;/*no modificar este heigth*/
   margin-top: 76px;/**/
-  /*background-color: rgba(48, 44, 46, 0.051);/*Visualizador*/
-}
+ }
 /*--- FINALIZA SECTION
 */
 
@@ -92,8 +87,7 @@
   height: 170px;/**/
   border-radius: 100%;/**/
   border: solid rgb(30, 45, 103) 1.5px;/**/
-  /*background-color: blue;/**/
-} 
+ } 
 /*--- FINALIZA ARTICLE
 */
 
@@ -109,7 +103,6 @@
   text-align: center;/**/
   border-radius: 100%;/**/
   border: solid rgb(30, 45, 103) 1.5px;/**/
-  /*background-color: aqua;/*Visualizador*/
 }  
 
 .h3-circulos a {
@@ -120,7 +113,6 @@
   text-decoration: none;/**/
   color: black;/**/
   font-family: 'Syncopate-Regular';/**/
-  /*background-color: aquamarine;/**/
 }
 
 /*--- FINALIZA H5 Circulos
@@ -132,7 +124,6 @@
 /*INICIA ETIQUETA FOOTER*/
 .footer-logo {
   margin-top: 130px;/**/
-  /*background-color: rgb(0, 0, 0);/*V*/  
 }
 /* --- FINALIZA FOOTER LOGO
 */
@@ -148,7 +139,6 @@
 }
 /* FINALIZA FOOTERLOGO Y DIV
 */
-
 
 /* --- INICIA SECTION-1-FOOTER
 */
@@ -173,9 +163,8 @@
   font-family: 'Syncopate-Regular';/**/
 }
 
-
 /* --- INICIA ARTICLE-2-FOOTER
-  */
+*/
 .article-2-footer {
   display: flex;/**/
   flex-direction: column;/**/
