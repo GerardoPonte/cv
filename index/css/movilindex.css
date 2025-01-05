@@ -42,7 +42,7 @@
 .section-1 {
   display: flex;/**/
   justify-content: center;/**/
-  width: 100%;
+  width: 100%;/**/
   max-width: 630px;/**/
   margin-top: 35px;/**/
  }
@@ -55,7 +55,7 @@
 .h2-bienvenidos {
   width: 100%;/**/
   text-align: center;/**/
-  font-family: 'Syncopate-Regular';
+  font-family: 'Syncopate-Regular';/**/
   letter-spacing: .2px;/**/
   text-transform: uppercase;/**/
  }
@@ -147,9 +147,9 @@
   flex-direction: column;/**/
   align-items: center;/**/
   
-  width: 95%;
+  width: 95%;/**/
   margin-top: 40px;/**/
-  margin-bottom: 100px;
+  margin-bottom: 100px;/**/
 } 
 
 .article-1-footer {
@@ -159,7 +159,7 @@
 
 .h2-gps-footer {
   color: white;/**/
-  text-align: center;
+  text-align: center;/**/
   font-family: 'Syncopate-Regular';/**/
 }
 
@@ -180,7 +180,7 @@
   width: 100%;/**/
   margin: 15px;/*margen para separar los bloques*/
   border-radius: 20px;/**/
-  background-color: rgba(29, 56, 67, 0.541);/*No borrar*/
+  background-color: rgba(36, 73, 88, 0.541);/*No borrar*/
 }
 
 /*INICIA ETIQUETA H5 FOOTER DESARROLLO, SQL, WSERVER*/
@@ -193,7 +193,7 @@
 /*
 */
 
-/* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/
+/* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/ 
 .figure-img-linux {
   padding: 0;/**/  
   margin-bottom: 0;/**/

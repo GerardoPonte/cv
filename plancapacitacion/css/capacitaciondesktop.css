@@ -1,3 +1,4 @@
+
 @media screen and (min-width: 400px) {
   .section-1-footer {
     max-width: 569px;/**/
@@ -14,12 +15,7 @@
 
 @media screen and (min-width: 1100px) {
  
-  .h2-bienvenidos {/*Bienvenidos a mi sitio web*/
-    /*font-size: 2em;/**/
-  }
-
-   
-  /*INICIAN LOS CIRCULOS PRINCIPALES
+/*INICIAN LOS CIRCULOS PRINCIPALES
   */
 
   /*--- inicia la seccion contenedor de los 4 circulos principales*/
@@ -59,7 +55,7 @@
 .article-1-footer {
   max-width: 300px;/**/
   padding: 0;/**/
-  border-radius: 15px;/**/
+  border-radius: 15 px;/**/
 }
 
 .h2-gps-footer {

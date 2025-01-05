@@ -169,7 +169,7 @@
   flex-direction: column;/**/
   align-items: center;/**/
   
-  width: 95%;
+  width: 95%; 
   margin-top: 20px;/**/
   margin-bottom: 100px;
 } 
@@ -206,7 +206,7 @@
   width: 100%;/**/
   margin: 15px;/*margen para separar los bloques*/
   border-radius: 20px;/**/
-  background-color: rgba(29, 56, 67, 0.541);/*No borrar*/
+  background-color: rgba(36, 73, 88, 0.541);/*No borrar*/
 }
 
 /*INICIA ETIQUETA H5 FOOTER DESARROLLO, SQL, WSERVER*/
