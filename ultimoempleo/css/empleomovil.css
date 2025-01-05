@@ -214,7 +214,8 @@ p, li {
   width: 100%;/**/
   margin: 15px;/*margen para separar los bloques*/
   border-radius: 20px;/**/
-}
+  background-color: rgba(29, 56, 67, 0.541);/*No borrar*/
+  }
 
 /*INICIA ETIQUETA H5 FOOTER DESARROLLO, SQL, WSERVER*/
 .h4-footer {
