@@ -53,11 +53,9 @@
 /* --- --- INICIA SECTION CONTENIDO GENERAL
 */
 .section-titulo { /*SECTION TITULO PRINCIPAL*/
-  display: flex;
-  justify-content: center;
+  display: flex;/**/
+  justify-content: center;/**/
   width: 95%;/**/
-  /*margin-top: 30px;/**/
-  /*margin-bottom: 20px;/**/
   /*background-color: #007BFF;/**/
 }
 
@@ -83,7 +81,7 @@
 
 .article-1 {
   width: 100%;/**/
-  max-width: 999px;/**/
+  max-width: 999px;/*no borrar*/
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
 
@@ -110,19 +108,19 @@
 
 /* Estilo del botón */
 .back-button {
-  width: 100%;
-  max-width: 100px;
-  margin-top: 69px;
-  margin-left: 15px;
-  padding: 10px 20px;
-  background-color: #007BFF; /* Azul */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+  width: 100%;/**/
+  max-width: 100px;/**/
+  margin-top: 69px;/**/
+  margin-left: 100px;/**/
+  padding: 10px 20px;/**/
+  background-color: #007BFF; /**/
+  color: white;/**/
+  border: none;/**/
+  border-radius: 5px;/**/
+  font-size: 16px;/**/
+  cursor: pointer;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;/**/
 }
 
 .back-button:hover {

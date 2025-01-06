@@ -81,8 +81,6 @@
   
   width: 100%;/**/
   max-width: 999px;/**/
-  /*margin-top: 20px;/**/
-  /*padding-top: 3px;/**/
   /*  background-color: rgb(218, 32, 32);/*Visualizador*/
 }
  
@@ -130,19 +128,19 @@ p, li {
 
  /* Estilo del botón */
  .back-button {
-  width: 100%;
-  max-width: 100px;
-  margin-top: 69px;
-  margin-left: 15px;
-  padding: 10px 20px;
-  background-color: #007BFF; /* Azul */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+  width: 100%;/**/
+  max-width: 100px;/**/
+  margin-top: 69px;/**/
+  margin-left: 100px;/**/
+  padding: 10px 20px;/**/
+  background-color: #007BFF;/**/
+  color: white;/**/
+  border: none;/**/
+  border-radius: 5px;/**/
+  font-size: 16px;/**/
+  cursor: pointer;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease; /**/
 }
 
 .back-button:hover {
