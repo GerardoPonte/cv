@@ -53,13 +53,20 @@
 /* --- --- INICIA SECTION CONTENIDO GENERAL
 */
 .section-titulo { /*SECTION TITULO PRINCIPAL*/
+  display: flex;
+  justify-content: center;
   width: 95%;/**/
-  /*border-top: 1.6px solid #00000052; /* Línea de 2px de grosor y color negro */
+  /*margin-top: 30px;/**/
   /*margin-bottom: 20px;/**/
+  /*background-color: #007BFF;/**/
+}
+
+.article-titulo {
+ /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
 
 .h2-titulo-principal {
-  margin-top: 30px;
+  
   text-align: center;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
 }
@@ -152,7 +159,7 @@
   align-items: center;/**/
   
   width: 95%;
-  margin-top: 20px;/**/
+  margin-top: 45px;/**/
   margin-bottom: 100px;
 } 
 
@@ -204,7 +211,7 @@
 /* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/
 .figure-img-linux {
   padding: 0;/**/  
-  margin-bottom: 0;/**/
+  margin-top: 0px;
 }
 
 /*INICIA LA IMAGEN DE LINUX*/  

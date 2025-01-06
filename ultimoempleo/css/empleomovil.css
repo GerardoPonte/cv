@@ -80,19 +80,19 @@
   /*background-color: rgb(136, 15, 218);/*VISUALIZADOR*/
 }
 
-.article-1 {
+.article-1 { 
   
   width: 100%;/**/
   max-width: 999px;/**/
   /*margin-top: 20px;/**/
   /*padding-top: 3px;/**/
-  /*border-top: 1.2px solid #00000052; /* Línea de 2px de grosor y color negro */
-  /*background-color: rgb(218, 32, 32);/*Visualizador*/
+    /*background-color: rgb(218, 32, 32);/*Visualizador*/
 }
  
 
 .div-li {
   margin-top: 40px;
+  margin-bottom: 55px;
   /*background-color: #007BFF;/**/
 }
 
@@ -176,7 +176,7 @@ p, li {
   align-items: center;/**/
   
   width: 95%;
-  margin-top: 20px;/**/
+  margin-top: 45px;/**/
   margin-bottom: 100px;/**/
 } 
 

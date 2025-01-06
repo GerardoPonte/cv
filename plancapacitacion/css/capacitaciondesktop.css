@@ -15,30 +15,33 @@
 
 @media screen and (min-width: 1100px) {
  
-/*INICIAN LOS CIRCULOS PRINCIPALES
-  */
+/* --- --- INICIAN LOS CIRCULOS PRINCIPALES
+*/
 
-  /*--- inicia la seccion contenedor de los 4 circulos principales*/
-  .section-3 {
-    display: flex;/**/  
-    justify-content: center;/**/
-    flex-direction: row;/**/
-    align-items: center;/**/
-    
-    width: 95%;/**/
-    margin-top: 200px;/**/
-    margin-bottom: 200px;/**/
-  }
-       
-  /*--- inicia article de los 4 circulos principales*/
-  .article-3 {
-    margin: -5px;/**/
-  }
-  /* ---- FINALIZAN LOS CIRCULOS PRINCIPALES
-  */
 
-  /*  
-  */
+.section-titulo {
+  
+  /*background-color: cadetblue;/*Visualizador*/
+}
+
+.article-titulo {
+  width: 100%;/**/
+  max-width: 999px;/**/
+  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
+}
+
+
+.article-1 {
+  width: 100%;/**/
+  max-width: 999px;/**/
+  margin-left: 50px;
+  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
+}
+
+
+/*  
+*/
+
 
   /* ---- INICIA CONTENIDO FOOTER
   */  
@@ -47,8 +50,8 @@
   flex-direction: row;/**/
   justify-content: space-around;/**/
   max-width: 1300px;/**/
-  margin-top: 130px;/**/
-  margin-bottom: 130px;
+  margin-top: 180px;/**/
+  margin-bottom: 110px;
   border: solid 0;/**/
 }   
 
@@ -78,8 +81,8 @@
   justify-content: center;/**/
   align-items: center;/**/
   
-  width: 163px;/**/
-  height: 163px;/**/
+  width: 155px;/**/
+  height: 155px;/**/
   padding: 0;
   border-radius: 100%;/**/
   border: solid rgba(236, 237, 242, 0.616) 1.5px;/**/
@@ -91,8 +94,8 @@
   align-items: center;
   justify-content: center;
   
-  width: 160px;/**/
-  height: 160px;/**/
+  width: 155px;/**/
+  height: 155px;/**/
   text-align: center;
   border-radius: 100%;/**/
   margin: 0;/**/
