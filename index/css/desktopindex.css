@@ -47,7 +47,8 @@
   flex-direction: row;/**/
   justify-content: space-around;/**/
   max-width: 1300px;/**/
-  margin-top: 125px;/**/
+  margin-top: 180px;/**/
+  margin-bottom: 110px;
   border: solid 0;/**/
   /*background-color: antiquewhite;/**/
 }   
