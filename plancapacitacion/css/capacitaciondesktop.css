@@ -25,23 +25,30 @@
 }
 
 .article-titulo {
-  width: 100%;/**/
-  max-width: 999px;/**/
-  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
+  /*background-color: rgba(218, 32, 32, 0.448);/*VISUALIZADOR*/
+}
+
+
+/*
+*/
+
+
+.section-1 {
+  
+  /*background-color: rgba(160, 95, 134, 0.652);/*Visualizador*/
 }
 
 
 .article-1 {
   width: 100%;/**/
   max-width: 999px;/**/
+  margin-top: 26px;
   margin-left: 50px;
-  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
+  /*background-color: rgb(32, 106, 218);/*VISUALIZADOR*/
 }
-
 
 /*  
 */
-
 
   /* ---- INICIA CONTENIDO FOOTER
   */  

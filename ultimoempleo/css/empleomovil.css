@@ -56,20 +56,17 @@
 */
 .section-titulo { /*SECTION TITULO PRINCIPAL*/
   width: 95%;/**/
-  /*border-top: 1.6px solid #00000052; /* Línea de 2px de grosor y color negro */
-  /*margin-bottom: 20px;/**/
+  /*background-color: chocolate;/**/
 }
 
 .h2-titulo-principal {
-  margin-top: 50px;
   text-align: center;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
+  /*background-color: chartreuse;/**/
 }
-
 
 /*
 */
-
 
 /* --- --- INICIA SECTION 1 section-1
 */
@@ -86,13 +83,13 @@
   max-width: 999px;/**/
   /*margin-top: 20px;/**/
   /*padding-top: 3px;/**/
-    /*background-color: rgb(218, 32, 32);/*Visualizador*/
+  /*  background-color: rgb(218, 32, 32);/*Visualizador*/
 }
  
 
 .div-li {
-  margin-top: 20px;
-  margin-bottom: 60px;
+  margin-top: 45px;/**/
+  margin-bottom: 50px;/**/
   /*background-color: #007BFF;/**/
 }
 
@@ -133,15 +130,19 @@ p, li {
 
  /* Estilo del botón */
  .back-button {
-  margin-top: 69px;/**/
-  padding: 10px 20px;/**/
+  width: 100%;
+  max-width: 100px;
+  margin-top: 69px;
+  margin-left: 15px;
+  padding: 10px 20px;
   background-color: #007BFF; /* Azul */
-  color: white;/**/
-  border: none;/**/
-  border-radius: 5px;/**/
-  font-size: 16px;/**/
-  cursor: pointer;/**/
-  transition: background-color 0.3s ease;/**/
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Montserrat-VariableFont_wght';/**/
+  transition: background-color 0.3s ease; 
 }
 
 .back-button:hover {

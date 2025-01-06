@@ -13,44 +13,50 @@
 
 }
 
-
 @media screen and (min-width: 1100px) {
-   
-/* -- -- INICIAN LOS CIRCULOS PRINCIPALES
+/* --- --- INICIAN LOS CIRCULOS PRINCIPALES
 */
 
-/* -- -- inicia la seccion contenedor de los 4 circulos principales
+.section-titulo {
+  /*background-color: cadetblue;/*Visualizador*/
+}
+
+
+.article-titulo {/*TITULO PRINCIPAL NO BORRAR WIDTH*/
+  /*background-color: rgba(91, 75, 193, 0.577);/*VISUALIZADOR*/
+}
+
+/*
 */
-  .section-3 {
-    display: flex;/**/  
-    justify-content: center;/**/
-    flex-direction: row;/**/
-    align-items: center;/**/
-    
-    width: 95%;/**/
-    margin-top: 200px;/**/
-    margin-bottom: 200px;/**/
-  }
-       
-  /*--- inicia article de los 4 circulos principales*/
-  .article-3 {
-    margin: -5px;/**/
-  }
-  /* ---- FINALIZAN LOS CIRCULOS PRINCIPALES
-  */
 
-  /*
-  
-  */
+.article-1 {
+  width: 100%;/**/
+  max-width: 999px;/**/
+  margin-top: 26px;
+  margin-left: 50px;
+  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
+}
 
-  /* ---- INICIA CONTENIDO FOOTER
-  */  
+.div-li {
+  margin-top: 45px;/**/
+  margin-bottom: 69px;/**/
+  /*background-color: #007BFF;/**/
+}
+
+
+/*
+*/
+
+
+/* ---- INICIA CONTENIDO FOOTER
+*/  
 .section-1-footer {
   display: flex;/**/
   flex-direction: row;/**/
   justify-content: space-around;/**/
   max-width: 1300px;/**/
-  margin-top: 125px;/**/
+  margin-top: 180px;/**/
+  margin-bottom: 110px;
   border: solid 0;/**/
 }   
 
