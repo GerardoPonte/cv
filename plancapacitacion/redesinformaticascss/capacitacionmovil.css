@@ -91,18 +91,10 @@
   font-family: 'Montserrat-VariableFont_wght';
 }   
 
-.ul-li {
-  list-style: none;/**/
-}
 
 .ul-li .li-1 {/*LI TEXTO PRINCIPAL*/
   font-size: 19px;/**/
-  margin: 12px;
   font-family: 'Montserrat-VariableFont_wght';
-}
-
-a {
-  text-decoration: none;/**/
 }
 
 .p-texto {
