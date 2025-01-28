@@ -13,8 +13,6 @@
 }
 
 
-
-
 @media screen and (min-width: 1100px) {
  
 /* --- --- INICIAN LOS CIRCULOS PRINCIPALES
@@ -34,33 +32,26 @@
 /*
 */
 
+
 .section-1 {
-  /*background-color: rgba(160, 95, 134, 0.652);/*VISUALIZADOR*/
+  
+  /*background-color: rgba(160, 95, 134, 0.652);/*Visualizador*/
 }
 
 
-  .article-1 {
-    /*width: 100%;/**/
-    /*max-width: 999px;/**/
-    margin-top: 26px;
-    margin-left: 50px;
-    /*background-color: rgb(32, 106, 218);/*VISUALIZADOR*/
-}
-
-.ul-li {/*LI TEXTO PRINCIPAL*/
-  padding: 0;
-  /*background-color: brown;/*VISUALIZADOR*/
-}
-
-.ul-li .li-1 {/*LI TEXTO PRINCIPAL*/
-  /*background-color: aquamarine;/*Visualizador*/
+.article-1 {
+  width: 100%;/**/
+  max-width: 999px;/**/
+  margin-top: 26px;
+  margin-left: 50px;
+  /*background-color: rgb(32, 106, 218);/*VISUALIZADOR*/
 }
 
 /*  
 */
 
-/* ---- INICIA CONTENIDO FOOTER
-*/  
+  /* ---- INICIA CONTENIDO FOOTER
+  */  
 .section-1-footer {
   display: flex;/**/
   flex-direction: row;/**/
