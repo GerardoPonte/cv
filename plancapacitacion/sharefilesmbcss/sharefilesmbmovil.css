@@ -56,7 +56,7 @@
   display: flex;/**/
   justify-content: center;/**/
   width: 95%;/**/
-  /*background-color: #ff5500;/*Visualizador*/
+  /*background-color: #007BFF;/**/
 }
 
 .article-titulo {
@@ -68,19 +68,14 @@
   text-align: center;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
 }
-/*TERMINA TITULO PRINCIPAL*/
-
 
 /*
 */
 
-
-/*INICIA SECCION 1 Y ARTICULO 1*/
-
 .section-1 {
   display: flex;/**/
-  flex-direction: column;/**/
-  width: 95%;/**/
+  flex-direction: column;
+  width: 95%;
   /*background-color: cadetblue;/*Visualizador*/
 }
 
@@ -88,91 +83,58 @@
 .article-1 {
   width: 100%;/**/
   max-width: 999px;/*no borrar*/
-  /*background-color: rgb(206, 218, 32);/*Visualizador*/
+  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
 
 
-.ul-li {
-  padding: 0;/**/
-  /*list-style: none;/**/
-  /*background-color: #f30909;/*Visualizador*/
-}
+.h3-titulo {/*SUBTITULOS DE LI*/
+  margin-top: 45px;/**/
+  text-align: left;/**/
+  font-family: 'Montserrat-VariableFont_wght';
+}   
 
 
 .ul-li .li-1 {/*LI TEXTO PRINCIPAL*/
   font-size: 19px;/**/
-  margin: 12px;/**/
-  font-family: 'Montserrat-VariableFont_wght';/**/
-  /*background-color: aqua;/**/
+  font-family: 'Montserrat-VariableFont_wght';
 }
 
-a { /*No borrar la letra (a)*/  
-  text-decoration: none;/**/
-}
 
 .p-texto {
   font-size: 19px;/**/
-  font-family: 'Montserrat-VariableFont_wght';/**/
+  font-family: 'Montserrat-VariableFont_wght';
+  /*background-color: #007BFF;/**/
+}
+
+.p-texto-figure {
+  font-size: 19px;/**/
+  font-family: 'Montserrat-VariableFont_wght';
   /*background-color: #007BFF;/**/
 }
 /*
 */  
 
 
-/* ----INICIA SECTION-2 ------ ------ ----- */
+.article-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-
-/*INICIA SECCION 1 Y ARTICULO 1*/
-
-.section-2 {
-  display: flex;/**/
-  flex-direction: column;/**/
-  width: 95%;/**/
-  /*background-color: cadetblue;/*Visualizador*/
+  /*background-color: aqua;/**/
 }
 
 
-.article-2 {
+.figure-containner {
+  width: 98%;/**/
+  /*background-color: coral;/**/
+
+}
+
+
+.figure-containner img{
   width: 100%;/**/
-  max-width: 999px;/*no borrar*/
 
-  /*background-color: rgb(206, 218, 32);/*Visualizador*/
 }
-
-
-.ul-li-2 {
-  padding: 0;/**/
-  display: none; /* Oculta la lista por defecto */
-  list-style: none;/**/
-  /*background-color: #f30909;/*Visualizador*/
-}
-
-
-.article-2:hover .ul-li-2 {
-  display: block; /* Muestra la lista cuando pasas el cursor sobre el artículo */
-}
-
-
-.ul-li-2 .li-2 {/*LI TEXTO PRINCIPAL*/
-  font-size: 19px;/**/
-  margin: 12px;/**/
-  font-family: 'Montserrat-VariableFont_wght';/**/
-  /*background-color: aqua;/**/
-}
-
-a { /*No borrar la letra (a)*/
-  display: block;
-  text-decoration: none;/**/
-}
-
-.p-texto {
-  font-size: 19px;/**/
-  font-family: 'Montserrat-VariableFont_wght';/**/
-  /*background-color: #007BFF;/**/
-}
-/*
-*/  
-
 
 
 /* Estilo del botón */
@@ -180,9 +142,9 @@ a { /*No borrar la letra (a)*/
   width: 100%;/**/
   max-width: 100px;/**/
   margin-top: 69px;/**/
-  margin-left: 23px;/**/
+  margin-left: 10px;/**/
   padding: 10px 20px;/**/
-  background-color: #007BFF;/**/
+  background-color: #007BFF; /**/
   color: white;/**/
   border: none;/**/
   border-radius: 5px;/**/
@@ -202,9 +164,10 @@ a { /*No borrar la letra (a)*/
 /*--- --- INICIA ETIQUETA FOOTER
 */
 .footer-logo {
-  margin-top: 69px;/**/
-  /*background-color: rgb(0, 0, 0);/*Visualizador*/  
+  margin-top: 130px;/**/
 }
+/* --- FINALIZA FOOTER LOGO
+*/
 
 /* INICIA FOOTERLOGO Y DIV*/  
 .footer-logo > div {
@@ -226,7 +189,7 @@ a { /*No borrar la letra (a)*/
   align-items: center;/**/
   
   width: 95%;/**/
-  margin-top: 20px;/**/
+  margin-top: 40px;/**/
   margin-bottom: 100px;/**/
 } 
 
@@ -240,10 +203,6 @@ a { /*No borrar la letra (a)*/
   text-align: center;/**/
   font-family: 'Syncopate-Regular';/**/
 }
-
-
-/*
-*/
 
 /* --- INICIA ARTICLE-2-FOOTER
 */
@@ -275,11 +234,10 @@ a { /*No borrar la letra (a)*/
 /*
 */
 
-/* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/
+/* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/ 
 .figure-img-linux {
   padding: 0;/**/  
   margin-bottom: 0;/**/
-  /*background-color: #007BFF;/**/
 }
 
 /*INICIA LA IMAGEN DE LINUX*/  
