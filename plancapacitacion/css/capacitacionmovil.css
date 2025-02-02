@@ -98,14 +98,6 @@
 }
 
 
-.ul-li-1 {
-  
-  padding: 0;/**/
-  list-style: none;/**/
-  background-color: #f30909;/*Visualizador*/
-}
-
-
 .p-titulo-1 {/*LI TEXTO PRINCIPAL*/
   width: 100%;/**/
   max-width: 350px;/**/  
