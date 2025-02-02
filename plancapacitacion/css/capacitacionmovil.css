@@ -84,7 +84,7 @@
   flex-direction: column;/**/
 
   width: 95%;/**/
-  max-width: 900px;/*no borrar*/
+  /*max-width: 900px;/*no borrar*/
   margin-top: 60px;/**/
   /*background-color: rgb(96, 160, 95);/*Visualizador*/
 }
@@ -129,7 +129,7 @@
   flex-direction: column;/**/
 
   width: 95%;/**/
-  max-width: 900px;/*no borrar*/
+  /*max-width: 900px;/*no borrar*/
   margin-top: 60px;/**/
   /*background-color: rgb(96, 160, 95);/*Visualizador*/
 }
