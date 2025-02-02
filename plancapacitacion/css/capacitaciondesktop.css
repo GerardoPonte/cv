@@ -23,7 +23,7 @@
   
   
   .article-1 {
-    width: 100%;/*PredeterminadoEnMovil*/
+    /*width: 100%;/*PredeterminadoEnMovil*/
     /*max-width: 500px;/*PredeterminadoEnMovil*/
     /*background-color: rgba(32, 165, 218, 0.285);/*Visualizador*/
   }
@@ -80,9 +80,9 @@
 
   .article-1 {
     /*width: 100%;/**/
-    /*max-width: 999px;/**/
-    margin-top: 26px;
-    margin-left: 50px;
+    /*max-width: 1099px;/**/
+    /*margin-top: 26px;/**/
+    /*margin-left: 50px;/*
     /*background-color: rgb(32, 106, 218);/*VISUALIZADOR*/
 }
 
