@@ -95,15 +95,17 @@
 
 
 .ul-li .li-1 {/*LI TEXTO PRINCIPAL*/
+  width: 100%;/**/
   font-size: 19px;/**/
   font-family: 'Montserrat-VariableFont_wght';
+  /*background-color: antiquewhite;/**/
 }
 
 
 .p-texto {
   font-size: 19px;/**/
   font-family: 'Montserrat-VariableFont_wght';
-  /*background-color: #007BFF;/**/
+  /*background-color: #00ff4c;/**/
 }
 
 .p-texto-figure {
