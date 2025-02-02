@@ -56,6 +56,7 @@
   display: flex;/**/
   justify-content: center;/**/
   width: 95%;/**/
+  margin-top: 15px;/**/
   /*background-color: #ff5500;/*Visualizador*/
 }
 
@@ -67,6 +68,7 @@
   
   text-align: center;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
+  /*background-color: chartreuse;/*Visualizador*/
 }
 /*TERMINA TITULO PRINCIPAL*/
 
@@ -80,41 +82,47 @@
 .section-1 {
   display: flex;/**/
   flex-direction: column;/**/
+
   width: 95%;/**/
-  /*background-color: cadetblue;/*Visualizador*/
+  max-width: 900px;/*no borrar*/
+  margin-top: 60px;/**/
+  /*background-color: rgb(96, 160, 95);/*Visualizador*/
 }
 
 
 .article-1 {
   width: 100%;/**/
-  max-width: 999px;/*no borrar*/
-  /*background-color: rgb(206, 218, 32);/*Visualizador*/
+  /*max-width: 500px;/*no borrar*/
+  /*max-width: 999px;/*no borrar*/
+  /*background-color: rgba(218, 32, 144, 0.285);/*Visualizador*/
 }
 
 
-.ul-li {
+.ul-li-1 {
+  
   padding: 0;/**/
-  /*list-style: none;/**/
-  /*background-color: #f30909;/*Visualizador*/
+  list-style: none;/**/
+  background-color: #f30909;/*Visualizador*/
 }
 
 
-.ul-li .li-1 {/*LI TEXTO PRINCIPAL*/
+.p-titulo-1 {/*LI TEXTO PRINCIPAL*/
+  width: 100%;/**/
+  max-width: 350px;/**/  
   font-size: 19px;/**/
-  margin: 12px;/**/
+  margin: 20px;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
-  /*background-color: aqua;/**/
+  /*background-color: aqua;/*Visualizador*/
 }
 
-a { /*No borrar la letra (a)*/  
+.a-ptext-1 { /*No borrar la letra (a)*/  
   text-decoration: none;/**/
-}
-
-.p-texto {
-  font-size: 19px;/**/
+  max-width: 569px;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
   /*background-color: #007BFF;/**/
 }
+
+
 /*
 */  
 
@@ -122,25 +130,43 @@ a { /*No borrar la letra (a)*/
 /* ----INICIA SECTION-2 ------ ------ ----- */
 
 
-/*INICIA SECCION 1 Y ARTICULO 1*/
+/*INICIA SECCION 2 Y ARTICULO 1*/
 
 .section-2 {
   display: flex;/**/
   flex-direction: column;/**/
+
   width: 95%;/**/
-  /*background-color: cadetblue;/*Visualizador*/
+  max-width: 900px;/*no borrar*/
+  margin-top: 60px;/**/
+  /*background-color: rgb(96, 160, 95);/*Visualizador*/
 }
 
 
 .article-2 {
   width: 100%;/**/
-  max-width: 999px;/*no borrar*/
-
-  /*background-color: rgb(206, 218, 32);/*Visualizador*/
+  /*max-width: 500px;/*no borrar*/
+  /*max-width: 999px;/*no borrar*/
+  
+  padding-left: 16px;
+  /*background-color: rgba(218, 32, 144, 0.285);/*Visualizador*/
 }
 
 
+.h2-titulo-2 {  
+  /*text-align: center;/**/
+  font-family: 'Montserrat-VariableFont_wght';/**/
+}
+
+.p-titulo-2 {  
+  /*text-align: center;/**/
+  font-size: 18px;
+  font-family: 'Montserrat-VariableFont_wght';/**/
+  /*background-color: #007BFF;/*Visualizador*/
+}
+
 .ul-li-2 {
+
   padding: 0;/**/
   display: none; /* Oculta la lista por defecto */
   list-style: none;/**/
@@ -154,15 +180,17 @@ a { /*No borrar la letra (a)*/
 
 
 .ul-li-2 .li-2 {/*LI TEXTO PRINCIPAL*/
+  max-width: 430px;/**/
   font-size: 19px;/**/
-  margin: 12px;/**/
+  margin: 15px;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
-  /*background-color: aqua;/**/
+  /*background-color: rgb(255, 157, 0);/**/
 }
 
-a { /*No borrar la letra (a)*/
-  display: block;
+.a-li-2 { /*No borrar la letra (a)*/
+  display: block;/**/
   text-decoration: none;/**/
+  /*background-color: cadetblue;/**/
 }
 
 .p-texto {
@@ -179,16 +207,21 @@ a { /*No borrar la letra (a)*/
 .back-button {
   width: 100%;/**/
   max-width: 100px;/**/
+
   margin-top: 69px;/**/
-  margin-left: 23px;/**/
-  padding: 10px 20px;/**/
+  /*margin-left: 10px;/**/
+  padding: 10px 20px;/**/ 
+  
   background-color: #007BFF;/**/
   color: white;/**/
+  
   border: none;/**/
   border-radius: 5px;/**/
+  
   font-size: 16px;/**/
-  cursor: pointer;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
+
+  cursor: pointer;/**/
   transition: background-color 0.3s ease;/**/
 }
 
@@ -245,6 +278,50 @@ a { /*No borrar la letra (a)*/
 /*
 */
 
+/*--- --- INICIA ETIQUETA FOOTER
+*/
+.footer-logo {
+  margin-top: 130px;/**/
+}
+/* --- FINALIZA FOOTER LOGO
+*/
+
+/* INICIA FOOTERLOGO Y DIV*/  
+.footer-logo > div {
+  display: flex;/**/
+  flex-direction: column;/**/
+  align-items: center;/**/
+  
+  width: 100%;/**/
+  background-color: rgb(0, 0, 0);/*visualizador*/
+}
+/* FINALIZA FOOTERLOGO Y DIV
+*/
+
+/* --- INICIA SECTION-1-FOOTER
+*/
+.section-1-footer {
+  display: flex;/**/
+  flex-direction: column;/**/
+  align-items: center;/**/
+  
+  width: 95%;/**/
+  margin-top: 40px;/**/
+  margin-bottom: 100px;/**/
+} 
+
+.article-1-footer {
+  width:  100%;/**/
+  margin-bottom: 20px;/**/
+  /*background-color: #f30909;/*Visualizador*/
+}
+
+.h2-gps-footer {
+  color: white;/**/
+  text-align: center;/**/
+  font-family: 'Syncopate-Regular';/**/
+}
+
 /* --- INICIA ARTICLE-2-FOOTER
 */
 .article-2-footer {
@@ -275,11 +352,10 @@ a { /*No borrar la letra (a)*/
 /*
 */
 
-/* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/
+/* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/ 
 .figure-img-linux {
   padding: 0;/**/  
   margin-bottom: 0;/**/
-  /*background-color: #007BFF;/**/
 }
 
 /*INICIA LA IMAGEN DE LINUX*/  

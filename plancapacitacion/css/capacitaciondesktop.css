@@ -12,6 +12,45 @@
 
 }
 
+@media screen and (min-width: 440px) {
+  /*INICIA SECCION-1 Y ARTICULO-1*/
+  .section-1 {
+    /*max-width: 500px;/*PredeterminadoEnMovil*/
+    /*width: 95%;/*PredeterminadoEnMovil*/
+    /*margin-top: 60px;/*PredeterminadoEnMovil*/
+    /*background-color: cadetblue;/*Visualizador*/
+  }
+  
+  
+  .article-1 {
+    width: 100%;/*PredeterminadoEnMovil*/
+    /*max-width: 500px;/*PredeterminadoEnMovil*/
+    /*background-color: rgba(32, 165, 218, 0.285);/*Visualizador*/
+  }
+
+
+  /*INICIA SECCION 2 Y ARTICULO 2*/
+.section-2 {
+  /*width: 95%;/*PredeterminadoEnMovil*/
+  /*margin-top: 66px;/*PredeterminadoEnMovil*/
+  /*background-color: cadetblue;/*Visualizador*/
+}
+
+
+.article-2 {
+  /*width: 100%;/*PredeterminadoEnMovil*/
+  /*max-width: 600px;/*PredeterminadoEnMovil*/
+  /*background-color: rgb(206, 218, 32);/*Visualizador*/
+}
+   }
+
+/*Finaliza:(min-width: 431px)*/
+
+
+
+/*
+   ---- ----- ----- ------- -- -- -- --
+*/
 
 
 
