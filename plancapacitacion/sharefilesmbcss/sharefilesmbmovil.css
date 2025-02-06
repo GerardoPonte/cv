@@ -94,7 +94,8 @@
 }   
 
 
-.ul-li .li-1 {/*LI TEXTO PRINCIPAL*/
+.li-1 {/*LI TEXTO PRINCIPAL*/
+  margin: 16px;/**/
   font-size: 19px;/**/
   font-family: 'Montserrat-VariableFont_wght';
 }
