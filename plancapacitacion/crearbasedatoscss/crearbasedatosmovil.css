@@ -149,7 +149,7 @@
 */  
 
 .pre-1 {
- 
+  text-align:justify;
   white-space: pre-wrap; /* Permite que el texto se ajuste automáticamente */
   word-wrap: break-word; /* Evita desbordamiento horizontal */
   overflow-x: auto; /* Agrega scroll solo si es necesario */
