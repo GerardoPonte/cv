@@ -149,12 +149,12 @@
 */  
 
 .pre-1 {
-  text-align:justify;
+  text-align:unset;
   white-space: pre-wrap; /* Permite que el texto se ajuste automáticamente */
   word-wrap: break-word; /* Evita desbordamiento horizontal */
   overflow-x: auto; /* Agrega scroll solo si es necesario */
   background-color: #f4f4f4; /* Color de fondo para mejorar lectura */
-  padding-top: 20px;/**/
+  padding: 15px;/**/
   border-radius: 5px;/**/
   font-family: 'Courier New', monospace;/**/
   /*background-color: #ca3535bc;/**/
@@ -164,11 +164,10 @@
 .pre-1 .p-texto-2 {
   /*width: 100%;/**/
   text-align: center;
-  font-size: 19px;/**/
+  font-size: 17px;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
   /*background-color: #00e5ff;/**/
 }
-
 
 
 .article-figure {
