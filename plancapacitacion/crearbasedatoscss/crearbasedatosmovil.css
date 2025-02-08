@@ -149,6 +149,7 @@
 */  
 
 .pre-1 {
+  font-size: 17px;
   text-align:unset;
   white-space: pre-wrap; /* Permite que el texto se ajuste automáticamente */
   word-wrap: break-word; /* Evita desbordamiento horizontal */
