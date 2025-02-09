@@ -98,7 +98,7 @@ main {
 .article-1 {
   display: flex;/**/
   flex-direction: column;/**/
-  /*align-items: center;/**/
+  align-items: center;/**/
  
   width: 97%;/**/
   max-width: 1100px;/*no borrar*/
@@ -109,8 +109,10 @@ main {
 
 /* Inicia ul-li-1*/
 .ul-li-1 {
+  
+
   /*margin: 30px;/**/
-  /*padding: 1px;/**/
+  padding: .1px;/**/
   /*background-color: #07d485;/*Visualizador*/
 
 }
@@ -118,9 +120,9 @@ main {
 
 /*--- Inicia li-1 ---*/
 .li-1 {
-  margin: 15px;
-  /*margin: 5px 5px 10px 5px;/**/
-  font-size: 17px;/**/
+  margin: 15px;/**/
+  font-size: 19px;/**/
+  list-style: none;
   font-family: 'Montserrat-VariableFont_wght';/**/
   /*background-color: antiquewhite;/*Visualizador*/
 }
