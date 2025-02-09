@@ -64,8 +64,8 @@ main {
 }
 
 .article-titulo {
- width: 97%;/**/
- /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
+  width: 97%;/**/
+  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
 
 .h1-titulo-principal {
@@ -90,6 +90,7 @@ main {
   align-items: center;/**/
 
   width: 97%;/**/
+  max-width: 900px;/*no borrar*/
   margin-top: 40px;/**/
   /*background-color: rgb(232, 17, 185);/*Visualizador*/
 }
@@ -100,7 +101,7 @@ main {
   flex-direction: column;/**/
   align-items: center;/**/
  
-  width: 97%;/**/
+  width: 100%;/**/
   max-width: 900px;/*no borrar*/
   
  /*background-color: rgb(218, 206, 32);/*VISUALIZADOR*/
@@ -145,28 +146,42 @@ main {
   align-items: center;/**/
 
   width: 97%;/**/
-  max-width: 1100px;/*no borrar*/
+  max-width: 900px;/*no borrar*/
   margin-top: 60px;/**/
   /*background-color: rgb(244, 220, 0);/*Visualizador*/
 }
 
 
 .article-2 {
-  display: flex;/**/
-  flex-direction: column;/**/
-  align-items: center;/**/
-
   width: 100%;/**/
   max-width: 900px;/*no borrar*/
-  /*background-color: #0785d4;/**/  
+  /*background-color: #07d422;/**/  
 }
 
 
+/*
+*/
+
+
+/* Inicia seccion titulo 2 Ejercicios
+*/
+
+.article-titulo-2 {
+  width: 100%;
+  /*background-color: aqua;/**/
+}
+
 .h3-titulo-2   {  
-  text-align: start;/**/
+  /*text-align: start;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
   /*background-color: antiquewhite;/*Visualizador*/
 }
+/* Finaliza seccion titulo 2 Ejercicios
+*/
+
+
+/* Inicia P
+*/
 
 .p-titulo-2 {
   /*width: 80%;/**/
@@ -176,12 +191,15 @@ main {
   /*background-color: #ff0000;/*Visualizador*/
 }
 
+
+/* Inicia LU ul-li-2
+*/
 .ul-li-2 {
 
   padding: 5px;/**/
   display: none; /* Oculta la lista por defecto*/
   list-style: none;/**/
- /*background-color: #09b51a;/*Visualizador*/
+  /*background-color: #09b51a;/*Visualizador*/
 }
 
 
@@ -190,6 +208,8 @@ main {
 }
 
 
+/* Inicia LI li-2
+*/
 .li-2 {/*LI TEXTO PRINCIPAL*/
   /*width: 90%;/**/
   font-size: 19px;/**/
@@ -210,12 +230,11 @@ main {
   font-family: 'Montserrat-VariableFont_wght';/**/
   /*background-color: #007BFF;/**/
 }
+
+
+
 /*
 */  
-
-
-
-
 
 
 .section-button {
