@@ -158,7 +158,6 @@ main {
 
   width: 97%;/**/
   max-width: 900px;/*no borrar*/
-  /*margin-top: 40px;/**/
   /*background-color: rgb(244, 220, 0);/*Visualizador*/
 }
 
@@ -211,13 +210,11 @@ main {
 /* Inicia LU ul-li-2
 */
 .ul-li-2 {
-  
-
-
+  width: 97%;
   padding: 2px;/**/
   display: none; /* Oculta la lista por defecto*/
   list-style: none;/**/
-  /*background-color: #00ff1a;/*Visualizador*/
+  background-color: #cbcdcb;/*Visualizador*/
 }
 
 
@@ -230,7 +227,7 @@ main {
 */
 .li-2 {/*LI TEXTO PRINCIPAL*/
  
-  width: 100%;/**/
+  width: 97%;/**/
   /*text-align: center;/**/
   font-size: 19px;/**/
   /*margin: 10px;/**/
