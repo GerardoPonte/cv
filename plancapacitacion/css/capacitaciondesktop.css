@@ -53,16 +53,7 @@
 */
 @media screen and (min-width: 600px) {
 
-  .p-titulo-2 {
-  
-
-    text-align: start;
-  }
-  
-  .li-1 {
-    text-align: start;
-      
-  }
+ 
 
 
 }
@@ -96,6 +87,38 @@
 }
 
 
+
+
+.article-titulo-2 {
+  width: 100%;/**/
+  max-width: 900px;/*no borrar*/
+  /*background-color: aqua;/**/
+}
+
+
+.ul-li-2 {
+  width: 97%;
+  max-width: 900px;/*no borrar*/
+}
+
+
+.li-2 {/*LI TEXTO PRINCIPAL*/
+  text-align: start;/**/
+}
+
+
+
+
+.p-titulo-2 {
+  
+
+  text-align: start;
+}
+
+.li-1 {
+  text-align: start;
+    
+}
 
 
 
