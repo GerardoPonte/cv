@@ -49,7 +49,7 @@
 
         <section class="section-titulo">
             <article class="article-titulo">
-                <h2 class="h2-titulo-principal">Práctica, Proyecto base de datos Reserva Vuelos</h2>
+                <h2 class="h2-titulo-principal">Práctica, Creación de tablas</h2>
             </article>
         </section>
 
@@ -131,58 +131,224 @@
                         -- CREACIÓN DE LA BASE DE DATOS ReservaBoletos -- 04/12/2024 
                         <p class="p-texto-2">En esta línea estamos creando la base de datos llamada <strong>ReservaBoletos</strong>.</p>
                     
-                        CREATE DATABASE ReservaBoletos
-                        ON PRIMARY(
-                            NAME = 'ReservaBoletosDat',
-                            FILENAME = 'C:\BasesDatosSQL\ReservaVuelos\ReservaBoletosDat.mdf',
-                            SIZE = 10MB,
-                            MAXSIZE = 40MB,
-                            FILEGROWTH = 5MB
-                        ),  
+                                                    CREATE TABLE cdmx.Pais (
+                                PaisID CHAR(4) NOT NULL,
+                                Nombre NVARCHAR(30) NOT NULL UNIQUE,
+                                CONSTRAINT PK_PaisID PRIMARY KEY (PaisID)
+                            ) ON [PRIMARY];
 
-                        <p class="p-texto-2">Definimos un segundo archivo de datos para distribuir mejor la carga de almacenamiento.</p>
-                    
-                        (
-                            NAME = 'ReservaBoletosMDF',
-                            FILENAME = 'C:\BasesDatosSQL\ReservaVuelos\ReservaBoletosMDF.mdf',
-                            SIZE = 5MB,
-                            MAXSIZE = 30MB,
-                            FILEGROWTH = 5%
-                        )
+                            -- TABLA PASAJERO
+                            CREATE TABLE cdmx.Pasajero(
+                                PasajeroID CHAR(8) NOT NULL,
+                                Nombre NVARCHAR(20) NOT NULL,
+                                Apaterno NVARCHAR(20) NOT NULL,
+                                Amaterno NVARCHAR(20) NOT NULL,
+                                Tipo_documento NVARCHAR(30) NOT NULL,
+                                Num_documento NVARCHAR(15) NOT NULL,
+                                Fecha_nacimiento DATE NOT NULL,
+                                PaisID CHAR(4) NOT NULL,
+                                Telefono NVARCHAR(15) NOT NULL,
+                                Email NVARCHAR(50) NOT NULL UNIQUE, 
+                                Clave NVARCHAR(20) NOT NULL,
+                                CONSTRAINT PK_Pasajero PRIMARY KEY (PasajeroID),
+                                CONSTRAINT FK_PasajeroPaisID FOREIGN KEY (PaisID) REFERENCES cdmx.Pais(PaisID)
+                            ) ON [PRIMARY];
 
-                        <p class="p-texto-2">Esta sección configura el archivo de <strong>LOG</strong> (transacciones):</p>
-                    
-                        LOG ON (
-                            NAME = 'ReservaBoletosLog',
-                            FILENAME = 'C:\BasesDatosSQL\ReservaVuelos\ReservaBoletosLog.Ldf',
-                            SIZE = 4MB,
-                            MAXSIZE = 20MB,
-                            FILEGROWTH = 10%
-                        );
+                            -- TABLA AEROPUERTO
+                            CREATE TABLE cdmx.Aeropuerto(
+                                AeropuertoID CHAR(6) NOT NULL,
+                                Nombre NVARCHAR(50) NOT NULL,
+                                PaisID CHAR(4) NOT NULL,
+                                CONSTRAINT PK_AeropuertoID PRIMARY KEY NONCLUSTERED (AeropuertoID),
+                                CONSTRAINT FK_AeropuertoPaisID FOREIGN KEY (PaisID) REFERENCES cdmx.Pais(PaisID)
+                            ) ON [PRIMARY];
+
+                            -- TABLA AEROLINEA
+                            CREATE TABLE cdmx.Aerolinea(
+                                AerolineaID INT NOT NULL,
+                                Ruc CHAR(11) NOT NULL UNIQUE,
+                                Nombre NVARCHAR(40) NOT NULL UNIQUE,
+                                CONSTRAINT PK_AerolineaID PRIMARY KEY (AerolineaID)
+                            ) ON [PRIMARY];
+
+                            -- TABLA AVION
+                            CREATE TABLE cdmx.Avion(
+                                AvionID CHAR(6) NOT NULL,
+                                AerolineaID INT NOT NULL,
+                                Fabricante NVARCHAR(40) NULL,
+                                Tipo NVARCHAR(30) NULL,
+                                Capacidad INT NOT NULL,
+                                CONSTRAINT PK_AvionID PRIMARY KEY (AvionID),
+                                CONSTRAINT FK_AvionAerolinea FOREIGN KEY (AerolineaID) REFERENCES cdmx.Aerolinea(AerolineaID)
+                            ) ON [PRIMARY];
+
+                            -- TABLA ASIENTO
+                            CREATE TABLE cdmx.Asiento(
+                                AsientoID INT NOT NULL,
+                                Letra CHAR(2) NOT NULL,
+                                Fila INT NOT NULL,
+                                CONSTRAINT PK_AsientoID PRIMARY KEY (AsientoID)
+                            ) ON [PRIMARY];
+
+                            -- TABLA TARIFA
+                            CREATE TABLE cdmx.Tarifa(
+                                TarifaID INT NOT NULL,
+                                Clase NVARCHAR(25) NOT NULL UNIQUE,
+                                Precio MONEY NOT NULL,
+                                Impuesto MONEY NOT NULL,
+                                CONSTRAINT PK_Tarifa PRIMARY KEY (TarifaID)
+                            ) ON [PRIMARY];
+
+                            -- TABLA RESERVA
+                            CREATE TABLE cdmx.Reserva(
+                                ReservaID INT NOT NULL,
+                                Costo MONEY NOT NULL,
+                                Fecha DATE NULL DEFAULT GETDATE(),
+                                Observacion NVARCHAR(200) NULL,
+                                CONSTRAINT PK_ReservaID PRIMARY KEY (ReservaID)
+                            ) ON [PRIMARY];
+
+                            -- TABLA VUELO
+                            CREATE TABLE cdmx.Vuelo(
+                                VueloID INT IDENTITY(1,1),
+                                AsientoID INT NOT NULL,
+                                AeropuertoID CHAR(6) NOT NULL,
+                                ReservaID INT NOT NULL,
+                                AvionID CHAR(6) NOT NULL,
+                                TarifaID INT NOT NULL,
+                                CONSTRAINT PK_VueloID PRIMARY KEY (VueloID),
+                                CONSTRAINT FK_VueloAsientoID FOREIGN KEY (AsientoID) REFERENCES cdmx.Asiento(AsientoID),
+                                CONSTRAINT FK_VueloAeropuertoID FOREIGN KEY (AeropuertoID) REFERENCES cdmx.Aeropuerto(AeropuertoID),
+                                CONSTRAINT FK_VueloReservaID FOREIGN KEY (ReservaID) REFERENCES cdmx.Reserva(ReservaID),
+                                CONSTRAINT FK_VueloAvionID FOREIGN KEY (AvionID) REFERENCES cdmx.Avion(AvionID),
+                                CONSTRAINT FK_VueloTarifaID FOREIGN KEY (TarifaID) REFERENCES cdmx.Tarifa(TarifaID)
+                            ) ON [PRIMARY];
+
+                            -- TABLA PAGO
+                            CREATE TABLE cdmx.Pago(
+                                PagoID INT NOT NULL,
+                                ReservaID INT NOT NULL,
+                                PasajeroID CHAR(8) NOT NULL,
+                                Fecha DATE DEFAULT GETDATE(),
+                                Monto MONEY NOT NULL,
+                                Tipo_Comprobante NVARCHAR(20) NOT NULL,
+                                Num_Comprobante NVARCHAR(15) NOT NULL,
+                                Impuesto DECIMAL (5,2) NOT NULL,
+                                CONSTRAINT PK_PagoID PRIMARY KEY (PagoID),
+                                CONSTRAINT FK_ReservaID FOREIGN KEY (ReservaID) REFERENCES cdmx.Reserva(ReservaID),
+                                CONSTRAINT FK_PasajeroID FOREIGN KEY (PasajeroID) REFERENCES cdmx.Pasajero(PasajeroID),
+                                CONSTRAINT CHK_Pago_Fecha CHECK (Fecha <= GETDATE())
+                            ) ON [PRIMARY];
                     </pre>
                 </article>
 
                 <article class="article-1">
                     <h3 class="h3-titulo">Explicacion del codigo:</h3>
-                    <p class="p-texto-1">Aquí definimos el archivo de datos principal (<strong>.mdf</strong>), con:
+
+                    <p><strong>1. Tabla: Pais</strong></p>
+                    <ul class="ul-li-1">
+                        <li class="li-1"><strong>PaisID:</strong> Identificador único del país.</li>
+                        <li class="li-1"><strong>Nombre:</strong> Nombre del país (único, no se repite).</li>
+                        <li class="li-1">Se establece <strong>PK_PaisID</strong> como clave primaria.</li>
+                    </ul>
+
+                    <p><strong>2. Tabla: Pasajero</strong></p>
+                    <ul class="ul-li-1">
+                        <li class="li-1"><strong>PasajeroID:</strong> Identificador único del pasajero.</li>
+                        <li class="li-1"><strong>Nombre, Apaterno, Amaterno:</strong> Datos personales del pasajero.</li>
+                        <li class="li-1"><strong>Tipo_documento y Num_documento:</strong> Información del documento de identidad.</li>
+                        <li class="li-1"><strong>Fecha_nacimiento:</strong> Fecha de nacimiento.</li>
+                        <li class="li-1"><strong>PaisID:</strong> Relación con la tabla <strong>Pais</strong>.</li>
+                        <li class="li-1"><strong>Telefono y Email:</strong> Datos de contacto (email debe ser único).</li>
+                        <li class="li-1"><strong>Clave:</strong> Contraseña del pasajero.</li>
+                        <li class="li-1">Se establece <strong>PK_Pasajero</strong> como clave primaria.</li>
+                        <li class="li-1">Se crea la <strong>FK_PasajeroPaisID</strong> que referencia a <strong>PaisID</strong>.</li>
+                    </ul>
+
+                    <p><strong>3. Tabla: Aeropuerto</strong></p>
+                    <ul class="ul-li-1">
+                        <li class="li-1"><strong>AeropuertoID:</strong> Identificador único del aeropuerto.</li>
+                        <li class="li-1"><strong>Nombre:</strong> Nombre del aeropuerto.</li>
+                        <li class="li-1"><strong>PaisID:</strong> Relación con la tabla <strong>Pais</strong>.</li>
+                        <li class="li-1">Se establece <strong>PK_AeropuertoID</strong> como clave primaria.</li>
+                        <li class="li-1">Se crea la <strong>FK_AeropuertoPaisID</strong> que referencia a <strong>PaisID</strong>.</li>
+                    </ul>
+
+                    <p><strong>4. Tabla: Aerolinea</strong></p>
+                    <ul class="ul-li-1">
+                        <li class="li-1"><strong>AerolineaID:</strong> Identificador único de la aerolínea.</li>
+                        <li class="li-1"><strong>Ruc:</strong> Registro único de contribuyente (único).</li>
+                        <li class="li-1"><strong>Nombre:</strong> Nombre de la aerolínea (único).</li>
+                        <li class="li-1">Se establece <strong>PK_AerolineaID</strong> como clave primaria.</li>
+                    </ul>
+
+                    <p><strong>5. Tabla: Avion</strong></p>
+                    <ul class="ul-li-1">
+                        <li class="li-1"><strong>AvionID:</strong> Identificador único del avión.</li>
+                        <li class="li-1"><strong>AerolineaID:</strong> Relación con la tabla <strong>Aerolinea</strong>.</li>
+                        <li class="li-1"><strong>Fabricante, Tipo:</strong> Información del avión.</li>
+                        <li class="li-1"><strong>Capacidad:</strong> Número de asientos disponibles.</li>
+                        <li class="li-1">Se establece <strong>PK_AvionID</strong> como clave primaria.</li>
+                        <li class="li-1">Se crea la <strong>FK_AvionAerolinea</strong> que referencia a <strong>AerolineaID</strong>.</li>
+                    </ul>
+
+                    <p><strong>6. Tabla: Asiento</strong></p>
+                    <ul class="ul-li-1">
+                        <li class="li-1"><strong>AsientoID:</strong> Identificador único del asiento.</li>
+                        <li class="li-1"><strong>Letra y Fila:</strong> Ubicación del asiento dentro del avión.</li>
+                        <li class="li-1">Se establece <strong>PK_AsientoID</strong> como clave primaria.</li>
+                    </ul>
+
+                    <p><strong>7. Tabla: Tarifa</strong></p>
+                    <ul class="ul-li-1">
+                        <li class="li-1"><strong>TarifaID:</strong> Identificador único de la tarifa.</li>
+                        <li class="li-1"><strong>Clase:</strong> Tipo de clase del boleto (Económica, Business, etc.).</li>
+                        <li class="li-1"><strong>Precio e Impuesto:</strong> Costo del boleto y su impuesto.</li>
+                        <li class="li-1">Se establece <strong>PK_Tarifa</strong> como clave primaria.</li>
+                    </ul>
+
+                    <p><strong>8. Tabla: Reserva</strong></p>
+                    <ul class="ul-li-1">
+                        <li class="li-1"><strong>ReservaID:</strong> Identificador único de la reserva.</li>
+                        <li class="li-1"><strong>Costo:</strong> Precio total de la reserva.</li>
+                        <li class="li-1"><strong>Fecha:</strong> Fecha en que se hizo la reserva (por defecto, la fecha actual).</li>
+                        <li class="li-1"><strong>Observacion:</strong> Información adicional.</li>
+                        <li class="li-1">Se establece <strong>PK_ReservaID</strong> como clave primaria.</li>
+                    </ul>
+
+                    <p><strong>9. Tabla: Vuelo</strong></p>
+                    <ul class="ul-li-1">
+                        <li class="li-1"><strong>VueloID:</strong> Identificador único del vuelo (autoincrementable).</li>
+                        <li class="li-1"><strong>AsientoID, AeropuertoID, ReservaID, AvionID, TarifaID:</strong> Relaciona el vuelo con otras tablas.</li>
+                        <li class="li-1">Se establece <strong>PK_VueloID</strong> como clave primaria.</li>
+                        <li class="li-1">Se crean las siguientes claves foráneas:</li>
                         <ul class="ul-li-1">
-                          <li class="li-1"><strong>NAME</strong>: Nombre lógico del archivo.</li>
-                          <li class="li-1"><strong>FILENAME</strong>: Ruta donde se almacenará el archivo físico.</li>
-                          <li class="li-1"><strong>SIZE</strong>: Tamaño inicial del archivo.</li>
-                          <li class="li-1"><strong>MAXSIZE</strong>: Tamaño máximo que puede alcanzar.</li>
-                          <li class="li-1"><strong>FILEGROWTH</strong>: Tamaño en que crecerá cuando se llene.</li>
+                            <li class="li-1"><strong>FK_VueloAsientoID</strong> → AsientoID</li>
+                            <li class="li-1"><strong>FK_VueloAeropuertoID</strong> → AeropuertoID</li>
+                            <li class="li-1"><strong>FK_VueloReservaID</strong> → ReservaID</li>
+                            <li class="li-1"><strong>FK_VueloAvionID</strong> → AvionID</li>
+                            <li class="li-1"><strong>FK_VueloTarifaID</strong> → TarifaID</li>
                         </ul>
-                    </p>
-                    
-                    <p class="p-texto-1">Esta sección configura el archivo de <strong>LOG</strong> (transacciones):
+                    </ul>
+
+                    <p><strong>10. Tabla: Pago</strong></p>
+                    <ul class="ul-li-1">
+                        <li class="li-1"><strong>PagoID:</strong> Identificador único del pago.</li>
+                        <li class="li-1"><strong>ReservaID:</strong> Relación con la tabla <strong>Reserva</strong>.</li>
+                        <li class="li-1"><strong>PasajeroID:</strong> Relación con la tabla <strong>Pasajero</strong>.</li>
+                        <li class="li-1"><strong>Fecha:</strong> Fecha del pago (por defecto, la fecha actual).</li>
+                        <li class="li-1"><strong>Monto:</strong> Cantidad pagada.</li>
+                        <li class="li-1"><strong>Tipo_Comprobante y Num_Comprobante:</strong> Información del comprobante del pago.</li>
+                        <li class="li-1"><strong>Impuesto:</strong> Valor del impuesto.</li>
+                        <li class="li-1">Se establece <strong>PK_PagoID</strong> como clave primaria.</li>
+                        <li class="li-1">Se crean las siguientes claves foráneas:</li>
                         <ul class="ul-li-1">
-                            <li class="li-1"><strong>NAME</strong>: Nombre lógico del archivo de log.</li>
-                            <li class="li-1"><strong>FILENAME</strong>: Ubicación del archivo físico.</li>
-                            <li class="li-1"><strong>SIZE</strong>: Tamaño inicial.</li>
-                            <li class="li-1"><strong>MAXSIZE</strong>: Tamaño máximo permitido.</li>
-                            <li class="li-1"><strong>FILEGROWTH</strong>: Incremento de tamaño cuando se llena.</li>
+                            <li class="li-1"><strong>FK_ReservaID</strong> → ReservaID</li>
+                            <li class="li-1"><strong>FK_PasajeroID</strong> → PasajeroID</li>
                         </ul>
-                    </p>
+                        <li class="li-1">Se agrega la restricción <strong>CHK_Pago_Fecha</strong> para asegurar que la fecha del pago no sea mayor a la actual.</li>
+                    </ul>
+
                 </article>  
                 
             </section>
