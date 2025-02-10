@@ -154,7 +154,7 @@
   width: 100%;/**/
   max-width: 100px;/**/
 
-  /*margin-left: 10px;/**/
+  margin-left: 10px;/**/
   padding: 10px 20px;/**/
   background-color: #007BFF;/**/
   color: white;/**/
@@ -166,22 +166,6 @@
   transition: background-color 0.3s ease;/**/
 }
 
-/* Estilo del botón */
-.back-button {
-  width: 100%;/**/
-  max-width: 100px;/**/
-  margin-top: 69px;/**/
-  margin-left: 10px;/**/
-  padding: 10px 20px;/**/
-  background-color: #007BFF; /**/
-  color: white;/**/
-  border: none;/**/
-  border-radius: 5px;/**/
-  font-size: 16px;/**/
-  cursor: pointer;/**/
-  font-family: 'Montserrat-VariableFont_wght';/**/
-  transition: background-color 0.3s ease;/**/
-}
 
 .back-button:hover {
   background-color: #f30909;/**/

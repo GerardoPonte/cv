@@ -51,13 +51,24 @@
 /* --- --- INICIA SECTION CONTENIDO GENERAL
 */
 .section-titulo { /*SECTION TITULO PRINCIPAL*/
-  width: 95%;/**/
+  display: flex;/**/
+  flex-direction: column;/**/
+  align-items: center;/**/
+   
+  width: 97%;/**/
+  max-width: 1000px;/*no borrar*/
+  margin-top: 20px;/**/ 
+  /*background-color: #007BFF;/**/
 }
 
-.h2-titulo-principal {
-  margin-top: 30px;
-  text-align: center;/**/
-  font-family: 'Montserrat-VariableFont_wght';/**/
+.article-titulo {
+  width: 97%;/**/
+ /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
+}
+
+.h1-titulo-principal {
+  width: 97%;/**/
+  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
 
 /*
@@ -65,20 +76,28 @@
 
 .section-1 {
   display: flex;/**/
-  flex-direction: column;
-  
-  width: 95%;/**/
+  flex-direction: column;/**/
+  align-items: center;
+
+  width: 97%;/**/
+  max-width: 1000px;/*no borrar*/
+  margin-top: 40px;/**/
+  padding: 0;
+  /*background-color: cadetblue;/*Visualizador*/
 }
 
 .article-1 {
-  width: 100%;/**/
-  max-width: 999px;/**/
+  width: 97%;/**/
+  max-width: 900px;/*no borrar*/
+  /*background-color: rgb(32, 218, 32);/*VISUALIZADOR*/
 }
 
 .h3-titulo {/*SUBTITULOS DE LI*/
-  margin-top: 45px;/**/
+  width: 95%;
+  max-width: 1000px;/*no borrar*/
   text-align: left;/**/
-  font-family: 'Montserrat-VariableFont_wght';
+  font-family: 'Montserrat-VariableFont_wght';/**/
+  /*background-color: #f30909;/**/
 }   
 
 /*ESTA ES KA ETIQUETA li CON CLASS li-1*/
@@ -105,17 +124,35 @@
 */
 
 /* Estilo del botón */
- .back-button {
-  margin-top: 69px;
-  padding: 10px 20px;
-  background-color: #007BFF; /* Azul */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+.section-button {
+  width: 97%;/**/
+  max-width: 1000px;/*no borrar*/
+  /*margin-top: 40px;/**/
+  /*background-color: #07d485;/**/
+}
+
+
+.article-button {
+  width: 100%;/**/
+  /*background-color: #a107d4;/**/
+}
+
+
+/* Estilo del botón */
+.back-button {
+  width: 100%;/**/
+  max-width: 100px;/**/
+
+  /*margin-left: 10px;/**/
+  padding: 10px 20px;/**/
+  background-color: #007BFF;/**/
+  color: white;/**/
+  border: none;/**/
+  border-radius: 5px;/**/
+  font-size: 16px;/**/
+  cursor: pointer;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
-  cursor: pointer;  
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;/**/
 }
 
 .back-button:hover {
