@@ -54,17 +54,21 @@
 */
 .section-titulo { /*SECTION TITULO PRINCIPAL*/
   display: flex;/**/
-  justify-content: center;/**/
-  width: 95%;/**/
+  flex-direction: column;/**/
+  align-items: center;/**/
+   
+  width: 97%;/**/
+  max-width: 1000px;/*no borrar*/
+  margin-top: 20px;/**/ 
   /*background-color: #007BFF;/**/
 }
 
 .article-titulo {
- /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
+  width: 97%;/**/
+  /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
 
-.h2-titulo-principal {
-  
+.h1-titulo-principal {
   text-align: center;/**/
   font-family: 'Montserrat-VariableFont_wght';/**/
 }
@@ -74,10 +78,16 @@
 
 .section-1 {
   display: flex;/**/
-  flex-direction: column;
-  width: 95%;
+  flex-direction: column;/**/
+  align-items: center;
+
+  width: 97%;/**/
+  max-width: 1000px;/*no borrar*/
+  margin-top: 40px;/**/
+  padding: 0;
   /*background-color: cadetblue;/*Visualizador*/
 }
+
 
 .article-1 {
   width: 100%;/**/
@@ -85,19 +95,31 @@
   /*background-color: rgb(218, 32, 32);/*VISUALIZADOR*/
 }
 
+
 .h3-titulo {/*SUBTITULOS DE LI*/
-  margin-top: 45px;/**/
+  width: 95%;
+  max-width: 1000px;/*no borrar*/
   text-align: left;/**/
-  font-family: 'Montserrat-VariableFont_wght';
+  font-family: 'Montserrat-VariableFont_wght';/**/
+  /*background-color: #f30909;/**/;
 }   
 
 
 .ul-li .li-1 {/*LI TEXTO PRINCIPAL*/
+  width: 100%;/**/
   font-size: 19px;/**/
   font-family: 'Montserrat-VariableFont_wght';
+  /*background-color: antiquewhite;/**/
 }
 
+
 .p-texto {
+  font-size: 19px;/**/
+  font-family: 'Montserrat-VariableFont_wght';
+  /*background-color: #00ff4c;/**/
+}
+
+.p-texto-figure {
   font-size: 19px;/**/
   font-family: 'Montserrat-VariableFont_wght';
   /*background-color: #007BFF;/**/
@@ -106,14 +128,50 @@
 */  
 
 
+.article-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /*background-color: aqua;/**/
+}
+
+
+.figure-containner {
+  width: 98%;/**/
+  /*background-color: coral;/**/
+
+}
+
+
+.figure-containner img{
+  width: 100%;/**/
+
+}
+
+
+.section-button {
+  width: 97%;/**/
+  max-width: 1000px;/*no borrar*/
+  /*margin-top: 40px;/**/
+  /*background-color: #07d485;/**/
+}
+
+
+.article-button {
+  width: 100%;/**/
+  /*background-color: #a107d4;/**/
+}
+
+
 /* Estilo del botón */
 .back-button {
   width: 100%;/**/
   max-width: 100px;/**/
-  margin-top: 69px;/**/
-  margin-left: 10px;/**/
+
+  /*margin-left: 10px;/**/
   padding: 10px 20px;/**/
-  background-color: #007BFF; /**/
+  background-color: #007BFF;/**/
   color: white;/**/
   border: none;/**/
   border-radius: 5px;/**/
@@ -133,9 +191,10 @@
 /*--- --- INICIA ETIQUETA FOOTER
 */
 .footer-logo {
-  margin-top: 69px;/**/
-  /*background-color: rgb(0, 0, 0);/*V*/  
+  margin-top: 130px;/**/
 }
+/* --- FINALIZA FOOTER LOGO
+*/
 
 /* INICIA FOOTERLOGO Y DIV*/  
 .footer-logo > div {
@@ -156,9 +215,9 @@
   flex-direction: column;/**/
   align-items: center;/**/
   
-  width: 95%;
-  margin-top: 20px;/**/
-  margin-bottom: 100px;
+  width: 95%;/**/
+  margin-top: 40px;/**/
+  margin-bottom: 100px;/**/
 } 
 
 .article-1-footer {
@@ -168,13 +227,9 @@
 
 .h2-gps-footer {
   color: white;/**/
-  text-align: center;
+  text-align: center;/**/
   font-family: 'Syncopate-Regular';/**/
 }
-
-
-/*
-*/
 
 /* --- INICIA ARTICLE-2-FOOTER
 */
@@ -206,11 +261,10 @@
 /*
 */
 
-/* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/
+/* INICIA FOOTERLOGO .FIGURE-IMG-LINUX*/ 
 .figure-img-linux {
   padding: 0;/**/  
   margin-bottom: 0;/**/
-  /*background-color: #007BFF;/**/
 }
 
 /*INICIA LA IMAGEN DE LINUX*/  
