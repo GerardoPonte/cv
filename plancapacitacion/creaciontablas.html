@@ -10,8 +10,8 @@
 
     <link rel="stylesheet" href="../normalize/normalize.css">
 
-    <link rel="stylesheet" href="../plancapacitacion/crearbasedatoscss/crearbasedatosmovil.css">
-    <link rel="stylesheet" href="../plancapacitacion/crearbasedatoscss/crearbasedatosdesktop.css">
+    <link rel="stylesheet" href="../plancapacitacion/crearbatablas/creartablassqlmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/crearbatablas/creartablassqldesktop.css">
 
     <link rel="stylesheet" href="../slider/slidermovil.css">
     <link rel="stylesheet" href="../slider/sliderdesktop.css">
@@ -49,12 +49,11 @@
 
         <section class="section-titulo">
             <article class="article-titulo">
-                <h2 class="h2-titulo-principal">Práctica, Creación de tablas</h2>
+                <h1 class="h1-titulo-principal">Práctica, Creación de tablas</h1>
             </article>
         </section>
 
-        <section class="section-1">
-            
+        <section class="section-1">            
             <article class="article-1">
                 <p class="p-texto-1">Se desea implementar un sistema web para gestionar la reserva de vuelos; que permita
                      al usuario registrar sus reservas de vuelos y hacer consultas, además de poder comprar los boletos de viaje de manera remota.</p>
@@ -72,10 +71,10 @@
 
         <section class="section-1">
             <article class="article-1">
-                <ul class="ul-li-1">
+                <ul class="ul-li">
                     <li class="li-1">Instalación y Configuración, Seguridad</li>
                     <li class="li-1">Gestión de Base de Datos
-                        <ul class="ul-li-1">
+                        <ul class="ul-li">
                             <li class="li-1">Estructura de Una Base de datos</li>
                             <li class="li-1">Archivos y Grupos Físicos de Bases de Datos</li>
                             <li class="li-1">Esquemas, Tablas, Campos, Tipos de datos</li>
@@ -93,14 +92,14 @@
                     </li>
 
                         <li class="li-1">DML Lenguaje de Manipulación de Datos
-                          <ul class="ul-li-1">
+                          <ul class="ul-li">
                             <li class="li-1">Insert Into, Update, Delete</li>
                             <li class="li-1">Select, Group By, Having, Union</li>
                           </ul>
                         </li>
 
                         <li class="li-1">Programación Transact SQL
-                          <ul class="ul-li-1">
+                          <ul class="ul-li">
                             <li class="li-1">Variables, Funciones Cast y Convert</li>
                             <li class="li-1">Estructuras de Control Condicionales e Iterativas o repetitivas</li>
                             <li class="li-1">Procedimientos Almacenados</li>
@@ -110,7 +109,7 @@
                     </ul>
 
                     <li class="li-1">Una vez registrado el usuario este podrá acceder a los siguientes procesos:
-                        <ul class="ul-li-1">
+                        <ul class="ul-li">
                           <li class="li-1">Consulta de Vuelos</li>
                           <li class="li-1">Por Horarios de Vuelos</li>
                           <li class="li-1">Por Tarifas de Vuelos</li>
@@ -218,12 +217,7 @@
                                 TarifaID INT NOT NULL,
                                 CONSTRAINT PK_VueloID PRIMARY KEY (VueloID),
                                 CONSTRAINT FK_VueloAsientoID FOREIGN KEY (AsientoID) REFERENCES cdmx.Asiento(AsientoID),
-                                CONSTRAINT FK_VueloAeropuertoID FOREIGN KEY (AeropuertoID) REFERENCES cdmx.Aeropuerto(AeropuertoID),
-                                CONSTRAINT FK_VueloReservaID FOREIGN KEY (ReservaID) REFERENCES cdmx.Reserva(ReservaID),
-                                CONSTRAINT FK_VueloAvionID FOREIGN KEY (AvionID) REFERENCES cdmx.Avion(AvionID),
-                                CONSTRAINT FK_VueloTarifaID FOREIGN KEY (TarifaID) REFERENCES cdmx.Tarifa(TarifaID)
-                            ) ON [PRIMARY];
-
+                                CONSTRAINT p-texto-2
                             -- TABLA PAGO
                             CREATE TABLE cdmx.Pago(
                                 PagoID INT NOT NULL,
@@ -236,24 +230,33 @@
                                 Impuesto DECIMAL (5,2) NOT NULL,
                                 CONSTRAINT PK_PagoID PRIMARY KEY (PagoID),
                                 CONSTRAINT FK_ReservaID FOREIGN KEY (ReservaID) REFERENCES cdmx.Reserva(ReservaID),
-                                CONSTRAINT FK_PasajeroID FOREIGN KEY (PasajeroID) REFERENCES cdmx.Pasajero(PasajeroID),
+                                CONSTRAINT FK_PasajeroID F<ul>
+                                    <li><strong>CHAR(n)</strong> → Cadena de texto de loOREIGN KEY (PasajeroID) REFERENCES cdmx.Pasajero(PasajeroID),
                                 CONSTRAINT CHK_Pago_Fecha CHECK (Fecha <= GETDATE())
                             ) ON [PRIMARY];
                     </pre>
                 </article>
+            </section>
+
+            <section class="section-1">
 
                 <article class="article-1">
                     <h3 class="h3-titulo">Explicacion del codigo:</h3>
+                </article>
 
-                    <p><strong>1. Tabla: Pais</strong></p>
-                    <ul class="ul-li-1">
+                <article class="article-1">
+
+                    <p class="p-texto-1"><strong>1. Tabla: Pais</strong></p>
+                    <ul class="ul-li">
                         <li class="li-1"><strong>PaisID:</strong> Identificador único del país.</li>
                         <li class="li-1"><strong>Nombre:</strong> Nombre del país (único, no se repite).</li>
                         <li class="li-1">Se establece <strong>PK_PaisID</strong> como clave primaria.</li>
                     </ul>
+                </article>
 
-                    <p><strong>2. Tabla: Pasajero</strong></p>
-                    <ul class="ul-li-1">
+                <article class="article-1">
+                    <p class="p-texto-1"><strong>2. Tabla: Pasajero</strong></p>
+                    <ul class="ul-li">
                         <li class="li-1"><strong>PasajeroID:</strong> Identificador único del pasajero.</li>
                         <li class="li-1"><strong>Nombre, Apaterno, Amaterno:</strong> Datos personales del pasajero.</li>
                         <li class="li-1"><strong>Tipo_documento y Num_documento:</strong> Información del documento de identidad.</li>
@@ -264,26 +267,32 @@
                         <li class="li-1">Se establece <strong>PK_Pasajero</strong> como clave primaria.</li>
                         <li class="li-1">Se crea la <strong>FK_PasajeroPaisID</strong> que referencia a <strong>PaisID</strong>.</li>
                     </ul>
+                </article>
 
-                    <p><strong>3. Tabla: Aeropuerto</strong></p>
-                    <ul class="ul-li-1">
+                <article class="article-1">
+                    <p class="p-texto-1"><strong>3. Tabla: Aeropuerto</strong></p>
+                    <ul class="ul-li">
                         <li class="li-1"><strong>AeropuertoID:</strong> Identificador único del aeropuerto.</li>
                         <li class="li-1"><strong>Nombre:</strong> Nombre del aeropuerto.</li>
                         <li class="li-1"><strong>PaisID:</strong> Relación con la tabla <strong>Pais</strong>.</li>
                         <li class="li-1">Se establece <strong>PK_AeropuertoID</strong> como clave primaria.</li>
                         <li class="li-1">Se crea la <strong>FK_AeropuertoPaisID</strong> que referencia a <strong>PaisID</strong>.</li>
                     </ul>
+                </article>
 
-                    <p><strong>4. Tabla: Aerolinea</strong></p>
-                    <ul class="ul-li-1">
+                <article class="article-1">
+                    <p class="p-texto-1"><strong>4. Tabla: Aerolinea</strong></p>
+                    <ul class="ul-li">
                         <li class="li-1"><strong>AerolineaID:</strong> Identificador único de la aerolínea.</li>
                         <li class="li-1"><strong>Ruc:</strong> Registro único de contribuyente (único).</li>
                         <li class="li-1"><strong>Nombre:</strong> Nombre de la aerolínea (único).</li>
                         <li class="li-1">Se establece <strong>PK_AerolineaID</strong> como clave primaria.</li>
                     </ul>
+                </article>
 
-                    <p><strong>5. Tabla: Avion</strong></p>
-                    <ul class="ul-li-1">
+                <article class="article-1">
+                    <p class="p-texto-1"><strong>5. Tabla: Avion</strong></p>
+                    <ul class="ul-li">
                         <li class="li-1"><strong>AvionID:</strong> Identificador único del avión.</li>
                         <li class="li-1"><strong>AerolineaID:</strong> Relación con la tabla <strong>Aerolinea</strong>.</li>
                         <li class="li-1"><strong>Fabricante, Tipo:</strong> Información del avión.</li>
@@ -291,33 +300,41 @@
                         <li class="li-1">Se establece <strong>PK_AvionID</strong> como clave primaria.</li>
                         <li class="li-1">Se crea la <strong>FK_AvionAerolinea</strong> que referencia a <strong>AerolineaID</strong>.</li>
                     </ul>
+                </article>
 
-                    <p><strong>6. Tabla: Asiento</strong></p>
-                    <ul class="ul-li-1">
+                <article class="article-1">
+                    <p class="p-texto-1"><strong>6. Tabla: Asiento</strong></p>
+                    <ul class="ul-li">
                         <li class="li-1"><strong>AsientoID:</strong> Identificador único del asiento.</li>
                         <li class="li-1"><strong>Letra y Fila:</strong> Ubicación del asiento dentro del avión.</li>
                         <li class="li-1">Se establece <strong>PK_AsientoID</strong> como clave primaria.</li>
                     </ul>
+                </article>
 
-                    <p><strong>7. Tabla: Tarifa</strong></p>
+                <article class="article-1">
+                    <p class="p-texto-1"><strong>7. Tabla: Tarifa</strong></p>
                     <ul class="ul-li-1">
                         <li class="li-1"><strong>TarifaID:</strong> Identificador único de la tarifa.</li>
                         <li class="li-1"><strong>Clase:</strong> Tipo de clase del boleto (Económica, Business, etc.).</li>
                         <li class="li-1"><strong>Precio e Impuesto:</strong> Costo del boleto y su impuesto.</li>
                         <li class="li-1">Se establece <strong>PK_Tarifa</strong> como clave primaria.</li>
                     </ul>
+                </article>
 
-                    <p><strong>8. Tabla: Reserva</strong></p>
-                    <ul class="ul-li-1">
+                <article class="article-1">
+                    <p class="p-texto-1"><strong>8. Tabla: Reserva</strong></p>
+                    <ul class="ul-li">
                         <li class="li-1"><strong>ReservaID:</strong> Identificador único de la reserva.</li>
                         <li class="li-1"><strong>Costo:</strong> Precio total de la reserva.</li>
                         <li class="li-1"><strong>Fecha:</strong> Fecha en que se hizo la reserva (por defecto, la fecha actual).</li>
                         <li class="li-1"><strong>Observacion:</strong> Información adicional.</li>
                         <li class="li-1">Se establece <strong>PK_ReservaID</strong> como clave primaria.</li>
                     </ul>
+                </article>
 
-                    <p><strong>9. Tabla: Vuelo</strong></p>
-                    <ul class="ul-li-1">
+                <article class="article-1">
+                    <p class="p-texto-1"><strong>9. Tabla: Vuelo</strong></p>
+                    <ul class="ul-li">
                         <li class="li-1"><strong>VueloID:</strong> Identificador único del vuelo (autoincrementable).</li>
                         <li class="li-1"><strong>AsientoID, AeropuertoID, ReservaID, AvionID, TarifaID:</strong> Relaciona el vuelo con otras tablas.</li>
                         <li class="li-1">Se establece <strong>PK_VueloID</strong> como clave primaria.</li>
@@ -330,9 +347,11 @@
                             <li class="li-1"><strong>FK_VueloTarifaID</strong> → TarifaID</li>
                         </ul>
                     </ul>
+                </article>
 
-                    <p><strong>10. Tabla: Pago</strong></p>
-                    <ul class="ul-li-1">
+                <article class="article-1">
+                    <p class="p-texto-1"><strong>10. Tabla: Pago</strong></p>
+                    <ul class="ul-li">
                         <li class="li-1"><strong>PagoID:</strong> Identificador único del pago.</li>
                         <li class="li-1"><strong>ReservaID:</strong> Relación con la tabla <strong>Reserva</strong>.</li>
                         <li class="li-1"><strong>PasajeroID:</strong> Relación con la tabla <strong>Pasajero</strong>.</li>
@@ -342,23 +361,68 @@
                         <li class="li-1"><strong>Impuesto:</strong> Valor del impuesto.</li>
                         <li class="li-1">Se establece <strong>PK_PagoID</strong> como clave primaria.</li>
                         <li class="li-1">Se crean las siguientes claves foráneas:</li>
-                        <ul class="ul-li-1">
+                        <ul class="ul-li">
                             <li class="li-1"><strong>FK_ReservaID</strong> → ReservaID</li>
                             <li class="li-1"><strong>FK_PasajeroID</strong> → PasajeroID</li>
                         </ul>
                         <li class="li-1">Se agrega la restricción <strong>CHK_Pago_Fecha</strong> para asegurar que la fecha del pago no sea mayor a la actual.</li>
                     </ul>
-
-                </article>  
-                
+                </article>
             </section>
 
-            <article class="article-1">
-                <!-- Botón para regresar a la página principal -->
-                <button class="back-button" onclick="goBack()">Volver</button> 
-            </article>
-        </section>
+            <section class="section-1">
+                <article class="article-1">
+                    <!-- EXPLICACIÓN DE TIPOS DE DATOS UTILIZADOS -->
+                    <ul class="ul-li">
+                        <li class="li-1"><strong>CHAR(n)</strong> → Cadena de texto de longitud fija de <code>n</code> caracteres.</li>
+                        <ul class="ul-li">
+                            <li class="li-1">Ejemplo: <code>CHAR(4)</code> almacena exactamente 4 caracteres, útil para códigos de países.</li>
+                        </ul>
 
+                        <li class="li-1"><strong>NVARCHAR(n)</strong> → Cadena de texto de longitud variable de hasta <code>n</code> caracteres.</li>
+                        <ul class="ul-li">
+                            <li class="li-1">Ejemplo: <code>NVARCHAR(30)</code> permite almacenar hasta 30 caracteres, ideal para nombres.</li>
+                        </ul>
+
+                        <li class="li-1"><strong>INT</strong> → Número entero sin decimales.</li>
+                        <ul class="ul-li">
+                            <li class="li-1">Ejemplo: <code>INT</code> para identificadores únicos como <code>AerolineaID</code>.</li>
+                        </ul>
+
+                        <li class="li-1"><strong>INT IDENTITY(1,1)</strong> → Número entero autoincremental.</li>
+                        <ul class="ul-li">
+                            <li class="li-1">Ejemplo: <code>VueloID INT IDENTITY(1,1)</code> genera valores secuenciales desde 1.</li>
+                        </ul>
+
+                        <li><strong>MONEY</strong> → Representa valores monetarios con hasta 4 decimales.</li>
+                        <ul class="ul-li">
+                            <li class="li-1">Ejemplo: <code>Precio MONEY</code> para almacenar costos de boletos.</li>
+                        </ul>
+
+                        <li class="li-1"><strong>DECIMAL(p,s)</strong> → Número decimal con precisión <code>p</code> y <code>s</code> decimales.</li>
+                        <ul class="ul-li">
+                            <li class="li-1">Ejemplo: <code>DECIMAL(5,2)</code> almacena números hasta 999.99, útil para impuestos.</li>
+                        </ul>
+
+                        <li class="li-1"><strong>DATE</strong> → Almacena una fecha en formato <code>YYYY-MM-DD</code>.</li>
+                        <ul class="ul-li">
+                            <li class="li-1">Ejemplo: <code>Fecha_nacimiento DATE</code> para registrar cumpleaños.</li>
+                        </ul>
+
+                        <li class="li-1"><strong>DEFAULT GETDATE()</strong> → Asigna automáticamente la fecha y hora actual.</li>
+                        <ul class="ul-li">
+                            <li class="li-1">Ejemplo: <code>Fecha DATE DEFAULT GETDATE()</code> registra la fecha de una reserva al insertarse.</li>
+                        </ul>
+                    </ul>
+                </article>  
+            </section>
+        
+            <section class="section-button">           
+                <article class="article-button">
+                    <!-- Botón para regresar a la página principal -->
+                    <button class="back-button" onclick="goBack()">Volver</button> 
+                </article>
+            </section>
     </main>
 
     <footer class="footer-logo">
