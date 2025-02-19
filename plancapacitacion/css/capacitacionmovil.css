@@ -107,6 +107,14 @@ main {
   /*background-color: rgb(218, 206, 32);/*VISUALIZADOR*/
 }
 
+.p-texto-1 {
+  width: 100%;/**/
+
+  text-align: start;
+  font-size: 19px;/**/
+  font-family: 'Montserrat-VariableFont_wght';/**/
+  /*background-color: #ff0000;/*Visualizador*/
+}
 
 /* Inicia ul-li-1*/
 .ul-li-1 {
