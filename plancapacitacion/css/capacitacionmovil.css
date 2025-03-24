@@ -234,7 +234,7 @@ main {
   width: 97%;
   max-width: 420px;/*no borrar*/
   padding: 2px;/**/
-  display: none; /* Oculta la lista por defecto*/
+  /*display: none;*/ /* Oculta la lista por defecto*/
   list-style: none;/**/
   border-radius: 10px;
   background-color: #cbcdcb;
@@ -260,7 +260,7 @@ main {
 }
 
 .li-2 .a-li-2 { /*No borrar la letra (a)*/
-  display: block;/**/
+  /*display: block;/**/
   text-decoration: none;/**/
   /*background-color: cadetblue;/**/
 }
