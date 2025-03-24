@@ -12,121 +12,46 @@
 
 }
 
-@media screen and (min-width: 550px) {
-  /*INICIA SECCION-1 Y ARTICULO-1*/ 
-  .section-1 {
-    /*width: 100%;/*PredeterminadoEnMovil*/
-   /* max-width: 900px;/*PredeterminadoEnMovil*/
-    /*margin-top: 60px;/*PredeterminadoEnMovil*/
-    /*background-color: cadetblue;/*Visualizador*/
-  }
-  
-  
-  .article-1 {
-    /*width: 100%;/*PredeterminadoEnMovil*/
-    /*max-width: 500px;/*PredeterminadoEnMovil*/
-    /*background-color: rgba(32, 165, 218, 0.285);/*Visualizador*/
-  }
-
-
-  /*INICIA SECCION 2 Y ARTICULO 2*/
-.section-2 {
-  /*width: 100%;/*PredeterminadoEnMovil*/
-  /*max-width: 900px;/*PredeterminadoEnMovil*/
-  /*background-color: cadetblue;/*Visualizador*/
-}
-
-
-.article-2 {
-  /*width: 100%;/*PredeterminadoEnMovil*/
-  /*max-width: 600px;/*PredeterminadoEnMovil*/
-  /*background-color: rgb(206, 218, 32);/*Visualizador*/
-}
-   }
-
-/*Finaliza:(min-width: 431px)*/
-
-
-
-/*
-   ---- ----- ----- ------- -- -- -- --
-*/
-@media screen and (min-width: 600px) {
-
- 
-
-
-}
-
 
 @media screen and (min-width: 1100px) {
  
 /* --- --- INICIAN LOS CIRCULOS PRINCIPALES
 */
 
-.section-1 {
-  /*display: flex;/**/
-  /*flex-direction: column;/**/
-  /*align-items: center;/**/
 
-  /*width: 97%;/**/
-  /*max-width: 900px;/*no borrar*/
-  /*margin-top: 40px;/**/
-  /*background-color: rgb(232, 17, 185);/*Visualizador*/
+.section-titulo {
+  
+  /*background-color: cadetblue;/*Visualizador*/
+}
+
+.article-titulo {
+  /*background-color: rgba(218, 32, 32, 0.448);/*VISUALIZADOR*/
+}
+
+
+/*
+*/
+
+
+.section-1 {
+  
+  /*background-color: rgba(160, 95, 134, 0.652);/*Visualizador*/
 }
 
 
 .article-1 {
-  /*display: flex;/**/
-  /*flex-direction: column;/**/
-  /*align-items: center;/**/
- 
-  /*width: 100%;/**/
-  /*max-width: 900px;/*no borrar*/
-  /*background-color: rgb(218, 206, 32);/*VISUALIZADOR*/
-}
-
-
-
-
-.article-titulo-2 {
   width: 100%;/**/
-  max-width: 900px;/*no borrar*/
-  /*background-color: aqua;/**/
+  max-width: 999px;/**/
+  margin-top: 26px;
+  margin-left: 50px;
+  /*background-color: rgb(32, 106, 218);/*VISUALIZADOR*/
 }
-
-
-.ul-li-2 {
-  width: 97%;
-  max-width: 900px;/*no borrar*/
-}
-
-
-.li-2 {/*LI TEXTO PRINCIPAL*/
-  text-align: start;/**/
-}
-
-
-
-
-.p-titulo-2 {
-  
-
-  text-align: start;
-}
-
-.li-1 {
-  text-align: start;
-    
-}
-
-
 
 /*  
 */
 
-/* ---- INICIA CONTENIDO FOOTER
-*/  
+  /* ---- INICIA CONTENIDO FOOTER
+  */  
 .section-1-footer {
   display: flex;/**/
   flex-direction: row;/**/
