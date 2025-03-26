@@ -59,95 +59,162 @@
            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </article>
 
-       <section class="section-1">
-          <article class="article-1">
-            <h3 class="h3-titulo"><strong>Introducción:</strong></h3>
-            <p class="p-texto">
-              En el video anterior vimos la introducción al curso de Fortinet, se dio una breve explicación de la parte física del 
-              FortiGate 60E, es decir, se describió el panel frontal que está conformado de un conjunto de leds indicadores, así mismo 
-              se describió la sección de conexiones ethernet.</p>
-          </article>
+      <section class="section-1">
 
-          <article class="article-1">
-            <p class="p-texto">
-              Este curso, “Fortinet de Principiante a Experto” esta centrado en la administración del sistema operativo FortiOS, Version 6.2, 
-              el cual proporciona un conjunto de herramientas avanzadas para la configuración y seguridad de redes empresariales.</p>
-          </article>
+        <article class="article-1">
+          <p class="p-texto">
+            En el video anterior vimos la introducción al curso de Fortinet, se dio una breve explicación de la parte física del 
+            FortiGate 60E, es decir, se describió el panel frontal que está conformado de un conjunto de leds indicadores, así mismo 
+            se describió la sección de conexiones ethernet.</p>
+        </article>
+
+        <article class="article-1">
+          <p class="p-texto">
+            Antes de comenzar con la tercera seccion del curso, Titulada: Primera Parte, Infraestructura Fortigate.</p>
+        </article>
+
+        <article class="article-1">
+          <h3 class="h3-titulo"><strong>Equipos y Configuración:</strong></h3>
+          <p class="p-texto">Para este curso vamos a utilizar un Firewall un dispositivo FortiGate 60E lanzado en 2016
+             como parte de la serie FortiGate E.</p>
+          <p class="p-texto">
+            Este dispositivo cuenta con un sistema operativo FortiOS v6.2. Cuenta con 7 puertos ethernet, un puerto DMZ "Zona Desmilitarizada"
+            (el cual nos permite que un servidor pueda ser accesible desde internet).</p>
+        </article>
+
+        <article class="article-1">
+          <p class="p-texto">
+            Me gustaria hablar de los modos de acceso y de configuracion con los que cuenta FortiGate, ya que el video anterior, y este segundo video no se
+            encuentran en el curso, pero para mi parecer son importantes ambas introducciones asi que se crearon. </p>
+        </article>
 
 
-          <article class="article-1">
-            <h3 class="h3-titulo"><strong>Equipos y Configuración:</strong></h3>
-            <p class="p-texto">Para este curso vamos a utilizar un Firewall un dispositivo FortiGate 60E lanzado en 2016 como parte de la serie FortiGate E.</p>
-            <p class="p-texto">
-              Este dispositivo cuenta con un sistema operativo FortiOS v6.2. Cuenta con 7 puertos ethernet, un puerto DMZ "Zona Desmilitarizada"
-               (el cual nos permite que un servidor pueda ser accesible desde internet).</p>
-          </article>
+        <h3>📌 Modos de Administración en FortiGate</h3>
+    
+    <h4>1️⃣ Modos de acceso a FortiGate</h4>
+    <table border="1">
+        <tr>
+            <th>Método</th>
+            <th>Descripción</th>
+            <th>Comando para acceder</th>
+        </tr>
+        <tr>
+            <td>Interfaz Web (GUI)</td>
+            <td>Acceso gráfico vía navegador (https://IP_FortiGate)</td>
+            <td>No aplica</td>
+        </tr>
+        <tr>
+            <td>CLI vía SSH o Consola</td>
+            <td>Administración mediante comandos</td>
+            <td><code>ssh admin@IP_FortiGate</code> o acceso por consola</td>
+        </tr>
+        <tr>
+            <td>Acceso por API</td>
+            <td>Para automatización y gestión remota</td>
+            <td>Requiere configuración previa</td>
+        </tr>
+    </table>
+    
+    <h4>2️⃣ Modos de Configuración en CLI</h4>
+    <table border="1">
+        <tr>
+            <th>Modo</th>
+            <th>Descripción</th>
+            <th>Prompt en CLI</th>
+        </tr>
+        <tr>
+            <td>Modo Usuario</td>
+            <td>Acceso básico con comandos de monitoreo (get, execute)</td>
+            <td>FortiGate-VM64 $</td>
+        </tr>
+        <tr>
+            <td>Modo Privilegiado</td>
+            <td>Permite entrar a configuración con config</td>
+            <td>FortiGate-VM64 #</td>
+        </tr>
+        <tr>
+            <td>Modo Configuración</td>
+            <td>Permite cambiar ajustes dentro de secciones específicas (config system interface)</td>
+            <td>FortiGate-VM64 (interface) #</td>
+        </tr>
+    </table>
+    
+    <h4>📌 Configuración de Interfaces de Red</h4>
+    <pre>
+config system interface
+edit port1
+set ip 192.168.1.99 255.255.255.0
+set allowaccess ping https ssh
+next
+end
+    </pre>
+    
+    <h4>📌 Configuración de Políticas de Firewall</h4>
+    <pre>
+config firewall policy
+edit 1
+set srcintf "port1"
+set dstintf "port2"
+set srcaddr "all"
+set dstaddr "all"
+set action accept
+set schedule "always"
+set service "ALL"
+set logtraffic all
+next
+end
+    </pre>
+    
+    <h4>📌 Configuración de Rutas Estáticas</h4>
+    <pre>
+config router static
+edit 1
+set dst 0.0.0.0 0.0.0.0
+set gateway 192.168.1.1
+set device "port1"
+next
+end
+    </pre>
+    
+    <h4>📌Configuración de Usuarios y Autenticación</h4>
+    <pre>
+config user local
+edit "usuario1"
+set type password
+set password "contraseñaSegura123"
+next
+end
+    </pre>
+    
+    <h4>📌 Otras configuraciones avanzadas</h4>
+    <table border="1">
+        <tr>
+            <th>Modo de Administración</th>
+            <th>Comando</th>
+        </tr>
+        <tr>
+            <td>Configurar NAT</td>
+            <td>config firewall ippool</td>
+        </tr>
+        <tr>
+            <td>Configurar VPN</td>
+            <td>config vpn ipsec phase1-interface</td>
+        </tr>
+        <tr>
+            <td>Configurar DNS</td>
+            <td>config system dns</td>
+        </tr>
+        <tr>
+            <td>Configurar logs y registros</td>
+            <td>config log setting</td>
+        </tr>
+        <tr>
+            <td>Configurar alta disponibilidad (HA)</td>
+            <td>config system ha</td>
+        </tr>
+    </table>
 
-          <article class="article-1">
-            <ul class="ul-li">
-              <li class="li-1"><strong>Contamos con dos puertos “WAN”:</strong>
-                  <ul class="ul-li">
-                      <li class="li-1">WAN1 para conexión del router principal a Internet (ISP1).</li>
-                      <li class="li-1">WAN2 para la conexión secundaria a internet (ISP2) para redundancia o balanceo de carga.</li>
-                  </ul>
-              </li>
-              <li class="li-1">Puerto de administración Console que nos da Acceso al CLI (RS-232, RJ45).</li>
-              <li class="li-1">Puerto USB que tiene diversas funciones desde la conexión de un modem para respaldo de internet hasta el 
-                                almacenamiento externo y carga de actualizaciones de firmware.</li>
-              <li class="li-1">Un solo puerto de alimentación de energía eléctrica.</li>
-            </ul>
-          </article>
-
-          <article class="article-1">
-            <p class="p-texto">Esta parte del Fortigate que acabamos de describir hace referencia al panel trasero o a la sección donde se 
-                               encuentran los puertos tipo RJ45, USB mencionados.</p>
-            <p class="p-texto">De igual forma, contamos con un panel frontal que esta compuesto por una serie de leds indicadores que nos informan
-                               sobre el estado de cada uno de los componentes de nuestro fortigate.</p>
-          
-            <h3 class="h3-titulo"><strong>Indicadores LED:</strong></h3>
-            <ul class="ul-li">
-                <li class="li-1">7 leds que hacen referencia a cada uno de los puertos ethernet.</li>
-                <li class="li-1">Leds asignados para WAN1, WAN2, DMZ, indicador de velocidad, encendido, status y HA.</li>
-            </ul>
-          </article>
-
-          <article class="article-1">
-            <p class="p-texto">Bien, lo anterior hace referencia a la descripción de la parte física del Fortigate.</p>
-          
-            <h3 class="h3-titulo"><strong>Implementación en el Curso:</strong></h3>
-            <p class="p-texto">En este curso no vamos a utilizar los equipos físicos Fortigate 60E, nos vamos a limitar a lo que tenemos, es decir, 
-              contamos con amplia información en Internet y en el sitio web oficial de Fortinet en relación a dicho modelo con el que vamos a reforzar
-              nuestro conocimiento.</p>
-            <p class="p-texto">Este curso se implementa mediante un laboratorio virtual que corre mediante GNS3 y otros complementos de software, 
-              instaladores que conforman el laboratorio de este curso. Este laboratorio esta conformado por dos dispositivos Fortigate virtuales y dos
-              equipos de cómputo con sistema operativo Windows Server 2012, uno de ellos como equipo Domain Controler Principal.</p>
-          </article>  
-
-          <article class="article-1">
-            <h3 class="h3-titulo"><strong>Protección de Fortinet:</strong></h3>
-            <p class="p-texto">Fortinet protege contra una amplia gama de ataques cibernéticos, para redes y dispositivos.</p>
-          </article>
-
-          <article class="article-1">
-            <h3 class="h3-titulo"><strong>Ataques que Fortinet ayuda a mitigar:</strong></h3>
-            <ul class="ul-li">
-              <li class="li-1"><strong>Ataques de Fuerza Bruta:</strong> Fortinet ayuda a proteger contra ataques de fuerza bruta, donde los atacantes
-                 intentan adivinar contraseñas o credenciales.</li>
-              <li class="li-1"><strong>Ataques DDoS:</strong> Fortinet ofrece soluciones para proteger contra ataques de denegación de servicio 
-                distribuido (DDoS), donde los atacantes inundan un servidor con tráfico para hacerlo inaccesible.</li>
-              <li class="li-1"><strong>Ataques Phishing:</strong> Fortinet ayuda a proteger contra ataques de phishing, donde los atacantes intentan
-                 engañar a los usuarios para que revelen información confidencial.</li>
-              <li class="li-1"><strong>Ransomware:</strong> Fortinet proporciona soluciones para proteger contra ataques de ransomware, donde los 
-                atacantes cifran los datos y exigen un rescate para su liberación.</li>
-              <li class="li-1"><strong>Malware:</strong> Fortinet ayuda a detectar y bloquear malware, que es software malicioso diseñado para dañar o 
-                tomar control de un sistema.</li>
-              <li class="li-1"><strong>Ataques MITM (Man-in-the-Middle):</strong> Fortinet ayuda a proteger contra ataques MITM, donde los atacantes se 
-                interponen entre dos usuarios para interceptar o modificar la comunicación.</li>
-              <li class="li-1"><strong>Ataques de Inyección SQL:</strong> Fortinet ayuda a proteger contra ataques de inyección SQL, donde los atacantes 
-                inyectan código malicioso en una base de datos.</li>
-          </ul>
-          </article>
-      </section> 
+  </section> 
        
       <section class="section-button">           
         <article class="article-button">
