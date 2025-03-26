@@ -74,24 +74,22 @@
         </article>
 
         <article class="article-1">
-          <h3 class="h3-titulo"><strong>Equipos y Configuración:</strong></h3>
-          <p class="p-texto">Para este curso vamos a utilizar un Firewall un dispositivo FortiGate 60E lanzado en 2016
-             como parte de la serie FortiGate E.</p>
-          <p class="p-texto">
-            Este dispositivo cuenta con un sistema operativo FortiOS v6.2. Cuenta con 7 puertos ethernet, un puerto DMZ "Zona Desmilitarizada"
-            (el cual nos permite que un servidor pueda ser accesible desde internet).</p>
+            <p class="p-texto">
+                Me gustaria hablar de los modos de acceso y de configuracion con los que cuenta FortiGate, ya que el video anterior, y este
+                segundo video no se encuentran en el curso, pero para mi parecer son importantes ambas introducciones asi que se crearón. </p>
         </article>
 
-        <article class="article-1">
+
+           <article class="article-1">
           <p class="p-texto">
-            Me gustaria hablar de los modos de acceso y de configuracion con los que cuenta FortiGate, ya que el video anterior, y este segundo video no se
-            encuentran en el curso, pero para mi parecer son importantes ambas introducciones asi que se crearon. </p>
+            Antes de entrar en los modos de configuracion, hay tres formas principales de acceder a FortiGate:</p>
         </article>
 
 
         <h3>📌 Modos de Administración en FortiGate</h3>
     
     <h4>1️⃣ Modos de acceso a FortiGate</h4>
+    <p class="p-texto">Antes de entrar en los modos de configuracion, hay tres formas principales de acceder a FortiGate:</p>
     <table border="1">
         <tr>
             <th>Método</th>
@@ -115,7 +113,9 @@
         </tr>
     </table>
     
+    
     <h4>2️⃣ Modos de Configuración en CLI</h4>
+    <p class="p-texto">En la CLI de FortiGate, hay tres niveles principales:</p>
     <table border="1">
         <tr>
             <th>Modo</th>
@@ -138,7 +138,16 @@
             <td>FortiGate-VM64 (interface) #</td>
         </tr>
     </table>
+
+    <p class="p-texto">🔹 Para entrar al Modo Privilegiado desde el Modo Usuario: enable</p>
+    <p class="p-texto">?  # Muestra todos los comandos disponibles en el modo actual</p>
+
     
+
+
+    <h4>3️⃣ Modos de Administración en CLI (Configuración)</h4>
+    <p class="p-texto">FortiGate organiza su configuración en distintos modos de administración, cada uno con su propósito. Aquí están los más usados:</p>
+
     <h4>📌 Configuración de Interfaces de Red</h4>
     <pre>
 config system interface
@@ -148,8 +157,19 @@ set allowaccess ping https ssh
 next
 end
     </pre>
+
+    <ul>
+        <li><strong>config system interface</strong> → Entra al modo de configuración de interfaces.</li>
+        <li><strong>edit portX</strong> → Edita una interfaz específica (cambia portX por la interfaz que configures).</li>
+        <li><strong>set ip ...</strong> → Asigna una dirección IP.</li>
+        <li><strong>set allowaccess ...</strong> → Define accesos permitidos (ping, SSH, HTTP, etc.).</li>
+        <li><strong>next</strong> → Guarda y pasa a otra interfaz sin salir del modo.</li>
+        <li><strong>end</strong> → Guarda y sale del modo de configuración.</li>
+    </ul>
+
     
     <h4>📌 Configuración de Políticas de Firewall</h4>
+    <p class="p-texto">📌 Para configurar reglas de firewall (permitir/tráfico entre redes):</p>
     <pre>
 config firewall policy
 edit 1
@@ -164,8 +184,20 @@ set logtraffic all
 next
 end
     </pre>
+
+    <ul>
+        <li><strong>config firewall policy</strong> → Configura políticas de tráfico.</li>
+        <li><strong>edit X</strong> → Edita la política X (cambia el número según la política).</li>
+        <li><strong>set srcintf "portX"</strong> → Define interfaz de origen.</li>
+        <li><strong>set dstintf "portY"</strong> → Define interfaz de destino.</li>
+        <li><strong>set action accept</strong> → Acepta tráfico (o usa <code>deny</code> para bloquear).</li>
+        <li><strong>set logtraffic all</strong> → Habilita logs para auditoría.</li>
+    </ul>
+    
+
     
     <h4>📌 Configuración de Rutas Estáticas</h4>
+    <p class="p-texto">📌 Para configurar rutas estáticas (enrutamiento manual):</p>
     <pre>
 config router static
 edit 1
@@ -175,8 +207,18 @@ set device "port1"
 next
 end
     </pre>
+
+    <ul>
+        <li><strong>Comandos clave:</strong></li>
+        <li>config router static → Entra al modo de configuración de rutas.</li>
+        <li>set dst → Define la red de destino.</li>
+        <li>set gateway → Define la IP de la puerta de enlace.</li>
+        <li>set device → Especifica la interfaz de salida.</li>
+      </ul>
+      
     
     <h4>📌Configuración de Usuarios y Autenticación</h4>
+    <p class="p-texto">📌 Para agregar un usuario local en FortiGate:</p>
     <pre>
 config user local
 edit "usuario1"
@@ -185,6 +227,15 @@ set password "contraseñaSegura123"
 next
 end
     </pre>
+
+    <ul>
+        <li><strong>Comandos clave:</strong></li>
+        <li>config user local → Entra al modo de administración de usuarios.</li>
+        <li>edit "usuario1" → Crea o edita el usuario.</li>
+        <li>set type password → Define el tipo de autenticación.</li>
+        <li>set password "..." → Establece la contraseña.</li>
+      </ul>
+      
     
     <h4>📌 Otras configuraciones avanzadas</h4>
     <table border="1">
@@ -213,6 +264,46 @@ end
             <td>config system ha</td>
         </tr>
     </table>
+
+    <p></p>
+    <p></p>
+    
+    <table border="1">
+        <thead>
+          <tr>
+            <th>📌 Resumen rápido</th>
+            <th>Modo de Administración</th>
+            <th>Comando de ingreso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Configurar interfaces</td>
+            <td>config system interface</td>
+          </tr>
+          <tr>
+            <td>Configurar firewall</td>
+            <td>config firewall policy</td>
+          </tr>
+          <tr>
+            <td>Configurar rutas</td>
+            <td>config router static</td>
+          </tr>
+          <tr>
+            <td>Configurar usuarios</td>
+            <td>config user local</td>
+          </tr>
+          <tr>
+            <td>Configurar DNS</td>
+            <td>config system dns</td>
+          </tr>
+          <tr>
+            <td>Configurar VPN</td>
+            <td>config vpn ipsec phase1-interface</td>
+          </tr>
+        </tbody>
+      </table>
+      
 
   </section> 
        
