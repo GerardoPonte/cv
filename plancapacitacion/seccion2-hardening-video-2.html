@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <title>Plan Capacitación</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css"/>
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto"/>
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+      <section class="section-titulo">
+        <article class="article-titulo">
+            <h1 class="h1-titulo-principal">Bienvenidos, Bienvenidos al video 2 de la Seccion 2: ¿Porqué Necesitamos 
+                Proteger Nuestro Hardware?</h1>
+        </article>
+      </section>
+
+       <section class="section-1">
+
+          <article class="article-1">
+            <h3 class="h3-titulo">¡Bienvenidos, amigos, a esta nueva sección!</h3>
+                       
+            <p class="p-texto">En este apartado, aprenderemos qué medidas de seguridad podemos tomar para proteger
+                 nuestro sistema cuando una persona malintencionada tiene acceso físico al hardware.</p>
+
+            <h3 class="h3-titulo">Control de acceso físico</h3>                 
+
+            <p class="p-texto">Lo primero que debemos considerar es restringir el acceso a nuestras instalaciones. 
+                Esto se puede lograr mediante credenciales, contraseñas, autenticación biométrica, entre otras medidas.
+                Sin embargo, en algunos entornos esto puede no ser suficiente, especialmente si trabajamos en oficinas
+                compartidas, espacios de alquiler o si nuestro equipo está en un área con acceso a terceros, como personal
+                de limpieza o compañeros de trabajo.</p>
+
+            <p class="p-texto">Si sospechamos que alguien podría acceder físicamente a nuestro equipo con intenciones
+                 maliciosas, es fundamental tomar precauciones adicionales.</p>
+
+                 <ul class="ul-li">
+                    <li class="li-1"><strong>Protección de la BIOS</strong></li>
+                    <ul class="ul-li">
+                      <li class="li-1">Uno de los primeros puntos críticos a proteger es la BIOS, ya que controla el arranque del sistema.  
+                        Por defecto, la BIOS permite iniciar el sistema desde distintas unidades, como discos duros, DVD o pendrives.  
+                        Un atacante podría modificar esta configuración para arrancar desde una unidad externa e instalar herramientas
+                        maliciosas, lo que comprometería el sistema.
+                      </li>
+                      <li class="li-1">Para prevenir esto, es imprescindible establecer una contraseña en la BIOS.  
+                        Sin embargo, debemos tener en cuenta que estas contraseñas suelen almacenarse en la pila de la placa base.  
+                        Esto significa que, si un atacante abre la torre del ordenador y extrae la pila, podrá restablecer la BIOS y
+                        modificar el orden de arranque.
+                      </li>
+                      <li class="li-1">Para dificultar esto, muchos equipos y servidores incluyen un anillo metálico en la carcasa donde se puede colocar
+                         un candado, impidiendo la apertura del hardware sin autorización.  
+                        Aunque no es una protección absoluta contra ataques sofisticados, evita accesos oportunistas y bloquea manipulaciones
+                         rápidas.
+                        </li>
+                    </ul>
+                  </ul>
+
+                  <ul class="ul-li">
+                    <li class="li-1"><strong>Protección de los discos duros</strong></li>
+                        <ul class="ul-li">
+                            <li class="li-1">Otro riesgo es el acceso físico a los discos duros.  
+                                Un atacante podría extraer el disco, clonar su contenido y devolverlo sin que lo notemos, o
+                                 simplemente robarlo por completo.
+                            </li>
+                            <li class="li-1">Para evitar esto, la mejor solución es el cifrado del disco, asegurando que, aunque el disco 
+                                sea robado, sus datos permanezcan inaccesibles sin la clave de descifrado.</li>
+                        </ul>
+                  </ul>
+                          
+                  <ul class="ul-li">
+                    <li class="li-1"><strong>Protección del gestor de arranque</strong></li>
+                    <li class="li-1">Una vez que aseguramos la BIOS y el disco, el siguiente punto crítico es el gestor 
+                        de arranque, específicamente GRUB 2, que es el estándar en la mayoría de distribuciones Linux.</li>
+                    <li class="li-1">Aunque un sistema pueda estar bien protegido con firewalls y reglas de seguridad, si
+                         un atacante accede al menú de arranque, puede modificar GRUB y obtener privilegios de root con facilidad.</li>
+                  </ul>
+                  
+                  <p class="p-texto">Por ello, en los siguientes vídeos aprenderemos cómo proteger el gestor de arranque para
+                     evitar accesos no autorizados y reforzar aún más la seguridad del sistema.</p>
+            </article>
+       </section>  
+
+        <section class="section-button">           
+          <article class="article-button">
+              <!-- Botón para regresar a la página principal -->
+              <button class="back-button" onclick="goBack()">Volver</button> 
+          </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux"/>
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Marzo</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+<script src="../slider/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+<!-- Inicialización de Slick Slider -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        // Inicializamos el slider
+        $('.slider').slick({
+            dots: true,  // Habilita los puntos de navegación
+            arrows: false,  // Habilita las flechas de navegación
+            autoplay: true,  // Activa la reproducción automática
+            autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+            fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+            speed: 550,  // Tiempo de la transición entre las imágenes
+        });
+    });
+</script>
+
+<script src="../plancapacitacion/js/soporteslider.js"></script>
+
+<!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+               window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+</html>

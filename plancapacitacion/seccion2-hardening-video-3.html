@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <title>Plan Capacitación</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css"/>
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto"/>
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+      <section class="section-titulo">
+        <article class="article-titulo">
+            <h1 class="h1-titulo-principal">Bienvenidos, Bienvenidos al Video 3 de la Sección dos: Proteger la configuración de
+                 la BIOS, Evitar cambios en la Secuencia de Arranque</h1>
+        </article>
+      </section>
+
+       <section class="section-1">
+
+          <article class="article-1">
+            <h3 class="h3-titulo">Protección de la BIOS y la secuencia de arranque</h3>
+                       
+            <p class="p-texto">Aquí tenemos un setup clásico de la BIOS, común antes de la era de las interfaces
+                 gráficas y las páginas web. Este tipo de configuración es habitual en la mayoría de los ordenadores
+                  y se maneja a través del teclado, utilizando teclas como Tabulador, cursor y Enter. En general, la
+                   BIOS no soporta ratón.</p>
+
+            <p class="p-texto">En la parte superior podemos ver que el fabricante de la BIOS es uno de los más grandes,
+                 como Award o Phoenix, lo cual es muy común. Aunque las interfaces gráficas actuales son más atractivas,
+                 el principio básico sigue siendo el mismo.</p>
+
+            <p class="p-texto">El objetivo aquí es proteger el acceso al setup de la BIOS para que nadie pueda modificar
+                 la secuencia de arranque. Esta secuencia determina qué dispositivo será el primero en intentar arrancar,
+                  ya sea el disco duro, un DVD o un USB. En mi caso, el primer dispositivo de arranque está configurado para
+                   el disco duro, donde reside el sistema operativo. </p>
+
+            <h3 class="h3-titulo">Riesgo de la secuencia de arranque sin protección</h3>     
+            <p class="p-texto">Lo peligroso es que si alguien tiene acceso físico al equipo, podría cambiar la secuencia de 
+                arranque y configurar una unidad externa (como un USB) como la primera opción. Si insertan un pendrive USB 
+                con herramientas maliciosas, podrían arrancar un sistema operativo diferente, lo que permitiría ejecutar 
+                herramientas de hackeo o robar información.</p>  
+
+            <p class="p-texto">Aunque nuestro sistema operativo y red puedan estar bien protegidos, si un atacante tiene 
+                acceso al hardware y puede modificar la secuencia de arranque, se abriría una importante vulnerabilidad. 
+                Por eso, debemos proteger este acceso.</p>
+
+            <h3 class="h3-titulo">Cómo proteger la BIOS</h3>
+            <p class="p-texto">Para hacerlo, salimos del menú de configuración con la tecla Escape y nos dirigimos a la 
+                opción Security. Allí veremos dos tipos de contraseñas:</p>
+
+            <ol class="ul-li">
+                <li class="li-1">Contraseña de usuario: Esta contraseña solicita un acceso al sistema operativo cada vez 
+                    que se enciende el ordenador. Puede ser útil, pero no es crítica, especialmente en entornos donde el 
+                    equipo no se reinicia frecuentemente, como en servidores.</li>
+                <li class="li-1">Contraseña de supervisor (supervisor password): Esta es la clave importante que protege
+                    el acceso al setup de la BIOS. Al configurar esta contraseña, evitamos que alguien pueda acceder a este
+                    menú y cambiar la secuencia de arranque sin autorización.</li>
+            </ol>
+
+            <h3 class="h3-titulo">Configurando la contraseña de supervisor</h3>
+            <ol class="ul-li">
+                <li class="li-1">Seleccionamos la opción Supervisor Password y asignamos una contraseña.</li>
+                <li class="li-1">Después de establecerla, cada vez que alguien intente acceder al setup de la BIOS, se solicitará
+                     esta contraseña antes de permitir modificaciones. </li>
+            </ol>
+            
+            
+            <p class="p-texto">Esto es esencial para mejorar la seguridad, especialmente en equipos críticos. Además, 
+                dependiendo de la BIOS, puedes configurar las opciones de acceso para que se solicite solo al entrar al setup
+                 o en ambos casos: acceso al setup y al sistema operativo</p>
+
+            <h3 class="h3-titulo">Protección adicional: Seguridad física</h3>
+            <p class="p-texto">Es importante tener en cuenta que parte de la configuración de la BIOS se guarda en una
+                pila de la placa base. Si alguien tiene acceso físico al equipo, podría extraer la pila y borrar la 
+                configuración, lo que permitiría reiniciar el proceso sin la contraseña de supervisor.</p>
+
+            <p class="p-texto">Por lo tanto, en entornos altamente críticos, es necesario asegurar físicamente la torre del 
+                ordenador, el armario del rack o cualquier otro acceso físico al hardware, añadiendo candados o mecanismos de 
+                seguridad adicionales para evitar manipulaciones.</p>
+
+            <h3 class="h3-titulo">Resumen</h3>
+            <p class="p-texto">En resumen, proteger el acceso al setup de la BIOS mediante una contraseña de supervisor es una
+                 medida esencial para evitar que se cambie la secuencia de arranque y se ejecute software malicioso. Además, 
+                 también debemos considerar proteger físicamente el acceso al hardware para evitar que la configuración sea 
+                 manipulada. Con estas medidas, conseguimos una defensa básica pero efectiva contra accesos no autorizados.</p>    
+          </article>
+       </section>  
+
+        <section class="section-button">           
+          <article class="article-button">
+              <!-- Botón para regresar a la página principal -->
+              <button class="back-button" onclick="goBack()">Volver</button> 
+          </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux"/>
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Marzo</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+<script src="../slider/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+<!-- Inicialización de Slick Slider -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        // Inicializamos el slider
+        $('.slider').slick({
+            dots: true,  // Habilita los puntos de navegación
+            arrows: false,  // Habilita las flechas de navegación
+            autoplay: true,  // Activa la reproducción automática
+            autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+            fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+            speed: 550,  // Tiempo de la transición entre las imágenes
+        });
+    });
+</script>
+
+<script src="../plancapacitacion/js/soporteslider.js"></script>
+
+<!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+               window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+</html>

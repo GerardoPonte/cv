@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <title>Plan Capacitación</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/ModosAdminFortinetcss/modoadminfortinetmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/ModosAdminFortinetcss/modoadminfortinetdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css"/>
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto"/>
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+      <section class="section-titulo">
+        <article class="article-titulo">
+            <h1 class="h1-titulo-principal">Bienvenidos, Bienvenidos al Curso: Fortinet de Principiante a Experto</h1>
+        </article>
+      </section>
+
+      <section class="section-1">
+        <article class="article-1">
+          <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/g-xVavwJfXs?si=SwGUm5mVJZrzKMUA" title="YouTube video player"
+           frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </article>
+
+      <section class="section-1">
+
+        <article class="article-1">
+          <p class="p-texto">
+            En el video anterior vimos la introducción al curso de Fortinet, se dio una breve explicación de la parte física del 
+            FortiGate 60E, es decir, se describió el panel frontal que está conformado de un conjunto de leds indicadores, así mismo 
+            se describió la sección de conexiones ethernet.</p>
+        </article>
+
+        <article class="article-1">
+          <p class="p-texto">
+            Antes de comenzar con la tercera seccion del curso, Titulada: Primera Parte, Infraestructura Fortigate.</p>
+        </article>
+
+        <article class="article-1">
+            <p class="p-texto">
+                Me gustaria hablar de los modos de acceso y de configuracion con los que cuenta FortiGate, ya que el video anterior, y este
+                segundo video no se encuentran en el curso, pero para mi parecer son importantes ambas introducciones asi que se crearón. </p>
+        </article>
+
+
+           <article class="article-1">
+          <p class="p-texto">
+            Antes de entrar en los modos de configuracion, hay tres formas principales de acceder a FortiGate:</p>
+        </article>
+
+
+        <h3>📌 Modos de Administración en FortiGate</h3>
+    
+    <h4>1️⃣ Modos de acceso a FortiGate</h4>
+    <p class="p-texto">Antes de entrar en los modos de configuracion, hay tres formas principales de acceder a FortiGate:</p>
+    <table border="1">
+        <tr>
+            <th>Método</th>
+            <th>Descripción</th>
+            <th>Comando para acceder</th>
+        </tr>
+        <tr>
+            <td>Interfaz Web (GUI)</td>
+            <td>Acceso gráfico vía navegador (https://IP_FortiGate)</td>
+            <td>No aplica</td>
+        </tr>
+        <tr>
+            <td>CLI vía SSH o Consola</td>
+            <td>Administración mediante comandos</td>
+            <td><code>ssh admin@IP_FortiGate</code> o acceso por consola</td>
+        </tr>
+        <tr>
+            <td>Acceso por API</td>
+            <td>Para automatización y gestión remota</td>
+            <td>Requiere configuración previa</td>
+        </tr>
+    </table>
+    
+    
+    <h4>2️⃣ Modos de Configuración en CLI</h4>
+    <p class="p-texto">En la CLI de FortiGate, hay tres niveles principales:</p>
+    <table border="1">
+        <tr>
+            <th>Modo</th>
+            <th>Descripción</th>
+            <th>Prompt en CLI</th>
+        </tr>
+        <tr>
+            <td>Modo Usuario</td>
+            <td>Acceso básico con comandos de monitoreo (get, execute)</td>
+            <td>FortiGate-VM64 $</td>
+        </tr>
+        <tr>
+            <td>Modo Privilegiado</td>
+            <td>Permite entrar a configuración con config</td>
+            <td>FortiGate-VM64 #</td>
+        </tr>
+        <tr>
+            <td>Modo Configuración</td>
+            <td>Permite cambiar ajustes dentro de secciones específicas (config system interface)</td>
+            <td>FortiGate-VM64 (interface) #</td>
+        </tr>
+    </table>
+
+    <p class="p-texto">🔹 Para entrar al Modo Privilegiado desde el Modo Usuario: enable</p>
+    <p class="p-texto">?  # Muestra todos los comandos disponibles en el modo actual</p>
+
+    
+
+
+    <h4>3️⃣ Modos de Administración en CLI (Configuración)</h4>
+    <p class="p-texto">FortiGate organiza su configuración en distintos modos de administración, cada uno con su propósito. Aquí están los más usados:</p>
+
+    <h4>📌 Configuración de Interfaces de Red</h4>
+    <pre>
+config system interface
+edit port1
+set ip 192.168.1.99 255.255.255.0
+set allowaccess ping https ssh
+next
+end
+    </pre>
+
+    <ul>
+        <li><strong>config system interface</strong> → Entra al modo de configuración de interfaces.</li>
+        <li><strong>edit portX</strong> → Edita una interfaz específica (cambia portX por la interfaz que configures).</li>
+        <li><strong>set ip ...</strong> → Asigna una dirección IP.</li>
+        <li><strong>set allowaccess ...</strong> → Define accesos permitidos (ping, SSH, HTTP, etc.).</li>
+        <li><strong>next</strong> → Guarda y pasa a otra interfaz sin salir del modo.</li>
+        <li><strong>end</strong> → Guarda y sale del modo de configuración.</li>
+    </ul>
+
+    
+    <h4>📌 Configuración de Políticas de Firewall</h4>
+    <p class="p-texto">📌 Para configurar reglas de firewall (permitir/tráfico entre redes):</p>
+    <pre>
+config firewall policy
+edit 1
+set srcintf "port1"
+set dstintf "port2"
+set srcaddr "all"
+set dstaddr "all"
+set action accept
+set schedule "always"
+set service "ALL"
+set logtraffic all
+next
+end
+    </pre>
+
+    <ul>
+        <li><strong>config firewall policy</strong> → Configura políticas de tráfico.</li>
+        <li><strong>edit X</strong> → Edita la política X (cambia el número según la política).</li>
+        <li><strong>set srcintf "portX"</strong> → Define interfaz de origen.</li>
+        <li><strong>set dstintf "portY"</strong> → Define interfaz de destino.</li>
+        <li><strong>set action accept</strong> → Acepta tráfico (o usa <code>deny</code> para bloquear).</li>
+        <li><strong>set logtraffic all</strong> → Habilita logs para auditoría.</li>
+    </ul>
+    
+
+    
+    <h4>📌 Configuración de Rutas Estáticas</h4>
+    <p class="p-texto">📌 Para configurar rutas estáticas (enrutamiento manual):</p>
+    <pre>
+config router static
+edit 1
+set dst 0.0.0.0 0.0.0.0
+set gateway 192.168.1.1
+set device "port1"
+next
+end
+    </pre>
+
+    <ul>
+        <li><strong>Comandos clave:</strong></li>
+        <li>config router static → Entra al modo de configuración de rutas.</li>
+        <li>set dst → Define la red de destino.</li>
+        <li>set gateway → Define la IP de la puerta de enlace.</li>
+        <li>set device → Especifica la interfaz de salida.</li>
+      </ul>
+      
+    
+    <h4>📌Configuración de Usuarios y Autenticación</h4>
+    <p class="p-texto">📌 Para agregar un usuario local en FortiGate:</p>
+    <pre>
+config user local
+edit "usuario1"
+set type password
+set password "contraseñaSegura123"
+next
+end
+    </pre>
+
+    <ul>
+        <li><strong>Comandos clave:</strong></li>
+        <li>config user local → Entra al modo de administración de usuarios.</li>
+        <li>edit "usuario1" → Crea o edita el usuario.</li>
+        <li>set type password → Define el tipo de autenticación.</li>
+        <li>set password "..." → Establece la contraseña.</li>
+      </ul>
+      
+    
+    <h4>📌 Otras configuraciones avanzadas</h4>
+    <table border="1">
+        <tr>
+            <th>Modo de Administración</th>
+            <th>Comando</th>
+        </tr>
+        <tr>
+            <td>Configurar NAT</td>
+            <td>config firewall ippool</td>
+        </tr>
+        <tr>
+            <td>Configurar VPN</td>
+            <td>config vpn ipsec phase1-interface</td>
+        </tr>
+        <tr>
+            <td>Configurar DNS</td>
+            <td>config system dns</td>
+        </tr>
+        <tr>
+            <td>Configurar logs y registros</td>
+            <td>config log setting</td>
+        </tr>
+        <tr>
+            <td>Configurar alta disponibilidad (HA)</td>
+            <td>config system ha</td>
+        </tr>
+    </table>
+
+    <p></p>
+    <p></p>
+    
+    <table border="1">
+        <thead>
+          <tr>
+            <th>📌 Resumen rápido</th>
+            <th>Modo de Administración</th>
+            <th>Comando de ingreso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Configurar interfaces</td>
+            <td>config system interface</td>
+          </tr>
+          <tr>
+            <td>Configurar firewall</td>
+            <td>config firewall policy</td>
+          </tr>
+          <tr>
+            <td>Configurar rutas</td>
+            <td>config router static</td>
+          </tr>
+          <tr>
+            <td>Configurar usuarios</td>
+            <td>config user local</td>
+          </tr>
+          <tr>
+            <td>Configurar DNS</td>
+            <td>config system dns</td>
+          </tr>
+          <tr>
+            <td>Configurar VPN</td>
+            <td>config vpn ipsec phase1-interface</td>
+          </tr>
+        </tbody>
+      </table>
+      
+
+  </section> 
+       
+      <section class="section-button">           
+        <article class="article-button">
+          <!-- Botón para regresar a la página principal -->
+          <button class="back-button" onclick="goBack()">Volver</button> 
+        </article>
+      </section> 
+    
+    </main>
+   
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux"/>
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Marzo</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+<script src="../slider/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+<!-- Inicialización de Slick Slider -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        // Inicializamos el slider
+        $('.slider').slick({
+            dots: true,  // Habilita los puntos de navegación
+            arrows: false,  // Habilita las flechas de navegación
+            autoplay: true,  // Activa la reproducción automática
+            autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+            fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+            speed: 550,  // Tiempo de la transición entre las imágenes
+        });
+    });
+</script>
+
+<script src="../plancapacitacion/js/soporteslider.js"></script>
+
+<!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+               window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+</html>

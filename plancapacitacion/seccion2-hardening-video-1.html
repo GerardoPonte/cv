@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <title>Plan Capacitación</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css"/>
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto"/>
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+      <section class="section-titulo">
+        <article class="article-titulo">
+            <h1 class="h1-titulo-principal">Bienvenidos, Bienvenidos a la Presentacion de la Seccion dos: Seguridad en Acceso al Hardware</h1>
+        </article>
+      </section>
+
+       <section class="section-1">
+
+          <article class="article-1">
+            <h3 class="h3-titulo">Video 1: Introducción al Nivel Hardware de la Defensa en Profundidad</h3>
+            <h3 class="h3-titulo">¿Qué es la Defensa en Profundidad?</h3>
+            
+            <p class="p-texto">En este apartado, exploraremos el primer nivel de la defensa en profundidad, 
+              centrándonos en la protección del hardware de nuestros servidores ante accesos no autorizados.</p>
+
+            <p class="p-texto">🔹 Identificaremos los riesgos asociados a que personas malintencionadas accedan 
+              físicamente a nuestros equipos.</p>
+                        
+            <p class="p-texto">🔹 Aprenderemos qué elementos proteger para evitar modificaciones en la configuración 
+              del sistema y el robo de información sensible.</p>
+                        
+            <h3 class="h3-titulo">A lo largo de esta sección, veremos cómo:</h3>
+            <p class="p-texto">✅ Proteger la secuencia de arranque de la BIOS para impedir la carga de herramientas
+               maliciosas.</p>
+
+            <p class="p-texto">✅ Asegurar el gestor de arranque GRUB con contraseña, evitando accesos no autorizados 
+              con privilegios elevados.</p>
+
+            <p class="p-texto">✅ Cifrar discos, particiones y unidades externas, como pendrives USB, para resguardar
+               la información crítica.</p>
+
+               <p class="p-texto">Si no estabas al tanto de estos riesgos, esta sección te será imprescindible para 
+                fortalecer la seguridad de tus servidores. ¡Comencemos! 🚀</p>
+          </article>
+       </section>  
+
+        <section class="section-button">           
+          <article class="article-button">
+              <!-- Botón para regresar a la página principal -->
+              <button class="back-button" onclick="goBack()">Volver</button> 
+          </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux"/>
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Marzo</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+<script src="../slider/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+<!-- Inicialización de Slick Slider -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        // Inicializamos el slider
+        $('.slider').slick({
+            dots: true,  // Habilita los puntos de navegación
+            arrows: false,  // Habilita las flechas de navegación
+            autoplay: true,  // Activa la reproducción automática
+            autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+            fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+            speed: 550,  // Tiempo de la transición entre las imágenes
+        });
+    });
+</script>
+
+<script src="../plancapacitacion/js/soporteslider.js"></script>
+
+<!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+               window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+</html>
