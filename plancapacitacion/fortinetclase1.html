@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <title>Instalando el laboratorio</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/fortinetejercicio1css/fortinetejercicio1movil.css">
+    <link rel="stylesheet" href="../plancapacitacion/fortinetejercicio1css/fortinetejercicio1desktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css"/>
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto"/>
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">Práctica, Accediendo a Fortinet y conociendo su entorno</h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            
+            <article class="article-1">
+                <p class="p-texto">En esta primera clase se realiza la configuración del entorno de laboratorio de Fortinet mediante la instalación de
+                    GNS3, VMWare, entre una serie de archivos de configuración que nos van a permitir la configuración del entorno de trabajo.</p>
+                
+                <p class="p-texto">Por el momento abortamos la instalación y configuración del laboratorio en el entorno de ParrotOS, por temas
+                    de configuración, y optamos por continuar bajo Windows 11.</p>
+
+            </article>
+    
+            <article class="article-figure">
+                <p class="p-texto-figure">1.- Primero, tenemos que realizar la instalación y la configuración de GNS3VM.ova.</p> 
+                    <figure class="figure-containner">
+                        <img src="./imgfortinetejercicio1/01.webp" title="" alt="img "/>
+                    </figure>
+            </article>
+
+            <article class="article-figure">
+                    <p class="p-texto-figure">2.- Vamos a omitir algunos pasos para no saturar de imágenes el sitio, para mi es importante realizar estas 
+                        prácticas ya que,  para un servidor, son como si hicieras planas, se me graban mejor las cosas.</p> 
+                    <p class="p-texto-figure">Ya una vez configurado el laboratorio vamos a realizar el primer ingreso al primer Fortinet del Site-1 
+                        dando clic derecho al mismo y seleccionando (console) y con el comando (get system interface) obtenemos la dirección IP para ingresar a nuestro Fortinet.</p>
+                    <figure class="figure-containner">
+                        <img src="./imgfortinetejercicio1/02.webp" title="" alt="img "/>
+                    </figure>
+            </article>
+
+                <article class="article-figure">
+                    <p class="p-texto-figure">3.- Posteriormente dentro de la consola del Fortigate tenemos una serie de opciones tanto lateralmente como en el centro.
+                        Se da una explicación de cada una de ellas para tener un mejor panorama de Fortinet 6.
+                        En la parte inferior se cuenta con una lista que describe el panel lateral izquierdo y tenemos una descripción de la pestaña u opción (Status)</p> 
+                    <figure class="figure-containner">
+                        <img src="./imgfortinetejercicio1/03.webp" title="" alt="img "/>
+                    </figure>
+                </article>
+
+                <div class="sidebar">
+                    <h2>Menú</h2>
+                    <a href="#dashboard">Dashboard</a>
+                    <a href="#security-fabric">Security Fabric</a>
+                    <a href="#fortiview">FortiView</a>
+                    <a href="#network">Network</a>
+                    <a href="#system">System</a>
+                    <a href="#policy-objects">Policy & Objects</a>
+                    <a href="#security-profiles">Security Profiles</a>
+                    <a href="#vpn">VPN</a>
+                    <a href="#user-switch">User & Switch Controller</a>
+                    <a href="#log-monitor">Log & Monitor</a>
+                    <a href="#status-options">Status Options</a>
+                </div>
+    <div class="content">
+        <h1>Fortinet - Panel Lateral izquierdo</h1>
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <p>Resumen general del estado del firewall, incluyendo tráfico en tiempo real y estadísticas.</p>
+        </section>
+        <section id="security-fabric">
+            <h2>Security Fabric</h2>
+            <p>Gestión centralizada de seguridad con dispositivos Fortinet conectados.</p>
+        </section>
+        <section id="fortiview">
+            <h2>FortiView</h2>
+            <p>Análisis visual del tráfico de red y amenazas detectadas.</p>
+        </section>
+        <section id="network">
+            <h2>Network</h2>
+            <p>Configuraciones de red, interfaces, rutas y VLANs.</p>
+        </section>
+        <section id="system">
+            <h2>System</h2>
+            <p>Administración del sistema, actualizaciones, configuración de administradores.</p>
+        </section>
+        <section id="policy-objects">
+            <h2>Policy & Objects</h2>
+            <p>Definición de políticas de seguridad y objetos de red.</p>
+        </section>
+        <section id="security-profiles">
+            <h2>Security Profiles</h2>
+            <p>Perfiles de seguridad como IPS, antivirus, filtrado web y control de aplicaciones.</p>
+        </section>
+        <section id="vpn">
+            <h2>VPN</h2>
+            <p>Configuración y monitoreo de túneles VPN.</p>
+        </section>
+        <section id="user-switch">
+            <h2>User & Switch Controller</h2>
+            <p>Gestión de usuarios, autenticación y control de switches.</p>
+        </section>
+        <section id="log-monitor">
+            <h2>Log & Monitor</h2>
+            <p>Registro y monitoreo de eventos y actividades del firewall.</p>
+        </section>
+        <section id="status-options">
+            <h1>Descricion de la pestaña Status:</h1>
+            <h3>System Informatión</h3>
+            <p>Muestra detalles clave sobre la configuración y el estado del dispositivo Fortinet.</p>
+            <h3>Licences</h3>
+            <p>Información sobre las licencias activas y expiradas del sistema.</p>
+            <h3>Virtual Machine</h3>
+            <p>Estado y detalles de la virtualización del dispositivo, si aplica.</p>
+            <h3>Fortigate Cloud</h3>
+            <p>Acceso y configuración del servicio en la nube de Fortinet.</p>
+            <h3>Security Fabric</h3>
+            <p>Integración de dispositivos Fortinet para una seguridad unificada.</p>
+            <h3>Security Rating</h3>
+            <p>Análisis y puntuación del nivel de seguridad del sistema.</p>
+            <h3>Administrators</h3>
+            <p>Lista y gestión de usuarios con permisos de administrador.</p>
+            <h3>CPU</h3>
+            <p>Uso actual del procesador del sistema.</p>
+            <h3>Memory</h3>
+            <p>Consumo de memoria del dispositivo.</p>
+            <h3>Sessions</h3>
+            <p>Número de sesiones activas en el firewall.</p>
+        </section>
+    </div>
+        </section>
+
+        <section class="section-button">           
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button> 
+            </article>
+        </section>
+
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux"/>
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Marzo</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+<script src="../slider/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+<!-- Inicialización de Slick Slider -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        // Inicializamos el slider
+        $('.slider').slick({
+            dots: true,  // Habilita los puntos de navegación
+            arrows: false,  // Habilita las flechas de navegación
+            autoplay: true,  // Activa la reproducción automática
+            autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+            fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+            speed: 550,  // Tiempo de la transición entre las imágenes
+        });
+    });
+</script>
+
+<script src="../plancapacitacion/js/soporteslider.js"></script>
+
+<!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+               window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+</html>

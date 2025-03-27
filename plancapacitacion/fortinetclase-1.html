@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="es-mx">
 <head>
-    <title>Instalando el laboratorio</title>
+    <title>Plan Capacitación</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Sitio Wen Profesional Curricular">
     <meta name="keywords" content="Soporte tecnico, TI">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" href="../normalize/normalize.css">
 
-    <link rel="stylesheet" href="../plancapacitacion/fortinetejercicio1css/fortinetejercicio1movil.css">
-    <link rel="stylesheet" href="../plancapacitacion/fortinetejercicio1css/fortinetejercicio1desktop.css">
+    <link rel="stylesheet" href="../plancapacitacion/IntroduccionFortinetcss/introfortinetmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/IntroduccionFortinetcss/introfortinetdesktop.css">
 
     <link rel="stylesheet" href="../slider/slidermovil.css">
     <link rel="stylesheet" href="../slider/sliderdesktop.css">
@@ -46,141 +46,119 @@
     </header>
 
     <main>
+      <section class="section-titulo">
+        <article class="article-titulo">
+            <h1 class="h1-titulo-principal">Bienvenidos, Bienvenidos a la Presentacion del Curso: Fortinet de Principiante a Experto</h1>
+        </article>
+      </section>
 
-        <section class="section-titulo">
-            <article class="article-titulo">
-                <h1 class="h1-titulo-principal">Práctica, Accediendo a Fortinet y conociendo su entorno</h1>
-            </article>
-        </section>
+      <section class="section-1">
+        <article class="article-1">
+          <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/2isZXC3gYMM?si=es3ZutELc1AwMmD6" title="YouTube video player" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </article>
 
-        <section class="section-1">
-            
-            <article class="article-1">
-                <p class="p-texto">En esta primera clase se realiza la configuración del entorno de laboratorio de Fortinet mediante la instalación de
-                    GNS3, VMWare, entre una serie de archivos de configuración que nos van a permitir la configuración del entorno de trabajo.</p>
-                
-                <p class="p-texto">Por el momento abortamos la instalación y configuración del laboratorio en el entorno de ParrotOS, por temas
-                    de configuración, y optamos por continuar bajo Windows 11.</p>
+       <section class="section-1">
+          <article class="article-1">
+            <h3 class="h3-titulo"><strong>Introducción:</strong></h3>
+            <p class="p-texto">
+              Fortinet es una empresa multinacional fundada en el año 2000 por los hermanos Ken Xie y Michael Xie con cede en Sunnyvale, 
+              California, EE.UU.. Desde entonces, se ha convertido en un líder de ciberseguridad, ofreciendo soluciones integrales para 
+              proteger redes, sistemas y datos con productos como firewalls, antivirus, prevención de intrusiones y 
+              seguridad en la nube, entre otros.</p>
+          </article>
 
-            </article>
+          <article class="article-1">
+            <p class="p-texto">
+              Este curso, “Fortinet de Principiante a Experto” esta centrado en la administración del sistema operativo FortiOS, Version 6.2, 
+              el cual proporciona un conjunto de herramientas avanzadas para la configuración y seguridad de redes empresariales.</p>
+          </article>
+
+
+          <article class="article-1">
+            <h3 class="h3-titulo"><strong>Equipos y Configuración:</strong></h3>
+            <p class="p-texto">Para este curso vamos a utilizar un Firewall un dispositivo FortiGate 60E lanzado en 2016 como parte de la serie FortiGate E.</p>
+            <p class="p-texto">
+              Este dispositivo cuenta con un sistema operativo FortiOS v6.2. Cuenta con 7 puertos ethernet, un puerto DMZ "Zona Desmilitarizada"
+               (el cual nos permite que un servidor pueda ser accesible desde internet).</p>
+          </article>
+
+          <article class="article-1">
+            <ul class="ul-li">
+              <li class="li-1"><strong>Contamos con dos puertos “WAN”:</strong>
+                  <ul class="ul-li">
+                      <li class="li-1">WAN1 para conexión del router principal a Internet (ISP1).</li>
+                      <li class="li-1">WAN2 para la conexión secundaria a internet (ISP2) para redundancia o balanceo de carga.</li>
+                  </ul>
+              </li>
+              <li class="li-1">Puerto de administración Console que nos da Acceso al CLI (RS-232, RJ45).</li>
+              <li class="li-1">Puerto USB que tiene diversas funciones desde la conexión de un modem para respaldo de internet hasta el 
+                                almacenamiento externo y carga de actualizaciones de firmware.</li>
+              <li class="li-1">Un solo puerto de alimentación de energía eléctrica.</li>
+            </ul>
+          </article>
+
+          <article class="article-1">
+            <p class="p-texto">Esta parte del Fortigate que acabamos de describir hace referencia al panel trasero o a la sección donde se 
+                               encuentran los puertos tipo RJ45, USB mencionados.</p>
+            <p class="p-texto">De igual forma, contamos con un panel frontal que esta compuesto por una serie de leds indicadores que nos informan
+                               sobre el estado de cada uno de los componentes de nuestro fortigate.</p>
+          
+            <h3 class="h3-titulo"><strong>Indicadores LED:</strong></h3>
+            <ul class="ul-li">
+                <li class="li-1">7 leds que hacen referencia a cada uno de los puertos ethernet.</li>
+                <li class="li-1">Leds asignados para WAN1, WAN2, DMZ, indicador de velocidad, encendido, status y HA.</li>
+            </ul>
+          </article>
+
+          <article class="article-1">
+            <p class="p-texto">Bien, lo anterior hace referencia a la descripción de la parte física del Fortigate.</p>
+          
+            <h3 class="h3-titulo"><strong>Implementación en el Curso:</strong></h3>
+            <p class="p-texto">En este curso no vamos a utilizar los equipos físicos Fortigate 60E, nos vamos a limitar a lo que tenemos, es decir, 
+              contamos con amplia información en Internet y en el sitio web oficial de Fortinet en relación a dicho modelo con el que vamos a reforzar
+              nuestro conocimiento.</p>
+            <p class="p-texto">Este curso se implementa mediante un laboratorio virtual que corre mediante GNS3 y otros complementos de software, 
+              instaladores que conforman el laboratorio de este curso. Este laboratorio esta conformado por dos dispositivos Fortigate virtuales y dos
+              equipos de cómputo con sistema operativo Windows Server 2012, uno de ellos como equipo Domain Controler Principal.</p>
+          </article>  
+
+          <article class="article-1">
+            <h3 class="h3-titulo"><strong>Protección de Fortinet:</strong></h3>
+            <p class="p-texto">Fortinet protege contra una amplia gama de ataques cibernéticos, para redes y dispositivos.</p>
+          </article>
+
+          <article class="article-1">
+            <h3 class="h3-titulo"><strong>Ataques que Fortinet ayuda a mitigar:</strong></h3>
+            <ul class="ul-li">
+              <li class="li-1"><strong>Ataques de Fuerza Bruta:</strong> Fortinet ayuda a proteger contra ataques de fuerza bruta, donde los atacantes
+                 intentan adivinar contraseñas o credenciales.</li>
+              <li class="li-1"><strong>Ataques DDoS:</strong> Fortinet ofrece soluciones para proteger contra ataques de denegación de servicio 
+                distribuido (DDoS), donde los atacantes inundan un servidor con tráfico para hacerlo inaccesible.</li>
+              <li class="li-1"><strong>Ataques Phishing:</strong> Fortinet ayuda a proteger contra ataques de phishing, donde los atacantes intentan
+                 engañar a los usuarios para que revelen información confidencial.</li>
+              <li class="li-1"><strong>Ransomware:</strong> Fortinet proporciona soluciones para proteger contra ataques de ransomware, donde los 
+                atacantes cifran los datos y exigen un rescate para su liberación.</li>
+              <li class="li-1"><strong>Malware:</strong> Fortinet ayuda a detectar y bloquear malware, que es software malicioso diseñado para dañar o 
+                tomar control de un sistema.</li>
+              <li class="li-1"><strong>Ataques MITM (Man-in-the-Middle):</strong> Fortinet ayuda a proteger contra ataques MITM, donde los atacantes se 
+                interponen entre dos usuarios para interceptar o modificar la comunicación.</li>
+              <li class="li-1"><strong>Ataques de Inyección SQL:</strong> Fortinet ayuda a proteger contra ataques de inyección SQL, donde los atacantes 
+                inyectan código malicioso en una base de datos.</li>
+          </ul>
+          </article>
+      </section> 
+       
+      <section class="section-button">           
+        <article class="article-button">
+          <!-- Botón para regresar a la página principal -->
+          <button class="back-button" onclick="goBack()">Volver</button> 
+        </article>
+      </section> 
     
-            <article class="article-figure">
-                <p class="p-texto-figure">1.- Primero, tenemos que realizar la instalación y la configuración de GNS3VM.ova.</p> 
-                    <figure class="figure-containner">
-                        <img src="./imgfortinetejercicio1/01.webp" title="" alt="img "/>
-                    </figure>
-            </article>
-
-            <article class="article-figure">
-                    <p class="p-texto-figure">2.- Vamos a omitir algunos pasos para no saturar de imágenes el sitio, para mi es importante realizar estas 
-                        prácticas ya que,  para un servidor, son como si hicieras planas, se me graban mejor las cosas.</p> 
-                    <p class="p-texto-figure">Ya una vez configurado el laboratorio vamos a realizar el primer ingreso al primer Fortinet del Site-1 
-                        dando clic derecho al mismo y seleccionando (console) y con el comando (get system interface) obtenemos la dirección IP para ingresar a nuestro Fortinet.</p>
-                    <figure class="figure-containner">
-                        <img src="./imgfortinetejercicio1/02.webp" title="" alt="img "/>
-                    </figure>
-            </article>
-
-                <article class="article-figure">
-                    <p class="p-texto-figure">3.- Posteriormente dentro de la consola del Fortigate tenemos una serie de opciones tanto lateralmente como en el centro.
-                        Se da una explicación de cada una de ellas para tener un mejor panorama de Fortinet 6.
-                        En la parte inferior se cuenta con una lista que describe el panel lateral izquierdo y tenemos una descripción de la pestaña u opción (Status)</p> 
-                    <figure class="figure-containner">
-                        <img src="./imgfortinetejercicio1/03.webp" title="" alt="img "/>
-                    </figure>
-                </article>
-
-                <div class="sidebar">
-                    <h2>Menú</h2>
-                    <a href="#dashboard">Dashboard</a>
-                    <a href="#security-fabric">Security Fabric</a>
-                    <a href="#fortiview">FortiView</a>
-                    <a href="#network">Network</a>
-                    <a href="#system">System</a>
-                    <a href="#policy-objects">Policy & Objects</a>
-                    <a href="#security-profiles">Security Profiles</a>
-                    <a href="#vpn">VPN</a>
-                    <a href="#user-switch">User & Switch Controller</a>
-                    <a href="#log-monitor">Log & Monitor</a>
-                    <a href="#status-options">Status Options</a>
-                </div>
-    <div class="content">
-        <h1>Fortinet - Panel Lateral izquierdo</h1>
-        <section id="dashboard">
-            <h2>Dashboard</h2>
-            <p>Resumen general del estado del firewall, incluyendo tráfico en tiempo real y estadísticas.</p>
-        </section>
-        <section id="security-fabric">
-            <h2>Security Fabric</h2>
-            <p>Gestión centralizada de seguridad con dispositivos Fortinet conectados.</p>
-        </section>
-        <section id="fortiview">
-            <h2>FortiView</h2>
-            <p>Análisis visual del tráfico de red y amenazas detectadas.</p>
-        </section>
-        <section id="network">
-            <h2>Network</h2>
-            <p>Configuraciones de red, interfaces, rutas y VLANs.</p>
-        </section>
-        <section id="system">
-            <h2>System</h2>
-            <p>Administración del sistema, actualizaciones, configuración de administradores.</p>
-        </section>
-        <section id="policy-objects">
-            <h2>Policy & Objects</h2>
-            <p>Definición de políticas de seguridad y objetos de red.</p>
-        </section>
-        <section id="security-profiles">
-            <h2>Security Profiles</h2>
-            <p>Perfiles de seguridad como IPS, antivirus, filtrado web y control de aplicaciones.</p>
-        </section>
-        <section id="vpn">
-            <h2>VPN</h2>
-            <p>Configuración y monitoreo de túneles VPN.</p>
-        </section>
-        <section id="user-switch">
-            <h2>User & Switch Controller</h2>
-            <p>Gestión de usuarios, autenticación y control de switches.</p>
-        </section>
-        <section id="log-monitor">
-            <h2>Log & Monitor</h2>
-            <p>Registro y monitoreo de eventos y actividades del firewall.</p>
-        </section>
-        <section id="status-options">
-            <h1>Descricion de la pestaña Status:</h1>
-            <h3>System Informatión</h3>
-            <p>Muestra detalles clave sobre la configuración y el estado del dispositivo Fortinet.</p>
-            <h3>Licences</h3>
-            <p>Información sobre las licencias activas y expiradas del sistema.</p>
-            <h3>Virtual Machine</h3>
-            <p>Estado y detalles de la virtualización del dispositivo, si aplica.</p>
-            <h3>Fortigate Cloud</h3>
-            <p>Acceso y configuración del servicio en la nube de Fortinet.</p>
-            <h3>Security Fabric</h3>
-            <p>Integración de dispositivos Fortinet para una seguridad unificada.</p>
-            <h3>Security Rating</h3>
-            <p>Análisis y puntuación del nivel de seguridad del sistema.</p>
-            <h3>Administrators</h3>
-            <p>Lista y gestión de usuarios con permisos de administrador.</p>
-            <h3>CPU</h3>
-            <p>Uso actual del procesador del sistema.</p>
-            <h3>Memory</h3>
-            <p>Consumo de memoria del dispositivo.</p>
-            <h3>Sessions</h3>
-            <p>Número de sesiones activas en el firewall.</p>
-        </section>
-    </div>
-        </section>
-
-        <section class="section-button">           
-            <article class="article-button">
-                <!-- Botón para regresar a la página principal -->
-                <button class="back-button" onclick="goBack()">Volver</button> 
-            </article>
-        </section>
-
     </main>
-
+   
     <footer class="footer-logo">
         <div>
             <section class="section-1-footer">
