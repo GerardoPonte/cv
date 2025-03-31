@@ -49,60 +49,76 @@
     <main>
         <section class="section-titulo">
             <article class="article-titulo">
-                <h1 class="h1-titulo-principal">Bienvenidos, Bienvenidos al Video 5 de la Sección 2: ¿Cómo Proteger el
-                    Gestor de Arranque GRUB2?</h1>
+                <h1 class="h1-titulo-principal">Bienvenidos, Bienvenidos al Video 6 de la Sección 2: 
+                    Cifrar Particiones de Disco: LUKS. Instalación y puesta en marcha</h1>
             </article>
         </section>
 
         <section class="section-1">
 
             <article class="article-1">
-                <h3 class="h3-titulo">Protegiendo GRUB 2 con contraseña</h3>
+                <p class="p-texto">En ocasiones anteriores, explicamos que uno de los mayores riesgos en seguridad 
+                    informática ocurre cuando un atacante tiene acceso físico al hardware. En estos casos, es posible
+                    extraer las unidades de almacenamiento, como discos duros o SSDs, y conectarlos a otro equipo para
+                    acceder a la información sin necesidad de autenticación en el sistema operativo original. 
+                    Esto significa que, aunque tu sistema esté protegido con usuario y contraseña, el atacante puede 
+                    omitir estas barreras y leer los datos directamente desde otro sistema operativo.</p>
+
+                <h3 class="h3-titulo">¿Cómo podemos prevenir esto?</h3>
+                <p class="p-texto">La solución es cifrar el disco. Como sabemos, el cifrado convierte datos legibles en 
+                    información inaccesible a menos que se disponga de las herramientas y claves adecuadas para descifrarlos. 
+                    De este modo, si un atacante roba el disco y lo conecta a otro sistema operativo, sin la contraseña 
+                    correcta no podrá acceder a los datos.</p>
+
+                <p class="p-texto">Cuando hablamos de cifrado, lo primero que suele venir a la mente es proteger archivos 
+                    individuales o correos electrónicos. Sin embargo, en este video, aprenderemos a cifrar una partición completa.
+                    De esta manera, no habrá áreas del disco accesibles en claro, sino que toda la información almacenada estará
+                    protegida.</p>
                 
-                <p class="p-texto">Después de analizar lo peligroso que puede ser un gestor de arranque sin protección,
-                    ahora veremos cómo establecer una contraseña en GRUB 2 para que solicite usuario y contraseña antes de
-                    permitir modificaciones.</p>
-
-                <p class="p-texto">La única desventaja de esta configuración es que también nos pedirá la contraseña al
-                    arrancar el sistema. Sin embargo, dado que estamos en un entorno de servidores, donde los reinicios
-                    no son frecuentes, esto no representa un gran problema. Aun así, existe un método para evitar que GRUB
-                    solicite la contraseña en cada arranque, aunque es un proceso más complejo.</p>
+                <p class="p-texto">Esto no solo es útil para datos personales, sino también para bases de datos, archivos de 
+                    configuración y cualquier otro elemento que pueda comprometer la seguridad del sistema.</p>
             </article>
 
             <article class="article-1">
-                <h3 class="h3-titulo">Pasos para establecer una contraseña en GRUB 2</h3>
-                <p class="p-texto">1️⃣ abrimos una terminal con la combinación de teclas ctrl+f2, tecleamos
-                    mate-terminal y damos enter</p>
-                    <figure class="figure-containner">
-                        <img src="./img-seccion2-hardening-video-5/1.webp" width="750px" title="" alt="img"/>
-                    </figure>
-                    
-            <article class="article-1">
-                <h3 class="h3-titulo">2️⃣ Acceder como root para obtener privilegios de administrador.</h3>
-                    <figure class="figure-containner">
-                        <img src="./img-seccion2-hardening-video-5/2.webp" width="750px" title="" alt="img"/>
-                    </figure>
-
-                <h3 class="h3-titulo">3️⃣ Generar la contraseña cifrada con el siguiente comando:</h3><br>
-                    <code>grub-mkpasswd-pbkdf2</code><br>
-                <p class="p-texto">Se nos pedirá ingresar una contraseña y, al confirmar, obtendremos una versión cifrada.</p>
-                <figure class="figure-containner">
-                    <img src="./img-seccion2-hardening-video-5/3.webp" width="750px" height="300px" title="" alt="img"/>
-                </figure>
+                <h3 class="h3-titulo">¿Cómo se realiza este proceso?</h3>
+                <p class="p-texto">El cifrado de una partición involucra varias fases:</p>
+                
+                <p class="p-texto">1️⃣ Mapeo del dispositivo: Identificamos el disco o la partición que vamos a cifrar.</p>   
+                <p class="p-texto">2️⃣  Uso de una herramienta de cifrado: Se emplea una herramienta que proporcione cifrado 
+                    transparente al usuario, permitiendo solo la introducción de una contraseña para el acceso.</p>    
+                <p class="p-texto">3️⃣ Aplicación del cifrado por bloques: En lugar de cifrar archivos o directorios 
+                    individualmente, se protege toda la partición mediante un esquema de cifrado por bloques.</p>
+                
+                <p class="p-texto">Para este proceso, utilizaremos LUKS (Linux Unified Key Setup), un estándar para el cifrado 
+                    de discos en Linux.</p>
             </article>
 
             <article class="article-1">
-                <h3 class="h3-titulo">4️⃣ Editar el archivo de configuración de GRUB:</h3><br>
-                    <code>nano /etc/grub.d/40_custom</code><br>
-                    <figure class="figure-containner">
-                        <img src="./img-seccion2-hardening-video-5/4.webp" width="750px" title="" alt="img"/>
-                    </figure>
-                    
-                    <p class="p-texto">En este archivo, añadimos las siguientes líneas:</p>
-                        <pre>
-                            set superusers="usuario_admin"
-                            password_pbkdf2 usuario_admin contraseña_cifrada
-                        </pre>
+                <h3 class="h3-titulo">Demostración del proceso</h3>
+                <p class="p-texto">Para comenzar, accederemos al sistema con privilegios de administrador (root). 
+                    Luego, utilizaremos el comando:</p>
+                <code>lsblk</code>
+
+                <p class="p-texto">para visualizar las unidades y particiones disponibles. Aquí podremos identificar el 
+                    disco donde aplicaremos el cifrado.</p>
+                <p class="p-texto">En nuestro caso, tenemos un segundo disco identificado como /dev/sdb, al cual le hemos
+                    asignado un tamaño de 1GB para hacer el proceso más ágil. Cabe destacar que el tamaño del disco no
+                    influye en el método de cifrado.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Creación de una partición</h3><br>
+                <p class="p-texto">Para particionar el disco de manera rápida y sin utilizar entorno gráfico, usaremos el 
+                    siguiente comando:</p>
+                
+                    <code>fdisk /dev/sdb</code><br>
+                       
+                <p class="p-texto">Dentro de fdisk, podemos listar las opciones con m. Para crear una nueva partición, utilizamos
+                    n (new). Seleccionamos el tipo primaria, aceptamos los valores predeterminados para el primer y último sector,
+                    y confirmamos con w (write) para escribir la tabla de particiones.</p>
+                
+                    <h3 class="h3-titulo">Verificamos la creación de la partición con:</h3>
+                    <code>lsblk</code>
                     <p class="p-texto">(Reemplazando <code>usuario_admin</code> con el nombre de usuario deseado y
                 <code>contraseña_cifrada</code> con la clave generada en el paso anterior).</p>
                     <figure class="figure-containner">
