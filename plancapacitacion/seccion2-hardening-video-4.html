@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <title>seccion2-hardening-video-4.</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css"/>
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto"/>
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción"/>
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+      <section class="section-titulo">
+        <article class="article-titulo">
+            <h1 class="h1-titulo-principal">Bienvenidos, Bienvenidos al Video 4 de la Sección 2: ¿Por qué necesitamos 
+                proteger el gestor de arranque GRUB2?</h1>
+        </article>
+      </section>
+
+       <section class="section-1">
+
+          <article class="article-1">
+            <h3 class="h3-titulo">Demostración de acceso rápido a un sistema sin protección en GRUB</h3>
+                       
+            <p class="p-texto">Ahora os voy a mostrar lo fácil y rápido que es acceder a un sistema si GRUB no está protegido.
+                 Si tengo acceso físico al equipo y puedo entrar al menú de arranque, sin protección alguna, lo único que 
+                 necesitaría hacer es reiniciar el equipo.</p>
+
+            <p class="p-texto">En la parte superior podemos ver que el fabricante de la BIOS es uno de los más grandes,
+                 como Award o Phoenix, lo cual es muy común. Aunque las interfaces gráficas actuales son más atractivas,
+                 el principio básico sigue siendo el mismo.</p>
+
+            <p class="p-texto">Ya sea a través del teclado, de un menú o incluso manualmente desde la torre si tengo acceso
+                 físico al hardware, lo importante es que pueda acceder a la edición de GRUB.
+                 Mucha gente no sabe que cuando selecciono una línea que va a cargar el sistema, simplemente presionando la
+                  tecla E, puedo editar las opciones de arranque.</p>
+          </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Acceso a edición en GRUB</h3>  
+
+                <h3 class="h3-titulo">Fijaros lo rápido y sencillo que es:</h3> 
+                <ol class="ul-li">
+                    <li class="li-1">Me sitúo en la línea que carga el sistema operativo (por ejemplo, la línea que contiene "Linux").</li>
+                    <li class="li-1">Edición rápida: Cambio la opción de arranque para que sea lectura y escritura (<code>rw</code>), lo que me permite realizar modificaciones en el sistema sin restricciones.</li>
+                    <li class="li-1">Puedo cambiar contraseñas, eliminar archivos o modificar configuraciones del sistema.</li>
+                </ol>
+            </article>   
+            
+            <article class="article-1">
+              <h3 class="h3-titulo">Acceso a edición en GRUB</h3> 
+              <p class="p-texto">Lo que hago a continuación es muy importante: en vez de cargar el proceso normal de inicio (init),
+                 le digo al sistema que cargue un shell directamente. Esto significa que el sistema arrancará un shell sin pedir 
+                 ningún tipo de autenticación, dándome acceso directo al sistema como root.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Acceso a root en segundos</h3> 
+                <p class="p-texto">Como podéis ver, en cuestión de segundos, el sistema me da acceso a un shell de root. Desde aquí 
+                    puedo hacer lo que quiera: cambiar contraseñas, cargar módulos, modificar configuraciones del sistema, o incluso
+                    instalar software malicioso.</p>
+            
+                <p class="p-texto">Este es el tipo de acceso que un atacante malintencionado busca obtener para comprometer un sistema.
+                    Con GRUB sin protección, el acceso es extremadamente fácil.<p>
+            </article>
+           
+            <article class="article-1">
+                <h3 class="h3-titulo">Próximos pasos: protección de GRUB</h3>
+                <p class="p-texto">Ahora que hemos visto lo sencillo que es vulnerar un sistema sin protección en GRUB, en los 
+                    próximos vídeos veremos cómo proteger GRUB para evitar este tipo de acceso no autorizado.</p>
+            </article>
+        </section>  
+
+        <section class="section-button">           
+          <article class="article-button">
+              <!-- Botón para regresar a la página principal -->
+              <button class="back-button" onclick="goBack()">Volver</button> 
+          </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux"/>
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+<script src="../slider/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+<!-- Inicialización de Slick Slider -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        // Inicializamos el slider
+        $('.slider').slick({
+            dots: true,  // Habilita los puntos de navegación
+            arrows: false,  // Habilita las flechas de navegación
+            autoplay: true,  // Activa la reproducción automática
+            autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+            fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+            speed: 550,  // Tiempo de la transición entre las imágenes
+        });
+    });
+</script>
+
+<script src="../plancapacitacion/js/soporteslider.js"></script>
+
+<!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+               window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+</html>

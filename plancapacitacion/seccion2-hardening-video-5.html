@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>seccion2-hardening-video-5.</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css" />
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">Bienvenidos, Bienvenidos al Video 5 de la Sección 2: Cómo Proteger el
+                    Gestor de Arranque GRUB2</h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Protegiendo GRUB 2 con contraseña</h3>
+
+                <p class="p-texto">Después de analizar lo peligroso que puede ser un gestor de arranque sin protección,
+                    ahora veremos
+                    cómo establecer una contraseña en GRUB 2 para que solicite usuario y contraseña antes de permitir
+                    modificaciones.</p>
+
+                <p class="p-texto">La única desventaja de esta configuración es que también nos pedirá la contraseña al
+                    arrancar el sistema. Sin embargo, dado que estamos en un entorno de servidores, donde los reinicios
+                    no son frecuentes, esto no representa un gran problema. Aun así, existe un método para evitar que GRUB
+                    solicite la contraseña en cada arranque, aunque es un proceso más complejo.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Pasos para establecer una contraseña en GRUB 2</h3>
+                <p class="p-texto">1️⃣ abrimos una terminal con la combinación de teclas ctrl+f2, tecleamos
+                    mate-terminal y damos enter</p>
+                    <figure class="figure-containner">
+                        <img src="./img-seccion2-hardening-video-5/1.webp" width="750px" title="" alt="img"/>
+                    </figure>
+                    
+            <article class="article-1">
+                <h3 class="h3-titulo">2️⃣ Acceder como root para obtener privilegios de administrador.</h3>
+                    <figure class="figure-containner">
+                        <img src="./img-seccion2-hardening-video-5/2.webp" width="750px" title="" alt="img"/>
+                    </figure>
+
+                <h3 class="h3-titulo">3️⃣ Generar la contraseña cifrada con el siguiente comando:</h3><br>
+                    <code>grub-mkpasswd-pbkdf2</code><br>
+                <p class="p-texto">Se nos pedirá ingresar una contraseña y, al confirmar, obtendremos una versión cifrada.</p>
+                <figure class="figure-containner">
+                    <img src="./img-seccion2-hardening-video-5/3.webp" width="750px" height="300px" title="" alt="img"/>
+                </figure>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">4️⃣ Editar el archivo de configuración de GRUB:</h3><br>
+                    <code>nano /etc/grub.d/40_custom</code><br>
+                    <figure class="figure-containner">
+                        <img src="./img-seccion2-hardening-video-5/4.webp" width="750px" title="" alt="img"/>
+                    </figure>
+                    
+                    <p class="p-texto">En este archivo, añadimos las siguientes líneas:</p>
+                        <pre>
+                            set superusers="usuario_admin"
+                            password_pbkdf2 usuario_admin contraseña_cifrada
+                        </pre>
+                    <p class="p-texto">(Reemplazando <code>usuario_admin</code> con el nombre de usuario deseado y
+                <code>contraseña_cifrada</code> con la clave generada en el paso anterior).</p>
+                    <figure class="figure-containner">
+                        <img src="./img-seccion2-hardening-video-5/5.webp" width="750px" title="" alt="img"/>
+                    </figure>
+                <p class="p-texto">Guardar los cambios y salimos de "vi"</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">5️⃣ Actualizamos el GRUB con:</h3><br>
+                <code>update-grub</code><br>
+                <figure class="figure-containner">
+                    <img src="./img-seccion2-hardening-video-5/6.webp" width="750px" title="" alt="img"/>
+                </figure>
+                <p class="p-texto">Este comando aplicará la nueva configuración.</p>
+
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">6️⃣ Reiniciar el sistema para probar la nueva configuración.</h3>
+            </article>
+            
+            <article class="article-1">
+                <h3 class="h3-titulo">Comprobación de seguridad:</h3>
+                <p class="p-texto">Después del reinicio, si intentamos modificar las opciones de arranque en GRUB
+                    (pulsando E en una entrada), se nos pedirá usuario y contraseña.</p>
+                <figure class="figure-containner">
+                    <img src="./img-seccion2-hardening-video-5/7.webp" width="750px" title="" alt="img"/>
+                </figure>
+
+                <p class="p-texto">Esto impide que un atacante modifique el arranque para acceder con privilegios elevados.</p>
+                <figure class="figure-containner">
+                    <img src="./img-seccion2-hardening-video-5/8.webp" width="750px" title="" alt="img"/>
+                </figure>
+            </article>
+
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Evitar que la contraseña se solicite al iniciar el sistema</h3>
+                <p class="p-texto">Si queremos que la contraseña solo se solicite al modificar GRUB, pero no al arrancar
+                    el sistema,
+                    debemos editar manualmente el archivo grub.cfg. Sin embargo, esta no es una práctica recomendada, ya
+                    que
+                    cualquier actualización de GRUB sobrescribirá el archivo.</p>
+
+                <p class="p-texto">Pasos para hacerlo:</p>
+                <ul class="ul-li">
+                    <li class="li-1">1️⃣ Editar el archivo de configuración:<br>
+                        <code>nano /boot/grub/grub.cfg</code>
+                    </li>
+                    <li class="li-1">2️⃣ Buscar las líneas que comienzan con <code>menuentry</code> y añadir la
+                        opción:<br>
+                        <code>--unrestricted</code>
+                    </li>
+                </ul>
+                <p class="p-texto">Esto permitirá iniciar el sistema sin contraseña, pero seguirá siendo requerida para
+                    modificar opciones de arranque.</p>
+
+                <h3 class="h3-titulo">3️⃣ Guardar los cambios y reiniciar.</h3>
+
+                <p class="p-texto">⚠️ Nota: Como este archivo se regenera cada vez que se ejecuta update-grub, cualquier
+                    modificación manual se perderá al actualizar GRUB.</p>
+            </article>
+        </section>
+
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>
