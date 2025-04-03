@@ -2,7 +2,7 @@
 <html lang="es-mx">
 
 <head>
-    <title>seccion2-hardening-video-5.</title>
+    <title>sección2-hardening-video-7</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Sitio Wen Profesional Curricular">
@@ -49,139 +49,99 @@
     <main>
         <section class="section-titulo">
             <article class="article-titulo">
-                <h1 class="h1-titulo-principal">Bienvenidos, Bienvenidos al Video 6 de la Sección 2: 
-                    Cifrar Particiones de Disco: LUKS. Instalación y puesta en marcha</h1>
+                <h1 class="h1-titulo-principal">Bienvenidos, Bienvenidos al Video 7 de la Sección 2: 
+                     Cifrar Particiones de Disco: LUKS. Configurar el arraque</h1>
             </article>
         </section>
 
         <section class="section-1">
 
             <article class="article-1">
-                <p class="p-texto">En ocasiones anteriores, explicamos que uno de los mayores riesgos en seguridad 
-                    informática ocurre cuando un atacante tiene acceso físico al hardware. En estos casos, es posible
-                    extraer las unidades de almacenamiento, como discos duros o SSDs, y conectarlos a otro equipo para
-                    acceder a la información sin necesidad de autenticación en el sistema operativo original. 
-                    Esto significa que, aunque tu sistema esté protegido con usuario y contraseña, el atacante puede 
-                    omitir estas barreras y leer los datos directamente desde otro sistema operativo.</p>
+                <h3 class="h3-titulo">Montar y acceder a una partición cifrada con LUKS</h3>                
+                <ul class="ul-li-2">
+                    <li class="li-1"><strong>1️⃣  Desbloquear la partición:</strong>  
+                        <ul class="ul-li">
+                            <li class="li-1">🔹 Una partición cifrada no tiene una estructura accesible de inmediato. Por lo tanto, el primer paso es desbloquearla.</li>
+                        </ul>
+                    </li>
+                    <li> <strong>2️⃣ Añadir una estructura de archivos:</strong>  
+                        <ul class="ul-li"> 
+                            <li class="li-1">🔹 Se debe formatear la partición con el sistema de archivos deseado (ejemplo: ext4).</li>
+                        </ul>
+                    </li>
+                    <li> <strong>3️⃣ Montar la partición:</strong>  
+                        <ul class="ul-li">
+                            <li class="li-1">🔹 Una vez formateada, se puede montar en un directorio para su uso.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
 
-                <h3 class="h3-titulo">¿Cómo podemos prevenir esto?</h3>
-                <p class="p-texto">La solución es cifrar el disco. Como sabemos, el cifrado convierte datos legibles en 
-                    información inaccesible a menos que se disponga de las herramientas y claves adecuadas para descifrarlos. 
-                    De este modo, si un atacante roba el disco y lo conecta a otro sistema operativo, sin la contraseña 
-                    correcta no podrá acceder a los datos.</p>
+            <article class="article-1">
+                <h3 class="h3-titulo">Desbloqueo de la partición</h3>
+                <p class="p-texto">Ejecutamos el siguiente comando para desbloquear la partición cifrada:</p>
+                    <code>cryptsetup luksOpen /dev/sdb1 sdb1_enc</code>
 
                 <p class="p-texto">Cuando hablamos de cifrado, lo primero que suele venir a la mente es proteger archivos 
                     individuales o correos electrónicos. Sin embargo, en este video, aprenderemos a cifrar una partición completa.
                     De esta manera, no habrá áreas del disco accesibles en claro, sino que toda la información almacenada estará
                     protegida.</p>
                 
-                <p class="p-texto">Esto no solo es útil para datos personales, sino también para bases de datos, archivos de 
-                    configuración y cualquier otro elemento que pueda comprometer la seguridad del sistema.</p>
+                <p class="p-texto">Ingresamos la contraseña cuando nos la solicite. Esto hará que los bloques de datos sean accesibles.</p>
             </article>
 
             <article class="article-1">
-                <h3 class="h3-titulo">¿Cómo se realiza este proceso?</h3>
-                <p class="p-texto">El cifrado de una partición involucra varias fases:</p>
-                
-                <p class="p-texto">1️⃣ Mapeo del dispositivo: Identificamos el disco o la partición que vamos a cifrar.</p>   
-                <p class="p-texto">2️⃣  Uso de una herramienta de cifrado: Se emplea una herramienta que proporcione cifrado 
-                    transparente al usuario, permitiendo solo la introducción de una contraseña para el acceso.</p>    
-                <p class="p-texto">3️⃣ Aplicación del cifrado por bloques: En lugar de cifrar archivos o directorios 
-                    individualmente, se protege toda la partición mediante un esquema de cifrado por bloques.</p>
-                
-                <p class="p-texto">Para este proceso, utilizaremos LUKS (Linux Unified Key Setup), un estándar para el cifrado 
-                    de discos en Linux.</p>
-            </article>
-
-            <article class="article-1">
-                <h3 class="h3-titulo">Demostración del proceso</h3>
-                <p class="p-texto">Para comenzar, accederemos al sistema con privilegios de administrador (root). 
-                    Luego, utilizaremos el comando:</p>
-                <code>lsblk</code>
-
-                <p class="p-texto">para visualizar las unidades y particiones disponibles. Aquí podremos identificar el 
-                    disco donde aplicaremos el cifrado.</p>
-                <p class="p-texto">En nuestro caso, tenemos un segundo disco identificado como /dev/sdb, al cual le hemos
-                    asignado un tamaño de 1GB para hacer el proceso más ágil. Cabe destacar que el tamaño del disco no
-                    influye en el método de cifrado.</p>
-            </article>
-
-            <article class="article-1">
-                <h3 class="h3-titulo">Creación de una partición</h3><br>
-                <p class="p-texto">Para particionar el disco de manera rápida y sin utilizar entorno gráfico, usaremos el 
-                    siguiente comando:</p>
-                
-                    <code>fdisk /dev/sdb</code><br>
-                       
-                <p class="p-texto">Dentro de fdisk, podemos listar las opciones con m. Para crear una nueva partición, utilizamos
-                    n (new). Seleccionamos el tipo primaria, aceptamos los valores predeterminados para el primer y último sector,
-                    y confirmamos con w (write) para escribir la tabla de particiones.</p>
-                
-                    <h3 class="h3-titulo">Verificamos la creación de la partición con:</h3>
-                    <code>lsblk</code>
+                <h3 class="h3-titulo">Formatear la partición con ext4</h3>
+                <p class="p-texto">Para formatear la partición ya desbloqueada:</p>
+                    <code>mkfs.ext4 /dev/mapper/sdb1_enc</code>
                     
-                    <p class="p-texto">(Reemplazando <code>usuario_admin</code> con el nombre de usuario deseado y
-                <code>contraseña_cifrada</code> con la clave generada en el paso anterior).</p>
-                    <figure class="figure-containner">
-                        <img src="./img-seccion2-hardening-video-5/5.webp" width="750px" title="" alt="img"/>
-                    </figure>
-                <p class="p-texto">Guardar los cambios y salimos de "vi"</p>
+                <p class="p-texto">Ahora, el sistema de archivos ha sido creado y puede ser utilizado.</p>   
+            </article>    
+                
+            <article class="article-1">
+                <h3 class="h3-titulo">Formatear la partición con ext4</h3>
+                <p class="p-texto">Para formatear la partición ya desbloqueada:</p>
+                    <code>mkfs.ext4 /dev/mapper/sdb1_enc</code>
+
+                <p class="p-texto">Ahora, el sistema de archivos ha sido creado y puede ser utilizado.</p>
             </article>
 
             <article class="article-1">
-                <h3 class="h3-titulo">5️⃣ Actualizamos el GRUB con:</h3><br>
-                <code>update-grub</code><br>
-                <figure class="figure-containner">
-                    <img src="./img-seccion2-hardening-video-5/6.webp" width="750px" title="" alt="img"/>
-                </figure>
-                <p class="p-texto">Este comando aplicará la nueva configuración.</p>
-
+                <h3 class="h3-titulo">Montar la partición</h3>
+                <p class="p-texto">Montamos la partición en el directorio /mnt/prueba:</p>
+                    <code>mkdir /mnt/prueba</code>
+                    <code>mount /dev/mapper/sdb1_enc /mnt/prueba</code>
+                       
+                <p class="p-texto">Si no aparece ningún error, la partición ha sido montada correctamente. Podemos probar la escritura:</p>
+                    <code>touch /mnt/prueba/archivo_prueba</code>
+                    <code>ls -l /mnt/prueba</code>
+                
+                <p class="p-texto">Si el archivo se ha creado con éxito, significa que la partición está funcional.</p>
+            </article>    
+                
+            <article class="article-1">
+                <h3 class="h3-titulo">Suspender y reanudar el acceso</h3>
+                <p class="p-texto">Si queremos bloquear temporalmente el acceso a la partición, podemos suspenderla:</p>
+                    <code>cryptsetup luksSuspend sdb1_enc</code>
+                <p class="p-texto">Esto impedirá cualquier operación de lectura/escritura hasta que se reanude el acceso:</p>
+                    <code>cryptsetup luksResume sdb1_enc</code>
+                <p class="p-texto">Se solicitará la contraseña para reanudar el acceso.</p>
             </article>
 
             <article class="article-1">
-                <h3 class="h3-titulo">6️⃣ Reiniciar el sistema para probar la nueva configuración.</h3>
-            </article>
-            
-            <article class="article-1">
-                <h3 class="h3-titulo">Comprobación de seguridad:</h3>
-                <p class="p-texto">Después del reinicio, si intentamos modificar las opciones de arranque en GRUB
-                    (pulsando E en una entrada), se nos pedirá usuario y contraseña.</p>
-                <figure class="figure-containner">
-                    <img src="./img-seccion2-hardening-video-5/7.webp" width="750px" title="" alt="img"/>
-                </figure>
+                <h3 class="h3-titulo">Montaje automático al iniciar el sistema</h3>
+                <p class="p-texto">Para montar la partición automáticamente al inicio, agregamos la siguiente entrada en el archivo /etc/fstab:</p>
+                    <code>/dev/mapper/sdb1_enc /media/cifrado ext4 defaults 0 2</code>
 
-                <p class="p-texto">Esto impide que un atacante modifique el arranque para acceder con privilegios elevados.</p>
-                <figure class="figure-containner">
-                    <img src="./img-seccion2-hardening-video-5/8.webp" width="750px" title="" alt="img"/>
-                </figure>
-            </article>
+                <p class="p-texto">Si queremos que el sistema solicite la contraseña al arrancar, también debemos modificar /etc/crypttab:</p>
+                    <code>sdb1_enc /dev/sdb1 none luks</code>
 
-
-            <article class="article-1">
-                <h3 class="h3-titulo">Evitar que la contraseña se solicite al iniciar el sistema</h3>
-                <p class="p-texto">Si queremos que la contraseña solo se solicite al modificar GRUB, pero no al arrancar
-                    el sistema,
-                    debemos editar manualmente el archivo grub.cfg. Sin embargo, esta no es una práctica recomendada, ya
-                    que
-                    cualquier actualización de GRUB sobrescribirá el archivo.</p>
-
-                <p class="p-texto">Pasos para hacerlo:</p>
-                <ul class="ul-li">
-                    <li class="li-1">1️⃣ Editar el archivo de configuración:<br>
-                        <code>nano /boot/grub/grub.cfg</code>
-                    </li>
-                    <li class="li-1">2️⃣ Buscar las líneas que comienzan con <code>menuentry</code> y añadir la
-                        opción:<br>
-                        <code>--unrestricted</code>
-                    </li>
-                </ul>
-                <p class="p-texto">Esto permitirá iniciar el sistema sin contraseña, pero seguirá siendo requerida para
-                    modificar opciones de arranque.</p>
-
-                <h3 class="h3-titulo">3️⃣ Guardar los cambios y reiniciar.</h3>
-
-                <p class="p-texto">⚠️ Nota: Como este archivo se regenera cada vez que se ejecuta update-grub, cualquier
-                    modificación manual se perderá al actualizar GRUB.</p>
+                <p class="p-texto">Creamos el directorio de montaje:</p>
+                    <code>mkdir /media/cifrado</code>
+                
+                <p class="p-texto">Tras reiniciar, se solicitará la contraseña para desbloquear la partición y montarla automáticamente.</p>
+                <p class="p-texto">Con estos pasos, hemos configurado una partición cifrada con LUKS, permitiendo su acceso seguro y garantizando
+                    que sólo los usuarios con la contraseña puedan utilizarla.</p>
             </article>
         </section>
 
