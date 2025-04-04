@@ -58,23 +58,14 @@
 
             <article class="article-1">
                 <h3 class="h3-titulo">Montar y acceder a una partición cifrada con LUKS</h3>                
-                <ul class="ul-li-2">
-                    <li class="li-1"><strong>1️⃣  Desbloquear la partición:</strong>  
-                        <ul class="ul-li">
-                            <li class="li-1">🔹 Una partición cifrada no tiene una estructura accesible de inmediato. Por lo tanto, el primer paso es desbloquearla.</li>
-                        </ul>
-                    </li>
-                    <li> <strong>2️⃣ Añadir una estructura de archivos:</strong>  
-                        <ul class="ul-li"> 
-                            <li class="li-1">🔹 Se debe formatear la partición con el sistema de archivos deseado (ejemplo: ext4).</li>
-                        </ul>
-                    </li>
-                    <li> <strong>3️⃣ Montar la partición:</strong>  
-                        <ul class="ul-li">
-                            <li class="li-1">🔹 Una vez formateada, se puede montar en un directorio para su uso.</li>
-                        </ul>
-                    </li>
-                </ul>
+                <h3 class="h3-titulo"><strong>1️⃣  Desbloquear la partición:</strong></h3>
+                <p class="p-texto">🔹 Una partición cifrada no tiene una estructura accesible de inmediato. 
+                    Por lo tanto, el primer paso es desbloquearla.</p>
+                
+                <h3 class="h3-titulo"><strong>2️⃣ Añadir una estructura de archivos:</strong></h3>  
+                <p class="p-texto">🔹 Se debe formatear la partición con el sistema de archivos deseado (ejemplo: ext4).</p>
+                <h3 class="h3-titulo"><strong>3️⃣ Montar la partición:</strong></h3>
+                <p class="p-texto">🔹 Una vez formateada, se puede montar en un directorio para su uso.</p>
             </article>
 
             <article class="article-1">
@@ -87,7 +78,8 @@
                     De esta manera, no habrá áreas del disco accesibles en claro, sino que toda la información almacenada estará
                     protegida.</p>
                 
-                <p class="p-texto">Ingresamos la contraseña cuando nos la solicite. Esto hará que los bloques de datos sean accesibles.</p>
+                <p class="p-texto">Ingresamos la contraseña cuando nos la solicite. Esto hará que los bloques de datos sean
+                    accesibles.</p>
             </article>
 
             <article class="article-1">
@@ -112,7 +104,8 @@
                     <code>mkdir /mnt/prueba</code>
                     <code>mount /dev/mapper/sdb1_enc /mnt/prueba</code>
                        
-                <p class="p-texto">Si no aparece ningún error, la partición ha sido montada correctamente. Podemos probar la escritura:</p>
+                <p class="p-texto">Si no aparece ningún error, la partición ha sido montada correctamente. Podemos 
+                    probar la escritura:</p>
                     <code>touch /mnt/prueba/archivo_prueba</code>
                     <code>ls -l /mnt/prueba</code>
                 
@@ -130,17 +123,24 @@
 
             <article class="article-1">
                 <h3 class="h3-titulo">Montaje automático al iniciar el sistema</h3>
-                <p class="p-texto">Para montar la partición automáticamente al inicio, agregamos la siguiente entrada en el archivo /etc/fstab:</p>
-                    <code>/dev/mapper/sdb1_enc /media/cifrado ext4 defaults 0 2</code>
+                <p class="p-texto">Posteriormente se nos solicitará una contraseña. Es importante elegir una contraseña robusta
+                    para evitar accesos no autorizados. El sistema advertirá si considera que la contraseña es demasiado débil,
+                    pero podemos continuar bajo nuestra responsabilidad.</p>
+                
 
-                <p class="p-texto">Si queremos que el sistema solicite la contraseña al arrancar, también debemos modificar /etc/crypttab:</p>
+
+
+                <p class="p-texto">Si queremos que el sistema solicite la contraseña al arrancar, también debemos modificar
+                     /etc/crypttab:</p>
                     <code>sdb1_enc /dev/sdb1 none luks</code>
 
                 <p class="p-texto">Creamos el directorio de montaje:</p>
                     <code>mkdir /media/cifrado</code>
                 
-                <p class="p-texto">Tras reiniciar, se solicitará la contraseña para desbloquear la partición y montarla automáticamente.</p>
-                <p class="p-texto">Con estos pasos, hemos configurado una partición cifrada con LUKS, permitiendo su acceso seguro y garantizando
+                <p class="p-texto">Tras reiniciar, se solicitará la contraseña para desbloquear la partición y montarla
+                    automáticamente.</p>
+                <p class="p-texto">Con estos pasos, hemos configurado una partición cifrada con LUKS, permitiendo su acceso
+                    seguro y garantizando
                     que sólo los usuarios con la contraseña puedan utilizarla.</p>
             </article>
         </section>

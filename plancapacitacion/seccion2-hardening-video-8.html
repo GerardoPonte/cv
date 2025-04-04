@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-7</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css" />
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 8 de la Sección 2: 
+                   Introducción al cifrado de directorios y unidades externas con VeraCrypt</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+
+            <article class="article-1">
+                <h3 class="h3-titulo">🔐 Cifrado de información con VeraCrypt – Enfoque práctico</h3>
+                <p class="p-texto">En este video aprenderemos a utilizar una herramienta ampliamente reconocida para 
+                    proteger información mediante cifrado. No solo permite cifrar directorios dentro del sistema, sino
+                     también unidades de almacenamiento extraíbles como discos duros, memorias USB o pendrives.</p>
+                        
+                <h3 class="h3-titulo"><strong>¿Por qué elegir esta herramienta?</strong></h3>  
+                <p class="p-texto">Principalmente, porque es multiplataforma y muy popular dentro de la comunidad de
+                    usuarios que priorizan la seguridad. Esto significa que, si necesitamos trasladar información 
+                    cifrada entre diferentes sistemas operativos, como Windows, macOS o Linux, podremos hacerlo 
+                    sin inconvenientes. VeraCrypt está disponible para todos ellos.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Instalación en sistemas basados en Debian</h3>
+                <p class="p-texto">Aunque VeraCrypt no se encuentra disponible en los repositorios oficiales de algunas
+                     distribuciones, es posible descargarlo directamente desde su sitio web oficial. En dicha página 
+                     encontraremos paquetes .deb para distribuciones basadas en Debian y Ubuntu, así como también el 
+                     código fuente, en caso de que deseemos compilarlo manualmente para una arquitectura específica.</p>
+                
+                <p class="p-texto">En este ejemplo, utilizaremos Debian 10 y descargaremos la versión de consola, aunque 
+                    también se encuentra disponible una interfaz gráfica, más pesada y con mayores requerimientos.</p>
+                
+                <p class="p-texto">Una vez descargado el paquete .deb, lo instalamos desde la terminal utilizando el comando:</p>
+                    <code>sudo dpkg -i nombre-del-paquete.deb</code>
+                    <p class="p-texto">Esto instalará VeraCrypt de forma rápida y sencilla.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Creación de un volumen cifrado</h3>
+                <p class="p-texto">Con VeraCrypt es posible cifrar una unidad externa o crear un contenedor cifrado dentro de 
+                    nuestro sistema. En este caso, optaremos por la segunda opción: un archivo cifrado que actuará como volumen
+                    virtual.</p>
+                              
+                <p class="p-texto">Este volumen se comportará como una partición protegida por contraseña. Solo podrá accederse
+                    a su contenido si se monta correctamente desde VeraCrypt, garantizando así que la información esté segura
+                    mientras no esté montado. </p>
+                    
+                <p class="p-texto">Desde la terminal, ejecutamos:</p>   
+                    <code>veracrypt -c</code>
+                
+                <p class="p-texto">Este comando inicia el asistente para la creación de un volumen. A continuación, se nos pedirá
+                    indicar:</p>
+                    
+                <ul class="ul-li">
+                    <li class="li-1">Ubicación del volumen cifrado (por ejemplo: <code>/home/alumno/cifrado)</code></li>
+                    <li class="li-1">Tamaño del volumen (por ejemplo: 5G)</li>
+                    <li class="li-1">Algoritmo de cifrado (por defecto AES)</li>
+                    <li class="li-1">Algoritmo de hash (por defecto SHA-512)</li>
+                    <li class="li-1">Sistema de archivos (FAT, NTFS, Ext4, etc., dependiendo de la compatibilidad deseada
+                        entre sistemas)</li>
+                </ul>
+            
+                <p class="p-texto">Posteriormente se nos solicitará una contraseña. Es importante elegir una contraseña 
+                    robusta para evitar accesos no autorizados. El sistema advertirá si considera que la contraseña es 
+                    demasiado débil, pero podemos continuar bajo nuestra responsabilidad.
+                    Durante la creación del volumen también se nos solicitará generar entropía para reforzar la seguridad 
+                    criptográfica. Para ello, simplemente debemos mover el cursor por el teclado de forma aleatoria, sin 
+                    seguir un patrón predecible.</p>
+
+                <p class="p-texto">Una vez completado el proceso, el archivo de volumen estará listo para usarse.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Montaje y uso del volumen cifrado</h3>
+                <p class="p-texto">Para montar el volumen y acceder a su contenido:</p>
+                
+                <p class="p-texto">1.Creamos un directorio de montaje:</p>
+                    <code>mkdir /home/alumno/mis_datos</code>
+                
+                <p class="p-texto">2.Ejecutamos:</p>
+                <code>veracrypt /home/alumno/cifrado /home/alumno/mis_datos</code>
+
+                <p class="p-texto">Se nos solicitará la contraseña. Si todo es correcto, el volumen será montado y podremos
+                    utilizarlo como cualquier otro directorio del sistema.</p>
+                
+                <p class="p-texto">Dentro de ese volumen podemos crear archivos, copiar información, etc. Todo lo que
+                    coloquemos allí estará protegido por cifrado.</p>
+            </article>    
+                
+            <article class="article-1">
+                <h3 class="h3-titulo">Desmontaje del volumen</h3>
+                <p class="p-texto">Cuando deseemos ocultar nuevamente la información:</p>
+                    <code>veracrypt -d /home/alumno/mis_datos</code>
+                
+                <p class="p-texto">Esto desmontará el volumen, haciendo inaccesible su contenido hasta que vuelva a montarse 
+                    con la contraseña correspondiente.</p>
+            </article>
+            
+        </section>
+
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>
