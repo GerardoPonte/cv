@@ -55,96 +55,87 @@
         </section>
 
         <section class="section-1">
-
             <article class="article-1">
-                <h3 class="h3-titulo">🔐 Cifrado de información con VeraCrypt – Enfoque práctico</h3>
-                <p class="p-texto">En este video aprenderemos a utilizar una herramienta ampliamente reconocida para 
-                    proteger información mediante cifrado. No solo permite cifrar directorios dentro del sistema, sino
-                     también unidades de almacenamiento extraíbles como discos duros, memorias USB o pendrives.</p>
+                <h3 class="h3-titulo">🔐 Introducción al uso de VeraCrypt para cifrar directorios y unidades extraíbles</h3>
+                <p class="p-texto">En este video aprenderemos a utilizar una herramienta muy útil para cifrar directorios. 
+                    Además, nos será de gran ayuda si queremos cifrar unidades de almacenamiento extraíble como discos duros,
+                    memorias USB o pendrives.</p>
                         
-                <h3 class="h3-titulo"><strong>¿Por qué elegir esta herramienta?</strong></h3>  
-                <p class="p-texto">Principalmente, porque es multiplataforma y muy popular dentro de la comunidad de
-                    usuarios que priorizan la seguridad. Esto significa que, si necesitamos trasladar información 
-                    cifrada entre diferentes sistemas operativos, como Windows, macOS o Linux, podremos hacerlo 
-                    sin inconvenientes. VeraCrypt está disponible para todos ellos.</p>
+                <h3 class="h3-titulo"><strong>¿Por qué usar esta herramienta?</strong></h3>  
+                <p class="p-texto">Porque es multiplataforma y bastante conocida. Esto significa que, si queremos transportar 
+                    información entre diferentes sistemas operativos, podemos contar con su compatibilidad en Windows, macOS, 
+                    Linux y otras plataformas reconocidas.</p>
+                
+                <p class="p-texto">Aunque no está disponible directamente en los repositorios, desde su página oficial podemos
+                    descargar un paquete .deb compatible con todas las distribuciones basadas en Debian. La instalación es 
+                    bastante sencilla.</p>
+
+                <p class="p-texto">También existe la posibilidad de descargar el código fuente y compilarlo según nuestro sistema,
+                    si así lo preferimos.</p>
             </article>
 
             <article class="article-1">
-                <h3 class="h3-titulo">Instalación en sistemas basados en Debian</h3>
-                <p class="p-texto">Aunque VeraCrypt no se encuentra disponible en los repositorios oficiales de algunas
-                     distribuciones, es posible descargarlo directamente desde su sitio web oficial. En dicha página 
-                     encontraremos paquetes .deb para distribuciones basadas en Debian y Ubuntu, así como también el 
-                     código fuente, en caso de que deseemos compilarlo manualmente para una arquitectura específica.</p>
+                <h3 class="h3-titulo">Descarga e instalación de VeraCrypt</h3>
+                <p class="p-texto">La herramienta se llama VeraCrypt. Podemos buscar "VeraCrypt download" en Google para ir 
+                    directamente a su sitio oficial (veracrypt.fr) y acceder a la sección de descargas.</p>
                 
-                <p class="p-texto">En este ejemplo, utilizaremos Debian 10 y descargaremos la versión de consola, aunque 
-                    también se encuentra disponible una interfaz gráfica, más pesada y con mayores requerimientos.</p>
+                <p class="p-texto">Allí veremos que está disponible para los principales sistemas operativos. En mi caso, como uso
+                    Debian 10, descargaré la versión para consola. También está disponible con interfaz gráfica, aunque esta 
+                    puede requerir más recursos y espacio.</p>
                 
                 <p class="p-texto">Una vez descargado el paquete .deb, lo instalamos desde la terminal utilizando el comando:</p>
                     <code>sudo dpkg -i nombre-del-paquete.deb</code>
-                    <p class="p-texto">Esto instalará VeraCrypt de forma rápida y sencilla.</p>
             </article>
 
             <article class="article-1">
-                <h3 class="h3-titulo">Creación de un volumen cifrado</h3>
-                <p class="p-texto">Con VeraCrypt es posible cifrar una unidad externa o crear un contenedor cifrado dentro de 
-                    nuestro sistema. En este caso, optaremos por la segunda opción: un archivo cifrado que actuará como volumen
-                    virtual.</p>
+                <h3 class="h3-titulo">Crear un volumen cifrado</h3>
+                <p class="p-texto">Para cifrar un directorio, no necesitamos ser usuario root. Esto es una gran ventaja, ya que 
+                    cualquier usuario puede proteger su información sin necesidad de permisos administrativos.</p>
                               
-                <p class="p-texto">Este volumen se comportará como una partición protegida por contraseña. Solo podrá accederse
-                    a su contenido si se monta correctamente desde VeraCrypt, garantizando así que la información esté segura
-                    mientras no esté montado. </p>
-                    
-                <p class="p-texto">Desde la terminal, ejecutamos:</p>   
+                <p class="p-texto">Ejecutamos el siguiente comando para crear un volumen:</p>
                     <code>veracrypt -c</code>
-                
-                <p class="p-texto">Este comando inicia el asistente para la creación de un volumen. A continuación, se nos pedirá
-                    indicar:</p>
                     
+                <p class="p-texto">Este comando inicia un asistente que nos guiará paso a paso para crear un archivo cifrado. 
+                    Este archivo actuará como un contenedor o volumen. Cuando lo montamos, podemos acceder a la información; 
+                    cuando está desmontado, queda completamente cifrado.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Parámetros importantes durante la creación:</h3>
                 <ul class="ul-li">
-                    <li class="li-1">Ubicación del volumen cifrado (por ejemplo: <code>/home/alumno/cifrado)</code></li>
-                    <li class="li-1">Tamaño del volumen (por ejemplo: 5G)</li>
-                    <li class="li-1">Algoritmo de cifrado (por defecto AES)</li>
-                    <li class="li-1">Algoritmo de hash (por defecto SHA-512)</li>
-                    <li class="li-1">Sistema de archivos (FAT, NTFS, Ext4, etc., dependiendo de la compatibilidad deseada
-                        entre sistemas)</li>
-                </ul>
+                    <li class="li-1">Ubicación del volumen: por ejemplo /home/alumno/cifrado. Es recomendable que el nombre no
+                        revele información.</code></li>
+                    <li class="li-1">Tamaño: en este ejemplo usaremos 5 GB.</li>
+                    <li class="li-1">Algoritmo de cifrado: AES suele ser suficiente.</li>
+                    <li class="li-1">Sistema de archivos: si planeamos usarlo solo en Linux, podemos usar ext4. Si se usará en 
+                        otros sistemas, se recomienda FAT o exFAT (aunque con limitaciones en archivos grandes o permisos).</li>
+                    <li class="li-1">Contraseña: debe ser fuerte; el programa nos advertirá si es demasiado débil.</li>
+                    <li class="li-1">Keyfile (opcional): podemos omitirlo si no queremos utilizar claves externas.</li>
+                    <li class="li-1">Generación de entropía: deberemos teclear aleatoriamente durante unos segundos para
+                        generar una clave robusta.</li>
+                </ul>           
             
-                <p class="p-texto">Posteriormente se nos solicitará una contraseña. Es importante elegir una contraseña 
-                    robusta para evitar accesos no autorizados. El sistema advertirá si considera que la contraseña es 
-                    demasiado débil, pero podemos continuar bajo nuestra responsabilidad.
-                    Durante la creación del volumen también se nos solicitará generar entropía para reforzar la seguridad 
-                    criptográfica. Para ello, simplemente debemos mover el cursor por el teclado de forma aleatoria, sin 
-                    seguir un patrón predecible.</p>
-
-                <p class="p-texto">Una vez completado el proceso, el archivo de volumen estará listo para usarse.</p>
+                <p class="p-texto">Una vez completado el proceso, se creará el archivo cifrado en la ubicación que elegimos.</p>
             </article>
 
             <article class="article-1">
-                <h3 class="h3-titulo">Montaje y uso del volumen cifrado</h3>
-                <p class="p-texto">Para montar el volumen y acceder a su contenido:</p>
-                
-                <p class="p-texto">1.Creamos un directorio de montaje:</p>
-                    <code>mkdir /home/alumno/mis_datos</code>
-                
-                <p class="p-texto">2.Ejecutamos:</p>
-                <code>veracrypt /home/alumno/cifrado /home/alumno/mis_datos</code>
-
-                <p class="p-texto">Se nos solicitará la contraseña. Si todo es correcto, el volumen será montado y podremos
-                    utilizarlo como cualquier otro directorio del sistema.</p>
-                
-                <p class="p-texto">Dentro de ese volumen podemos crear archivos, copiar información, etc. Todo lo que
-                    coloquemos allí estará protegido por cifrado.</p>
-            </article>    
-                
-            <article class="article-1">
-                <h3 class="h3-titulo">Desmontaje del volumen</h3>
-                <p class="p-texto">Cuando deseemos ocultar nuevamente la información:</p>
-                    <code>veracrypt -d /home/alumno/mis_datos</code>
-                
-                <p class="p-texto">Esto desmontará el volumen, haciendo inaccesible su contenido hasta que vuelva a montarse 
-                    con la contraseña correspondiente.</p>
+                <h3 class="h3-titulo">Montar el volumen</h3>
+                <p class="p-texto">Para montar el volumen cifrado y acceder a su contenido:</p>
+                <p class="p-texto">1. Creamos un directorio, por ejemplo:code <code>mkdir ~/mis_datos</code></p>
+                <p class="p-texto">2. Montamos el volumen: <code>veracrypt /home/alumno/cifrado ~/mis_datos</code></p>
+                <p class="p-texto">Ingresamos la contraseña. Si no usamos PIN ni keyfile, simplemente presionamos Enter
+                    cuando se nos pregunte por ellos. Una vez montado, el contenido del volumen se podrá gestionar como
+                    cualquier directorio 	normal. Cualquier archivo que guardemos dentro quedará automáticamente cifrado.</p>
             </article>
-            
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Desmontar el volumen</h3>
+                <p class="p-texto">Cuando queramos ocultar nuevamente el contenido:</p>
+                    <code>veracrypt -d ~/mis_datos</code>
+                
+                <p class="p-texto">Esto desmontará el volumen, y el directorio quedará vacío. Para volver a acceder, simplemente
+                    repetimos el montaje como se explicó antes.</p>
+            </article>               
         </section>
 
         <section class="section-button">
