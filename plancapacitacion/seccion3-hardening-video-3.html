@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-3</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 3 de la seccion 10: 
+                    El fichero de grupos y comandos de administración</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>📁 Grupos del sistema en Linux</strong></h3>
+                <p class="p-texto"><strong>Pasamos ahora a explicar un concepto muy importante: los grupos del sistema.
+                    La información sobre los grupos se encuentra en el archivo:</strong></p>
+                    <code><strong>/etc/group</strong></code>
+                
+                <p class="p-texto">Este fichero contiene una lista de los grupos del sistema, y cada línea representa 
+                    un grupo distinto. Los campos están separados por dos puntos (:), de manera similar a otros archivos 
+                    del sistema.</p>
+
+                <p class="p-texto"><strong>🧠 Estructura de cada línea en /etc/group:</strong></p>
+            
+                    comunes:</strong></p>
+                    <p class="p-texto">1️⃣ Nombre del grupo</p>
+                    <p class="p-texto">2️⃣ Contraseña (si aplica, aunque no suele usarse. Si existiera, estaría en el 
+                        archivo <code><strong>/etc/gshadow)</strong></code></p>
+                    <p class="p-texto">3️⃣ GID: Identificador del grupo (Group ID)</p>
+                    <p class="p-texto">4️⃣ Miembros secundarios del grupo: lista de usuarios que pertenecen a este grupo de 
+                        forma secundaria, separados por comas y sin espacios.</p>
+                        
+                    <p class="p-texto">🔹 Es común que esta última columna esté vacía.</p>
+            </article>   
+            
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>👤 Tipos de pertenencia a un grupo</strong></h3>
+                <p class="p-texto">En Linux no existe una jerarquía de grupos.</p>
+                <p class="p-texto">Un usuario puede pertenecer a un grupo de dos formas:</p>
+
+                    <p class="p-texto">Grupo primario: Se define en el archivo /etc/passwd, en el campo GID del usuario.</p>
+                    <p class="p-texto">Grupo secundario: Aparece en la última columna del archivo /etc/group.</p>
+                    
+                <p class="p-texto">Por ejemplo, si el usuario juan pertenece a varios grupos secundarios, su nombre aparecerá
+                    en la última columna de cada uno de esos grupos.</p>
+            </article>  
+
+            <article class="article-1">
+                <h3 class="h3-titulo">🛠️ Comandos útiles para gestionar grupos</h3>
+                <p class="p-texto">🔹 Crear un grupo:</p>
+                    <code><strong>groupadd nombre_del_grupo</strong></code>
+                
+                <p class="p-texto">El sistema asignará automáticamente un GID, a menos que especifiques uno.</p>
+
+                <p class="p-texto">🔹 Eliminar un grupo:</p>
+                    <code><strong>groupdel nombre_del_grupo</strong></code>
+
+                <p class="p-texto">🔹 Modificar un grupo:</p>
+                    <code><strong>groupmod -n nuevo_nombre grupo_actual</strong></code>
+
+                <p class="p-texto">Solo permite cambiar el nombre, no mucho más.</p>
+
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">👤 Gestión de usuarios en grupos</h3>
+                <p class="p-texto">🔹 Añadir un usuario:</p>
+                    <code><strong>useradd nombre_usuario</strong></code>
+
+                <p class="p-texto">🔹 Modificar un usuario:</p>
+                    <code><strong>usermod opciones nombre_usuario</strong></code>
+
+                <p class="p-texto">Por ejemplo:</p>
+                    
+                    <p class="p-texto">Para añadir un grupo secundario (sin borrar los anteriores):</p>
+                        <code><strong>usermod -aG grupo usuario</strong></code>
+                
+                <p class="p-texto">⚠️ Importante: -a significa "añadir", G es de "Group".</p>
+
+                <p class="p-texto">Si usas solo <strong>-G grupo</strong>, el usuario será eliminado de todos sus grupos 
+                    secundarios y se añadirá solo al nuevo.</p>
+            
+                <p class="p-texto">🔹 Eliminar un usuario:</p>
+                    <code><strong>userdel -r nombre_usuario</strong></code>
+                    
+                <p class="p-texto">El parámetro <strong>-r</strong> borra también su directorio home y el de correo.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">📌 Herramientas adicionales</h3>
+                <p class="p-texto"><strong>Comando getent</strong> </p>
+
+                <p class="p-texto">Sirve para consultar información sobre usuarios, grupos y contraseñas del sistema, 
+                    accediendo a los archivos relevantes.</p>
+
+                <p class="p-texto">Ejemplos:</p>
+                <code><strong>getent passwd juan</strong></code>
+                <code><strong>getent group grupo1</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">🔚 Resumen</h3>
+                <ul class="ul-li">
+                    <li class="li-1">1️⃣ Los grupos se definen en /etc/group</code></li>
+                    <li class="li-1">2️⃣ Un usuario puede tener un grupo primario y varios secundarios.</li>
+                    <li class="li-1">3️⃣ Los comandos clave son groupadd, groupdel, groupmod, usermod, useradd, userdel</li>
+                    <li class="li-1">4️⃣ Usa usermod -aG para añadir un usuario a un grupo secundario sin perder los anteriores</li>
+                    <li class="li-1">5️⃣ getent es útil para consultar la información de forma directa</li>
+                </ul> 
+
+
+        </section>
+
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>

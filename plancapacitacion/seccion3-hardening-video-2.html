@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-2</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos a la presentacion del Video 2: Explicación 
+                    del fichero de usuarios passwd y comando useradd para crear usuarios</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>Introduccion a una nueva sección fundamental para administradores de 
+                    sistemas</strong></h3>
+                <p class="p-texto"><strong>En este bloque de videos aprenderemos a gestionar usuarios en Linux, abordando aspectos
+                    clave como la pertenencia a grupos, el manejo de contraseñas y la correcta administración de
+                    permisos.</strong></p>
+            </article>  
+                  
+            
+            <article class="article-1">
+                <h3 class="h3-titulo">¿Dónde se almacenan los usuarios del sistema?</h3>
+                <p class="p-texto">La información de los usuarios en Linux se encuentra en el archivo /etc/passwd, donde cada 
+                    usuario tiene una línea de registro con un formato específico. Este archivo, aunque sencillo, contiene datos
+                    fundamentales y sigue una estructura delimitada por dos puntos (:).</p>
+                
+                <p class="p-texto">La información de los usuarios en Linux se encuentra en el archivo /etc/passwd, donde cada
+                    usuario tiene una línea de registro con un formato específico. Este archivo, aunque sencillo, contiene datos 
+                    fundamentales y sigue una estructura delimitada por dos puntos (:).</p>
+
+                <p class="p-texto"><strong>A continuación, te muestro un ejemplo de tres líneas representando usuarios 
+                    comunes:</strong></p>
+                    <p class="p-texto">1️⃣ usuario1:x:1001:1002:Nombre Completo:/home/usuario1:/bin/bash</p>
+                    <p class="p-texto">2️⃣ usuario2:x:1002:1002:Otro Usuario:/home/usuario2:/bin/zsh</p>
+                    <p class="p-texto">3️⃣ usuario3:x:1003:1002:Tercer Usuario:/home/usuario3:/bin/bash</p>
+                    <p class="p-texto">4️⃣ soporte:x:1003:1002:Usuario Soporte:/home/soporte:/bin/bash</p>
+                
+                <p class="p-texto"><strong>Cada campo en esta línea tiene un propósito específico:</strong></p>
+
+                <p class="p-texto">1️⃣ Nombre de usuario: Es el identificador del usuario dentro del sistema.</p>
+                <p class="p-texto">2️⃣ Contraseña: Antiguamente, la contraseña cifrada se almacenaba aquí. Actualmente, aparece 
+                    una x, lo que indica que la contraseña se encuentra en un archivo más seguro: <code>/etc/shadow.</code></p>
+
+                <p class="p-texto">3️⃣ UID (User ID): Número identificador del usuario. Por defecto, los usuarios comunes suelen 
+                    tener UIDs a partir de 1000. </p>
+
+                <p class="p-texto">4️⃣ GID (Group ID): Identificador del grupo principal al que pertenece el usuario.</p>
+
+                    <p class="p-texto">5️⃣ Información adicional: Campo opcional donde se pueden agregar datos personales como 
+                        nombre, dirección, etc. </p>
+
+                    <p class="p-texto">6️⃣ Directorio home: Ruta absoluta donde se almacenan los archivos personales del usuario. 
+                        Aunque generalmente se encuentra en /home, hay excepciones, como el usuario root, cuyo home está en /root.</p>
+                    
+                    <p class="p-texto">7️⃣ Shell predeterminado: Es el intérprete de comandos que se ejecuta al iniciar sesión. 
+                        Los más comunes son /bin/bash y /bin/zsh, aunque algunos usuarios del sistema pueden tener /bin/false 
+                        para evitar el acceso interactivo. </p>
+            </article>   
+            
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>Creación de nuevos usuarios en Linux</strong></h3>
+                <p class="p-texto"><strong>Para añadir un usuario al sistema utilizamos el comando:</strong></p>
+                    <code><strong>useradd [opciones] nombre_de_usuario</strong></code>
+
+                <p class="p-texto"><strong>Para añadir un usuario al sistema utilizamos el comando:</strong></p>
+                    <code><strong>-d /ruta/home →</strong> Especifica el directorio home del usuario.</strong></code>
+                    <code><strong>-m →</strong> Crea el directorio home si aún no existe. </strong></code>
+                    <code><strong>--G grupo1,grupo2 → </strong> Asigna el usuario a múltiples grupos secundarios.</strong></code>
+                    <code><strong>-s /ruta/shell → </strong> Define el intérprete de comandos predeterminado.</code>
+                
+                <p class="p-texto">Ejemplo práctico:</p>
+                    <code><strong>useradd -d /home/soporte -m -G sudo,developers -s /bin/bash soporte</strong>
+                
+                <p class="p-texto"><strong>comando:</strong></p>
+                <p class="p-texto">✅ Crea el usuario soporte con su directorio /home/soporte.</p>
+                <p class="p-texto">✅ Lo asigna a los grupos sudo y developers.</p>
+                <p class="p-texto">✅ Le otorga /bin/bash como su shell.</p>
+            </article>  
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Usuarios de sistema y acceso restringido</h3>
+                <p class="p-texto">Algunos usuarios en Linux no representan personas reales, sino servicios o demonios del 
+                    sistema. En estos casos, es común encontrar que su shell está configurado como /bin/false, impidiendo 
+                    que inicien sesión de forma interactiva.</p>
+                
+                <p class="p-texto">Ejemplo:</p>
+                    <code><strong>mysql:x:999:999:MySQL Server:/var/lib/mysql:/bin/false</strong></code>
+                
+                <p class="p-texto">Este usuario mysql es utilizado por el servidor de bases de datos MySQL, pero no puede 
+                    ejecutar comandos manualmente.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">🚀Conclusión</h3>
+                <p class="p-texto">Comprender la estructura y gestión de usuarios en Linux es esencial para cualquier 
+                    administrador de sistemas. En los próximos videos profundizaremos en la administración de grupos, permisos 
+                    y seguridad de accesos.</p>
+
+
+        </section>
+
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-3</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 4 de la Seccion 10: El fichero de 
+                    contraseñas. Caducidad y alertas</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>📁 El archivo /etc/shadow y la gestión de contraseñas en Linux</strong></h3>
+                <p class="p-texto">El archivo /etc/shadow es fundamental en la seguridad del sistema, ya que almacena las
+                    contraseñas cifradas de los usuarios.</p>
+                
+                <p class="p-texto">⚠️ Regla número uno: ¡Las contraseñas nunca deben almacenarse en texto plano! Siempre deben 
+                    estar cifradas para proteger la información.</p>
+                
+                <p class="p-texto">Este fichero contiene una lista de los grupos del sistema, y cada línea representa 
+                    un grupo distinto. Los campos están separados por dos puntos (:), de manera similar a otros archivos 
+                    del sistema.</p>
+
+                <p class="p-texto">Sin embargo, con el avance del hardware y el aumento en la capacidad de cómputo, algunos 
+                    algoritmos de cifrado han quedado obsoletos, lo que ha llevado a la coexistencia de diferentes métodos
+                    de cifrado en Linux.</p>
+            </article>   
+            
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>Estructura del archivo /etc/shadow/strong></h3>
+                <p class="p-texto">Cada línea en /etc/shadow representa un usuario y contiene varios campos, separados por 
+                    el carácter :. Veamos un ejemplo:</p>
+                    
+                    <code><strong>usuario:$6$Xyz...$Hjkl2345...:19234:0:30:7:10::</strong></code>
+
+                    <p class="p-texto">Los campos más relevantes son:</p>
+
+                    <ul class="ul-li">
+                        <li class="li-1">1️⃣ Nombre de usuario </code></li>
+                        <li class="li-1">2️⃣ Contraseña cifrada (representada por una cadena con diferentes segmentos separados por $)</li>
+                        <li class="li-1">3️⃣ Fecha del último cambio de contraseña (en días desde el 1 de enero de 1970)</li>
+                        <li class="li-1">4️⃣ Mínimo de días antes de permitir un cambio de contraseña</li>
+                        <li class="li-1">5️⃣ Máximo de días de validez de la contraseña</li>
+                        <li class="li-1">6️⃣ Días antes de la expiración en los que el usuario será notificado</li>
+                        <li class="li-1">7️⃣ Días tras la expiración antes de que la cuenta se deshabilite automáticamente </li>
+                        <li class="li-1">8️⃣ Campo reservado (generalmente vacío) </li>
+                    </ul> 
+            </article>  
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Desglose del campo de contraseña cifrada</h3>
+                <p class="p-texto">El segundo campo de cada línea contiene la contraseña cifrada y se estructura de la 
+                    siguiente manera::</p>
+                    <code><strong>$ algoritmo $ sal $ hash</strong></code>
+                
+                <p class="p-texto">Por ejemplo:</p>
+                    <code><strong>$6$Xyz...$Hjkl2345…</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">1️⃣ Algoritmo de cifrado</h3>
+                <p class="p-texto">El número después del primer $ indica el algoritmo utilizado:</p>
+                <ul class="ul-li">
+                    <li class="li-1">1️⃣ $1$ → MD5 (obsoleto) </code></li>
+                    <li class="li-1">2️⃣ $2a$ → Blowfish</li>
+                    <li class="li-1">3️⃣ $5$ → SHA-256</li>
+                    <li class="li-1">4️⃣ $6$ → SHA-512 (más seguro)</li>
+                </ul> 
+
+                <p class="p-texto">Por ejemplo, en $6$Xyz...$Hjkl2345..., el 6 indica que la contraseña está cifrada con SHA-512.</p>
+
+
+                <h3 class="h3-titulo">2️⃣ Salt (Sal)</h3>
+                <p class="p-texto">El siguiente segmento (Xyz...) es un número aleatorio que se usa para asegurar que una misma 
+                contraseña no genere siempre el mismo hash en diferentes sistemas.</p>
+                
+                <p class="p-texto"><strong>¿Por qué se usa el salt?</strong></p>
+                <p class="p-texto">Si dos usuarios usan la misma contraseña y no existiera un salt, el hash resultante sería 
+                    idéntico, facilitando ataques de diccionario.</p>
+
+                <h3 class="h3-titulo">3️⃣ Hash resultante</h3>
+                <p class="p-texto">El último segmento (Hjkl2345...) es el hash de la contraseña combinado con el salt.</p>    
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Gestión de la expiración de contraseñas</h3>
+                <p class="p-texto">En los últimos campos de /etc/shadow se definen reglas de expiración de contraseñas:</p>
+                <ul class="ul-li">
+                    <li class="li-1">1️⃣ Fecha del último cambio de contraseña: Representado en días desde el 1 de enero de 1970
+                        (epoch time). </li>
+                    <li class="li-1">2️⃣ Mínimo de días para cambiar la contraseña: Evita cambios demasiado frecuentes.</li>
+                    <li class="li-1">3️⃣ Máximo de días antes de que caduque: Se puede configurar para forzar cambios periódicos.</li>
+                    <li class="li-1">4️⃣ Días de aviso antes de la caducidad: El usuario recibirá notificaciones antes de que su 
+                        contraseña expire.</li>
+                    <li class="li-1">5️⃣ Días tras la expiración antes de la deshabilitación: Si la contraseña expira y el 
+                        usuario no la cambia, la cuenta puede ser bloqueada.</li>
+                </ul> 
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">🔚 Resumen</h3>
+                <ul class="ul-li">
+                    <li class="li-1">1️⃣ Los grupos se definen en /etc/group</code></li>
+                    <li class="li-1">2️⃣ Un usuario puede tener un grupo primario y varios secundarios.</li>
+                    <li class="li-1">3️⃣ Los comandos clave son groupadd, groupdel, groupmod, usermod, useradd, userdel</li>
+                    <li class="li-1">4️⃣ Usa usermod -aG para añadir un usuario a un grupo secundario sin perder los anteriores</li>
+                    <li class="li-1">5️⃣ getent es útil para consultar la información de forma directa</li>
+                </ul> 
+                
+                <p class="p-texto">Por ejemplo, si configuramos lo siguiente:</p>
+                    <code><strong>30:7:10</strong></code>
+
+                <p class="p-texto">La contraseña expira cada 30 días.</p>
+
+                <ul class="ul-li">
+                    <li class="li-1">1️⃣ El usuario recibe una advertencia 7 días antes de la expiración.</code></li>
+                    <li class="li-1">2️⃣ Si no la cambia, la cuenta se deshabilita 10 días después.</li>
+                </ul> 
+
+                <p class="p-texto">Con esta información, puedes entender cómo Linux maneja las contraseñas y aplicar buenas 
+                    prácticas de seguridad en tu sistema. ¡Sigamos aprendiendo! 🚀</p>
+        </section>
+
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>
