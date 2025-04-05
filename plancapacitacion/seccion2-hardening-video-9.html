@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-9</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css" />
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 9 de la Sección 2: 
+                    Cifrar dispositivos externos como Pendrive USB con Veracrypt</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            <article class="article-1">
+                <h3 class="h3-titulo">🔐 Cifrando un Pendrive con VeraCrypt en Linux</h3>
+                <p class="p-texto">¡Seguimos aprendiendo sobre cifrado! En esta ocasión, veremos cómo cifrar una unidad
+                    externa (como un pendrive) usando VeraCrypt, una de las herramientas más potentes y utilizadas para
+                    proteger datos.</p>
+                        
+                <h3 class="h3-titulo"><strong>🧩 Detectar la unidad USB</strong></h3>  
+                <p class="p-texto">Primero, conectamos el pendrive a nuestro equipo. Podemos identificarlo usando el comando:</p>
+                    <code>lsblk</code>
+                <p class="p-texto">Yo sé cuál es mi USB por su tamaño. También puedo usar:</p>
+                    <code>lsblk -f</code>
+                
+                <p class="p-texto">Esto me muestra el tipo de sistema de archivos, etiquetas y más detalles. En este caso, sé que
+                    la partición que quiero cifrar es /dev/sdc1.</p>
+
+                <p class="p-texto">⚠️ Importante: Hay que estar muy seguros de cuál es la unidad que vamos a cifrar. Un error aquí 
+                    puede provocar la pérdida de datos importantes.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">🛠️ Crear el volumen cifrado</h3>
+                <p class="p-texto">Ahora usamos VeraCrypt para crear el volumen:</p>
+                    <code>veracrypt -c</code>
+                
+                <p class="p-texto">Nos pedirá la ruta de la partición, que será:</p>
+                    <code>/dev/sdc1</code>
+                    
+                <p class="p-texto">Luego, seleccionamos el tipo de volumen. En este caso, será un volumen estándar.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">📂 Seleccionar sistema de archivos</h3>
+                <p class="p-texto">Elegimos un sistema de archivos compatible. Yo seleccioné NTFS, ya que quiero poder acceder
+                    a este USB desde distintos sistemas operativos.</p>
+                
+                <p class="p-texto">A continuación, ingresamos la contraseña 🔑. Si es corta, VeraCrypt nos advertirá, pero
+                    podemos continuar 
+                    si lo aceptamos.</p>
+                
+                <p class="p-texto">También nos preguntará si queremos usar un PIN o archivo de llaves, pero en este ejemplo no
+                    los usaremos. Después, nos pedirá que tecleemos aleatoriamente durante unos segundos para generar la entropía
+                    necesaria en el cifrado.</p>
+            </article>
+            
+            <article class="article-1">
+                <h3 class="h3-titulo">🧪 Esperar el proceso de cifrado</h3>                             
+                <p class="p-texto">Al ser una unidad USB, el proceso es más lento que al cifrar un volumen interno. Una vez
+                    finalizado, ya tendremos nuestro pendrive cifrado.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">🧭 Montar la unidad cifrada</h3>                    
+                <p class="p-texto">El sistema no puede reconocer directamente el sistema de archivos del dispositivo cifrado.
+                    Si intentamos montarlo como siempre, obtendremos errores. Entonces, lo que debemos hacer es usar VeraCrypt
+                    para montarlo:</p>
+                    <code>veracrypt /dev/sdc1 /media/cifrado</code>           
+                
+                <p class="p-texto">Nos pedirá la contraseña. Como no usamos PIN ni archivo de llaves, dejamos esas
+                    opciones en blanco. </p>
+
+                <p class="p-texto">También nos preguntará si queremos proteger un volumen oculto (en este caso decimos que no).</p>
+
+                <p class="p-texto">Una vez montado, podemos acceder al contenido descifrado desde el directorio /media/cifrado.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">📁 Verificar y usar la unidad montada</h3>
+                <p class="p-texto">Creamos archivos de prueba dentro:</p>
+                    <code>touch /media/cifrado/archivo1.txt</code>
+                    <code>touch /media/cifrado/archivo2.txt</code>
+                
+                <p class="p-texto">Con:</p>
+                    <code>lsblk -f</code>
+
+                <p class="p-texto">Vemos que ahora aparece un nuevo volumen: veracrypt1, con sistema de archivos NTFS (como lo 
+                    definimos antes).</p>
+            </article>    
+
+            <article class="article-1">
+                <h3 class="h3-titulo">🧹 Desmontar y eliminar el mapeo</h3>
+                <p class="p-texto">Para desmontar la unidad:</p>
+                    <code>umount /media/cifrado</code>
+                
+                <p class="p-texto">Pero la partición sigue mapeada. Para "borrar el mapeo", usamos:</p>
+                    <code>veracrypt -d /dev/sdc1</code>
+
+                <p class="p-texto">Esto elimina el acceso a la unidad hasta que la volvamos a montar con VeraCrypt.</p>
+            </article>    
+                
+                
+            <article class="article-1">
+                <h3 class="h3-titulo">🧠 Resumen de pasos clave</h3>
+                
+                <ul class="ul-li">
+                    <li class="li-1">1️⃣ Conectar USB y detectar la partición (/dev/sdX1).</code></li>
+                    <li class="li-1">2️⃣ Crear volumen cifrado con veracrypt -c.</li>
+                    <li class="li-1">3️⃣ Seleccionar sistema de archivos, contraseña y generar entropía.</li>
+                    <li class="li-1">4️⃣ Montar con veracrypt /dev/sdX1 /ruta/destino.</li>
+                    <li class="li-1">5️⃣ Usar normalmente.</li>
+                    <li class="li-1">6️⃣ Desmontar con umount y eliminar mapeo con veracrypt -d.</li>
+                </ul>           
+            
+                <p class="p-texto">Una vez completado el proceso, se creará el archivo cifrado en la ubicación que elegimos.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">🚀 Notas finales</h3>
+                <ul class="ul-li">
+                    <li class="li-1">1️⃣ Ganamos seguridad al cifrar la unidad, pero sacrificamos algo de velocidad y 
+                        compatibilidad.</code></li>
+                    <li class="li-1">2️⃣ Siempre recordar que para trabajar con la partición descifrada debemos usar la ruta
+                        generada en /dev/mapper o directamente la asignación de VeraCrypt (por ejemplo, /media/cifrado).</li>
+                    
+                    <li class="li-1">3️⃣ Puedes listar los volúmenes activos con:</li>
+                        <code>veracrypt -l</code>
+                </ul>
+            </article>         
+        </section>
+
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>
