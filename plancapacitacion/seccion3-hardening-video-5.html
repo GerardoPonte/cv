@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-5</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 5 de la Seccion 10: Práctica: 
+                    Administración de usuarios</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>📁 Explorando el archivo /etc/passwd y la gestión de usuarios en Linux</p>
+                
+                <p class="p-texto">Ahora vamos a analizar el contenido del archivo /etc/passwd, que almacena información
+                    sobre los usuarios del sistema.</p>
+                
+                <p class="p-texto">Si ejecutamos:</p>
+                    <code><strong>cat /etc/passwd</strong></code>
+
+                <p class="p-texto">Veremos una lista de usuarios, cada uno representado en una línea con varios campos separados
+                    por</p>
+            </article>
+                
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>📁 Usuarios del sistema y su estructura en /etc/passwd</p>
+                <p class="p-texto">Cada línea en /etc/passwd tiene la siguiente estructura:</p>
+                    <code><strong>usuario:x:UID:GID:información:home:shell</strong></code>
+
+                <p class="p-texto">Desglosamos sus componentes:</p>
+                <ul class="ul-li">
+                    <li class="li-1">1️⃣ usuario → Nombre de la cuenta.</code></li>
+                    <li class="li-1">2️⃣ x → Indica que la contraseña está en /etc/shadow (no en texto plano).</li>
+                    <li class="li-1">3️⃣ UID → Identificador único del usuario.</li>
+                    <li class="li-1">4️⃣ GID → Identificador del grupo principal.</li>
+                    <li class="li-1">5️⃣ información → Campo de información opcional.</li>
+                    <li class="li-1">6️⃣ home → Directorio personal del usuario.</li>
+                    <li class="li-1">7️⃣ shell → Intérprete de comandos predeterminado.</li>
+                </ul>  
+
+                <p class="p-texto">Por ejemplo, la línea del usuario root se vería así:</p>
+                    <code><strong>root:x:0:0:root:/root:/bin/bash</strong></code>
+                <p class="p-texto">El usuario root siempre tiene UID y GID 0./p>
+                <ul class="ul-li">
+                    <li class="li-1">1️⃣ Su directorio personal es /root.</code></li>
+                    <li class="li-1">2️⃣ Su shell predeterminado es /bin/bash.</li>
+                </ul>
+            </article>   
+            
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>Usuarios del sistema y cuentas sin acceso interactivo</strong></h3>
+                <p class="p-texto">En /etc/passwd también encontramos cuentas de usuarios del sistema utilizadas por servicios
+                    y demonios (como impresión, audio, SSH, etc.).</p>
+                
+                <p class="p-texto">Por ejemplo, el usuario games o lp (impresión) pueden aparecer en el archivo.</p>
+
+                <p class="p-texto">Muchos de estos usuarios no necesitan acceso interactivo, por lo que su shell está 
+                    configurado como:</p>
+
+                    <ul class="ul-li">
+                        <li class="li-1">1️⃣ /usr/sbin/nologin → Muestra un mensaje indicando que el usuario no tiene acceso al
+                            sistema.</li>
+                        <li class="li-1">2️⃣ /bin/false → Simplemente bloquea el acceso sin mostrar mensaje.</li>
+                    </ul> 
+
+
+                <p class="p-texto">Ejemplo:</p>
+                    <code><strong>nobody:x:65534:65534:Nobody:/nonexistent:/usr/sbin/nologin</strong></code>
+                <p class="p-texto">Esto significa que nobody es un usuario del sistema sin acceso de inicio de sesión.</p>
+                    
+            </article>  
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Permisos de /etc/passwd y /etc/shadow</h3>
+                <p class="p-texto">Los permisos de estos archivos son clave para la seguridad del sistema:</p>
+                    <code><strong>/etc/passwd → Permite lectura a todos los usuarios, pero solo root puede modificarlo:</strong></code>
+                
+                <p class="p-texto">/etc/shadow → Solo root y el grupo shadow pueden leerlo, garantizando la seguridad de las 
+                    contraseñas cifradas:</p>
+                    <code><strong>ls -l /etc/shadow</strong></code>
+                    <code><strong>-rw-r----- 1 root shadow 1096 Mar 15 12:00 /etc/shadow</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Creación de usuarios en Linux</h3>
+                <p class="p-texto">Ejemplo 1: Crear un usuario básico</p>
+                    <code><strong>useradd ana</strong></code>
+
+                <p class="p-texto">Si el comando no muestra errores, significa que el usuario se creó correctamente.</p>
+
+                <p class="p-texto">Para verificarlo, podemos ver las últimas líneas de /etc/passwd:</p>
+                    <code><strong>tail -3 /etc/passwd</strong></code>
+                
+                <p class="p-texto">Aquí vemos que se creó ana con un UID y GID asignados automáticamente.</p>
+                
+                <p class="p-texto">Sin embargo, al ejecutar:</p>
+                    <code><strong>ls -l /home/ana</strong></code>
+
+                <p class="p-texto">Nos daremos cuenta de que no se creó su directorio personal. Para que se genere 
+                    automáticamente, debemos usar la opción -m:</p>
+                    <code><strong>useradd -m ana</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Ejemplo 2: Crear un usuario con opciones personalizadas</h3>
+                <p class="p-texto">Si queremos especificar detalles como grupo principal, directorio y shell, podemos 
+                    hacerlo así:</p>
+                    <code><strong>useradd -m -d /home/delegado -g clase -s /bin/bash alex</strong></code>
+
+                <p class="p-texto">-m → Crea el directorio personal.</p>
+                <ul class="ul-li">
+                    <li class="li-1">1️⃣ -d /home/delegado → Especifica el directorio home.</code></li>
+                    <li class="li-1">2️⃣ -g clase → Establece clase como su grupo principal.</li>
+                    <li class="li-1">3️⃣ -s /bin/bash → Define el shell predeterminado.</li>
+                </ul>
+
+                <p class="p-texto">Para comprobar que alex pertenece a clase:</p>
+                    <code><strong>id alex</strong></code>
+                1
+                <p class="p-texto">Salida esperada:</p>
+                    <code><strong>uid=1008(alex) gid=1007(clase) groups=1007(clase)</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Ejemplo 3: Crear un usuario con grupos secundarios</h3>
+                <p class="p-texto">Si queremos que lucia pertenezca a varios grupos, como tenis y padel, usamos:</p> 
+                    <code><strong>-G → Añade lucia a los grupos tenis y padel de forma secundaria.</strong></code>
+                
+                <p class="p-texto">Verificamos su configuración:</p>
+                    <code><strong>id lucia</strong></code>
+                    <code><strong>uid=1009(lucia) gid=1006(entrenadores) groups=1006(entrenadores),1010(tenis),1011(padel)</strong></code>
+
+                <p class="p-texto">Esto confirma que lucia pertenece a tres grupos: entrenadores (principal), tenis y padel 
+                    (secundarios).</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Comando</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>useradd usuario</td>
+                                <td>Crea un usuario sin directorio home ni configuración extra.</td>
+                            </tr>
+                            <tr>
+                                <td>useradd -m usuario</td>
+                                <td>Crea un usuario con directorio home.</td>
+                            </tr>
+                            <tr>
+                                <td>useradd -m -d /ruta usuario</td>
+                                <td>Define un directorio home personalizado.</td>
+                            </tr>
+                            <tr>
+                                <td>useradd -m -g grupo usuario</td>
+                                <td>Especifica un grupo principal.</td>
+                            </tr>
+                            <tr>
+                                <td>useradd -m -G grupo1,grupo2 usuario</td>
+                                <td>Asigna grupos secundarios.</td>
+                            </tr>
+                            <tr>
+                                <td>useradd -m -s /bin/bash usuario</td>
+                                <td>Define el shell predeterminado.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                <p class="p-texto">Con esta información, puedes entender cómo Linux maneja las contraseñas y aplicar buenas 
+                    prácticas de seguridad en tu sistema. ¡Sigamos aprendiendo! 🚀</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Explicación de cada opción utilizada</h3>
+                <code><strong>sudo useradd -u 1050 -g ventas -G ventas_norte,soporte -d /home/jose -m -s /bin/bash -c "José 
+                    Martínez, Soporte Técnico" -e 2025-12-31 -f 30 jos</strong></code>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>useradd</td>
+                            <td>Comando para crear un usuario.</td>
+                        </tr>
+                        <tr>
+                            <td>-u 1050</td>
+                            <td>Define el UID (User ID) manualmente en 1050.</td>
+                        </tr>
+                        <tr>
+                            <td>-g ventas</td>
+                            <td>Asigna el grupo primario ventas.</td>
+                        </tr>
+                        <tr>
+                            <td>-G ventas_norte,soporte</td>
+                            <td>Agrega al usuario a los grupos secundarios ventas_norte y soporte.</td>
+                        </tr>
+                        <tr>
+                            <td>-d /home/jose</td>
+                            <td>Especifica el directorio home en /home/jose.</td>
+                        </tr>
+                        <tr>
+                            <td>-m</td>
+                            <td>Crea automáticamente el directorio home si no existe.</td>
+                        </tr>
+                        <tr>
+                            <td>-s /bin/bash</td>
+                            <td>Define el shell predeterminado como /bin/bash.</td>
+                        </tr>
+                        <tr>
+                            <td>-c "José Martínez, Soporte Técnico"</td>
+                            <td>Agrega un comentario (GECOS) con información adicional sobre el usuario.</td>
+                        </tr>
+                        <tr>
+                            <td>-e 2025-12-31</td>
+                            <td>Establece la fecha de expiración de la cuenta (31 de diciembre de 2025).</td>
+                        </tr>
+                        <tr>
+                            <td>-f 30</td>
+                            <td>Define el número de días después de la expiración en que la cuenta será bloqueada (30 días).</td>
+                        </tr>
+                        <tr>
+                            <td>jose</td>
+                            <td>Es el nombre del usuario a crear.</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </article>
+
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Verificando la Creación del Usuario</h3>
+                <p class="p-texto">Después de ejecutar el comando, puedes verificar que el usuario se haya creado correctamente 
+                    con los siguientes comandos:</p>
+                
+                    <p class="p-texto">1️⃣ Ver detalles en /etc/passwd</p>
+                        <code><strong>grep "^jose" /etc/passwd</strong></code>
+
+                    <p class="p-texto">Salida esperada:</p>
+                        <code><strong>jose:x:1050:1001:José Martínez, Soporte Técnico:/home/jose:/bin/bash</strong></code>
+
+                    <p class="p-texto">2️⃣ Ver los grupos a los que pertenece</p>
+                        <code><strong>id jose</strong></code>
+
+                    <p class="p-texto">Salida esperada:</p>
+                        <code><strong>uid=1050(jose) gid=1001(ventas) groups=1001(ventas),1002(ventas_norte),1003
+                            (soporte)</strong></code>
+
+                    <p class="p-texto">3️⃣ Ver la fecha de expiración</p>
+                        <code><strong>sudo chage -l jose</strong></code>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Campo</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Last password change</td>
+                                    <td>never</td>
+                                </tr>
+                                <tr>
+                                    <td>Password expires</td>
+                                    <td>never</td>
+                                </tr>
+                                <tr>
+                                    <td>Password inactive</td>
+                                    <td>never</td>
+                                </tr>
+                                <tr>
+                                    <td>Account expires</td>
+                                    <td>Dec 31, 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Minimum number of days between password change</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Maximum number of days between password change</td>
+                                    <td>99999</td>
+                                </tr>
+                                <tr>
+                                    <td>Number of days of warning before password expires</td>
+                                    <td>7</td>
+                                </tr>
+                            </tbody>
+                        </table>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Eliminar el usuario y su información</h3>
+                <p class="p-texto">Si en algún momento deseas eliminar al usuario junto con su directorio home, usa:</p>    
+                <code><strong>sudo userdel -r jose</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Resumen</h3>
+                <p class="p-texto">SEste comando crea un usuario con UID, GID, grupos secundarios, shell, directorio home,
+                    comentario (GECOS), fecha de expiración y tiempo de gracia.</p>    
+                    <ul class="ul-li">
+                        <li class="li-1">1️⃣ Este comando crea un usuario con UID, GID, grupos secundarios, shell, directorio home, 
+                            comentario (GECOS), fecha de expiración y tiempo de gracia.</code></li>
+                        <li class="li-1">2️⃣ Se pueden verificar los cambios con grep /etc/passwd, id y chage -l.</li>
+                        <li class="li-1">3️⃣ Para eliminarlo completamente, se usa userdel -r. </li>
+                    </ul>
+            </article>
+        </section>
+<br><br><br><br>
+<br><br><br><br>
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>
