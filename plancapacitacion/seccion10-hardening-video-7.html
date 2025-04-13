@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-7</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 7 de la sección 10: 
+                    Funcionamiento de los Usuarios y Grupos del sistema</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>📌 Introducción a los usuarios, grupos y permisos en sistemas Linux</strong></h3>
+
+                <p class="p-texto">La primera distinción que debemos hacer es entre el usuario administrador, llamado root, 
+                    y el resto de los usuarios, quienes tienen permisos más limitados para utilizar el sistema.</p>
+            </article>
+                
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>🔧 ¿Qué es el usuario root?</strong></h3>
+                <p class="p-texto">El usuario root es el administrador del sistema. Tiene permisos totales para realizar
+                    cualquier tipo de tarea: instalar programas, modificar configuraciones del sistema, eliminar archivos
+                    importantes, etc.</p>
+                    <code><strong>usuario:x:UID:GID:información:home:shell</strong></code>
+                
+                <p class="p-texto">Los usuarios normales, como nosotros, no tienen estos privilegios. Solo pueden trabajar 
+                    dentro de sus directorios personales y con los permisos asignados.</p>
+            </article>   
+            
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>🧠 Comenzando a usar comandos con privilegios</strong></h3>
+                <p class="p-texto">Al aprender a usar comandos que requieren permisos de administrador, es importante 
+                    entender cómo obtener esos permisos.</p>
+                
+                <p class="p-texto">Para ejecutar comandos como administrador en Ubuntu u otras distros derivadas:</p>
+                    <code><strong>sudo comando</strong></code>
+
+                <p class="p-texto">Por ejemplo:</p>
+                    <code><strong>sudo apt install nombre_del_paquete</strong></code>
+ 
+                <p class="p-texto">En Debian o distros similares, se suele usar:</p>
+                    <code><strong>su</strong></code>
+                <p class="p-texto">Esto cambia al usuario root (si no se especifica otro), y pedirá la contraseña del 
+                    administrador. Una vez dentro, puedes ejecutar múltiples comandos como root.</p>
+            </article>  
+
+            <article class="article-1">
+                <h3 class="h3-titulo">👤 ¿Cómo sé qué usuario soy?</h3>
+                <p class="p-texto">En la terminal, el nombre del usuario actual aparece a la izquierda del 
+                    símbolo @ en el prompt.</p>
+                <p class="p-texto">Por ejemplo:</p>
+                    <code><strong>alumno@debian:~$</strong></code>
+                
+                <p class="p-texto">Aquí, el usuario actual es alumno.</p>
+                <p class="p-texto">También puedes usar los siguientes comandos:</p>
+
+                    <ul class="ul-li">
+                        <li class="li-1">1️⃣ whoami: Muestra tu nombre de usuario actual.</code></li>
+                        <li class="li-1">2️⃣ id: Muestra el ID del usuario, su grupo principal y los grupos secundarios.</li>
+                        <li class="li-1">3️⃣ groups: Lista todos los grupos a los que pertenece el usuario actual.</li>
+                    </ul>
+                
+                <p class="p-texto">Ejemplo:</p>
+
+                    <code><strong>$ whoami</strong></code>
+                    <code><strong>alumno</strong></code>
+
+                    <code><strong>$ groups</strong></code>
+                    <code><strong>alumno sudo audio</strong></code>
+
+                    <code><strong>$ id</strong></code>
+                    <code><strong>uid=1000(alumno) gid=1000(alumno) groups=1000(alumno),27(sudo),29(audio)</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">👥 ¿Qué son los grupos?</h3>
+                <p class="p-texto">En Linux, cada usuario pertenece a un grupo principal y puede ser añadido a varios grupos 
+                    secundarios. Esto permite administrar permisos de forma más eficiente.</p>
+                    
+
+                <p class="p-texto">Por ejemplo:</p>
+                    <code><strong>El grupo sudo da permiso para usar sudo.</strong></code>
+                    <code><strong>El grupo audio permite acceso a dispositivos de sonido.</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">📁 ¿Cómo se reflejan estos permisos?</h3>
+                <p class="p-texto">Cuando usamos el comando ls -l, vemos una lista con permisos, propietarios y grupos de cada 
+                    archivo o directorio.</p>
+
+                <p class="p-texto">Ejemplo:</p>
+                    <code><strong>$ ls -l</strong></code>
+                    <code><strong>-rw-r--r-- 1 alumno alumno  1234 abr 12 10:00 archivo.txt</strong></code>
+                    <code><strong>-rw-r--r-- 1 root   root    2048 abr 12 11:00 config.conf</strong></code>
+               
+
+                <p class="p-texto">Aquí:</p>
+                    
+                    <ul class="ul-li">
+                        <li class="li-1">1️⃣ archivo.txt fue creado por el usuario alumno y pertenece al grupo alumno.</code></li>
+                        <li class="li-1">2️⃣ config.conf pertenece a root, por lo tanto no podrás modificarlo sin permisos 
+                            de administrador.</li>
+                    </ul>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">🔁 Cambiar de usuario con s</h3>
+                <p class="p-texto">Si quieres cambiar temporalmente de usuario (por ejemplo, para convertirte en root o en 
+                    otro usuario como tux), puedes usar:</p> 
+                    <code><strong>su nombre_usuario</strong></code>
+                
+                <p class="p-texto">Ejemplo:</p>
+                    <code><strong>su root</strong></code>
+                
+                <p class="p-texto">Después de ingresar la contraseña correcta, el prompt cambiará a algo como:</p>                    
+                    <code><strong>root@debian:~#</strong></code>
+
+                <p class="p-texto">Al terminar, puedes volver al usuario anterior con:</p>
+                    <code><strong>exit</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">🎯 Conclusión</h3>
+                <p class="p-texto">Saber quién eres en el sistema, a qué grupos perteneces, y cómo cambiar temporalmente
+                    de usuario o ejecutar comandos con permisos elevados, es clave para trabajar con eficacia en Linux. 
+                    En futuros temas veremos cómo estos conceptos se relacionan directamente con el sistema de permisos 
+                    de archivos y seguridad del sistema operativo.</p>
+            </article>
+        </section>
+        
+        <br><br><br><br>
+        <br><br><br><br>
+        
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>

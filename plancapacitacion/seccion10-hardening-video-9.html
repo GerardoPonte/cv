@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-9</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 9 de la sección 10: 
+                    Comandos para cambiar la propiedad de un elemento. Chgrp y Chown</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            <article class="article-1">
+                <p class="p-texto">Les voy a hablar brevemente sobre los comandos que nos permiten cambiar el 
+                    propietario y el grupo de archivos o directorios en Linux.</p>
+
+                <p class="p-texto">Ya saben que cuando un usuario crea un archivo, un enlace, un directorio o
+                    cualquier otro elemento en el sistema de archivos, por defecto se asigna como propietario el 
+                    usuario que lo creó, y como grupo el grupo principal al que pertenecía ese usuario en ese momento.</p>
+
+                <p class="p-texto">Cuando trabajamos como administradores, normalmente usamos el usuario root. Y es muy 
+                    común que queramos cambiar el propietario o el grupo (o ambos) de uno o varios elementos, ya que al
+                     crearlos con root, otros usuarios no tendrán permisos para usarlos.</p>
+
+                <p class="p-texto">Por eso, si creamos algo como root pero queremos que lo use otro usuario, 
+                    hay que cambiar el propietario, el grupo, o los dos.</p>
+
+                <p class="p-texto">El primer comando que quiero mencionar es chgrp, que viene de change group (cambiar grupo).
+                    Es un comando sencillo: solo cambia el grupo al que pertenece un archivo o directorio. No se usa tanto, 
+                    porque existe el comando chown, que permite cambiar tanto el usuario como el grupo, ya sea juntos o
+                    por separado.</p>
+                
+                <p class="p-texto">Con chown, podemos cambiar el propietario y grupo de uno o más archivos. La opción -R 
+                    (recursiva) nos permite aplicar los cambios a todo el contenido de un directorio, incluyendo subdirectorios 
+                    y archivos.</p>
+                
+                <p class="p-texto">Sintaxis básica de chown:</p>
+                    <code><strong>chown usuario:grupo archivo_o_directorio</strong></code>
+                    
+                <p class="p-texto">También puedes usarlo así:</p>
+                    <code><strong>Para cambiar solo el usuario:</strong></code>
+
+                <p class="p-texto">Para cambiar solo el grupo:</p>
+                    <code><strong>chown :grupo archivo</strong></code>\
+
+                <p class="p-texto">Por eso chown es más versátil que chgrp, ya que nos da más control.</p>
+            </article>
+                
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>Ejemplo práctico:</strong></h3>
+                <p class="p-texto">Supongamos que estamos en el directorio de un usuario llamado alumno. Si hacemos:</p>
+                    <code><strong>ls -l</strong></code>
+                <p class="p-texto">Veremos que algunos archivos pertenecen a alumno, pero otros fueron creados por root, 
+                    así que alumno no podrá modificarlos.</p>
+
+                <p class="p-texto">Creamos un directorio nuevo:</p>
+                    <code><strong>mkdir cartas</strong></code>
+
+                <p class="p-texto">Creamos un directorio nuevo:</p>
+                    <code><strong>ls -l cartas</strong></code>
+
+                <p class="p-texto">Veremos que root es el dueño. Entonces, alumno no podrá escribir ahí. Para solucionar 
+                    eso, usamos:</p>
+                    <code><strong>chown alumno:alumno cartas</strong></code>
+                <p class="p-texto">Ahora cartas pertenece al usuario y grupo alumno.</p>
+
+                <p class="p-texto">Si quisiéramos cambiar solo el grupo, por ejemplo al grupo users, hacemos:</p>
+                    <code><strong>chown :users cartas</strong></code>
+
+                <p class="p-texto">SEl sistema pensaría que quieres cambiar el propietario a users, pero como no existe 
+                        un usuario llamado así, marcará error.</p>
+
+
+                <p class="p-texto">También podrías usar chgrp para cambiar solo el grupo:</p>
+                    <code><strong>chgrp alumno cartas</strong></code>
+            </article>   
+            
+            <article class="article-1">
+                <p>Información adicional: cambio de grupo activo:</p>
+                
+                <p class="p-texto">Si te identificas como alumno con:</p>
+                    <code><strong>su alumno</strong></code>
+                    
+                <p class="p-texto">y luego haces:</p>
+                    <code><strong>id</strong></code>
+                <p class="p-texto">Verás todos los grupos a los que pertenece ese usuario. Por defecto, el grupo principal
+                    es el que tiene el mismo nombre del usuario.</p>
+                
+                <p class="p-texto">Si creas un archivo con:</p>
+                    <code><strong>id</strong></code>
+                <p class="p-texto">Verás todos los grupos a los que pertenece ese usuario. Por defecto, el grupo principal
+                    es el que tiene el mismo nombre del usuario.</p>    
+
+                <p class="p-texto">Verás todos los grupos a los que pertenece ese usuario. Por defecto, el
+                    grupo principal es el que tiene el mismo nombre del usuario.</p>
+            
+                <p class="p-texto">Si creas un archivo con:</p>
+                    <code><strong>touch archivo1</strong></code>
+                    <code><strong>ls -l archivo1</strong></code>
+
+                <p class="p-texto">Verás que pertenece a alumno:alumno.</p>
+                     
+                <p class="p-texto">Pero si quieres que el archivo nuevo pertenezca a otro grupo (por ejemplo cdrom), 
+                    puedes cambiar temporalmente el grupo principal con:</p>
+                    <code><strong>newgrp cdrom</strong></code>
+                
+                <p class="p-texto">Y luego:</p>
+                    <code><strong>touch archivo2</strong></code>
+                    <code><strong>ls -l archivo2</strong></code>
+                <p class="p-texto">Ahora archivo2 tendrá como grupo cdrom.</p>
+            </article>  
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Resumen de comandos:</h3>
+                <table border="1">
+                    <thead>
+                      <tr>
+                        <th>Comando</th>
+                        <th>Descripción</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>chown usuario:grupo archivo</td>
+                        <td>Cambia propietario y grupo</td>
+                      </tr>
+                      <tr>
+                        <td>chown usuario archivo</td>
+                        <td>Cambia solo el propietario</td>
+                      </tr>
+                      <tr>
+                        <td>chown :grupo archivo</td>
+                        <td>Cambia solo el grupo</td>
+                      </tr>
+                      <tr>
+                        <td>chown -R usuario:grupo directorio</td>
+                        <td>Cambios recursivos en directorio</td>
+                      </tr>
+                      <tr>
+                        <td>chgrp grupo archivo</td>
+                        <td>Cambia solo el grupo</td>
+                      </tr>
+                      <tr>
+                        <td>id</td>
+                        <td>Muestra los grupos del usuario actual</td>
+                      </tr>
+                      <tr>
+                        <td>newgrp grupo</td>
+                        <td>Cambia el grupo principal para nuevos archivos</td>
+                      </tr>
+                    </tbody>
+                  </table>                  
+            </article>
+        </section>
+        
+            <br><br><br><br>
+            <br><br><br><br>
+        
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>

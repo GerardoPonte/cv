@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 10 de la sección 10: 
+                    Los permisos de los ficheros en Linux</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>Explicación de permisos en archivos y directorios de Linux</strong></h3>
+                <p class="p-texto">En este video vamos a explicar los permisos que tienen los elementos del sistema de archivos.</p>
+                    
+                <p class="p-texto">Cuando usamos el comando ls -l para mostrar los contenidos de un directorio de forma detallada,
+                    podemos ver una columna que contiene una serie de letras. Estas letras nos indican qué permisos
+                    están concedidos y cuáles no.</p>
+
+                    <code><strong>Si aparece un guion (-), significa que ese permiso no está concedido.</strong></code>
+                    <code><strong>Si aparece una letra, indica que el permiso sí está concedido.</strong></code>
+
+                <p class="p-texto">Las letras que pueden aparecer son:</p>
+                    <code><strong>r: Permiso de lectura (read)</strong></code>
+                    <code><strong>w: Permiso de escritura (write)</strong></code>
+                    <code><strong>x: Permiso de ejecución (execute)</strong></code>
+
+
+                <p class="p-texto">Estos permisos se organizan en tres grupos:</p>
+                    <code><strong>Permisos del propietario (usuario que creó el archivo)</strong></code>
+                    <code><strong>Permisos del grupo</strong></code>
+                    <code><strong>Permisos para el resto de los usuarios</strong></code>
+
+                <p class="p-texto">Dentro de cada grupo, los permisos siempre siguen este orden: r (lectura), w (escritura),
+                    x (ejecución).</p>
+
+
+                <p class="p-texto">Si una letra aparece, el permiso está concedido. Si hay un guion en esa posición,
+                    no está permitido.</p>
+            </article>   
+
+            <article class="article-1">
+                <p class="p-texto">Ejemplo 1: Archivo con permisos de lectura y escritura (rw-)</p>
+                <p class="p-texto">Archivo: carta</p>
+                    <code><strong>su alumno</strong></code>
+                    
+                <p class="p-texto">y luego haces:</p>
+                    <code><strong>Usuario: alumno</strong></code>
+                    <code><strong>Permisos: lectura y escritura para todos</strong></code>
+
+                <p class="p-texto">Acciones:</p>
+                    <code><strong>Leer el archivo con cat carta: ✅ Permitido</strong></code>
+                    <code><strong>Añadir contenido con echo "Nueva línea" >> carta_leer: ❌ Permiso denegado</strong></code>
+                    <code><strong>Ejecutar con ./carta_leer: ❌ Permiso denegado</strong></code>
+                          
+                <p class="p-texto">Ejemplo 3: Archivo sin ningún permiso (---)</p>    
+
+                <p class="p-texto">Archivo: carta_secreta</p>
+                    <code><strong>Permisos: ninguno</strong></code>
+                    
+                <p class="p-texto">Acciones:</p>
+                    <code><strong>Leer con cat carta_secreta: ❌ Permiso denegado</strong></code>
+                    <code><strong>Escribir con echo "Nueva línea" >> carta_secreta: ❌ Permiso denegado</strong></code>
+                    <code><strong>Ejecutar con ./carta_secreta: ❌ Permiso denegado</strong></code>
+
+                    
+                <p class="p-texto">Ejemplo 4: Archivo con solo permiso de ejecución (--x)</p>
+                                
+                <p class="p-texto">Archivo: codigo_ejecutable</p>
+                    <code><strong>Permisos: solo ejecución</strong></code>
+
+                <p class="p-texto">Acciones:</p>
+                    <code><strong>Leer con cat codigo_ejecutable: ✅ Permitido (si el permiso de 
+                        lectura está presente)</strong></code>
+                    <code><strong>Ejecutar con ./codigo_ejecutable: ✅ Permitido</strong></code>
+                    <code><strong>El archivo ejecuta una instrucción que muestra qué día es hoy.</strong></code>
+            </article>  
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Conclusión</h3>
+                <p class="p-texto">El permiso x nos permite ejecutar un archivo, pero este debe contener un código válido 
+                    para que el sistema lo entienda.</p>
+                <p class="p-texto">El sistema revisa los permisos del usuario que ejecuta el comando para saber si puede 
+                    realizar una acción sobre el archivo.</p>                                
+            </article>
+        </section>
+        
+            <br><br><br><br>
+            <br><br><br><br>
+        
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>

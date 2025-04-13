@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-13</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 13 de la sección 10: 
+                    Cambiar permisos con chmod usando números</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>Explicación de los permisos en Linux</strong></h3>
+                <p class="p-texto">En este video vamos a aprender con más detalle cómo funcionan los permisos de archivos
+                     y directorios en Linux. En videos anteriores ya hablamos de forma general sobre esto, pero ahora vamos
+                     a profundizar un poco más.</p>
+            </article>   
+            
+            <article class="article-1">                
+                <h3 class="h3-titulo"><strong>¿Cómo se representan los permisos?</strong></h3>
+                
+                <p class="p-texto">Los permisos se muestran con letras que indican qué acciones puede realizar un usuario 
+                    sobre un archivo o directorio. Estas letras aparecen en tres bloques:</p>.
+
+                    <ul class="ul-li">
+                        <li class="li-1">1️⃣ Usuario (u) → El propietario del archivo.</code></li>
+                        <li class="li-1">2️⃣ Grupo (g) → Usuarios que pertenecen al mismo grupo.</li>
+                        <li class="li-1">3️⃣ Otros (o) → Cualquier otro usuario del sistema.</li>
+                    </ul>
+
+                <p class="p-texto">Significado de los permisos</p>
+                <p class="p-texto">En archivos:</p>
+                        <ul class="ul-li">
+                            <li class="li-1">r → lectura (puede ver el contenido).</code></li>
+                            <li class="li-1">w → escritura (puede modificar el contenido).</li>
+                            <li class="li-1">x → ejecución (puede ejecutarlo si es un script o programa).</li>
+                        </ul>
+
+                <p class="p-texto">En directorios:</p>.
+                    <ul class="ul-li">
+                        <li class="li-1">r → puede listar los archivos dentro del directorio.</code></li>
+                        <li class="li-1">w → puede crear o eliminar archivos dentro del directorio.</li>
+                        <li class="li-1">x → puede acceder al directorio (entrar en él con cd).</li>
+                    </ul>        
+            </article>  
+
+            
+            
+            
+            
+            <article class="article-1">
+                <h3 class="h3-titulo">Comandos básicos con chmod</h3>
+                <p class="p-texto">Ya vimos dos formas para cambiar permisos usando chmod. Aquí te los explico con ejemplos:</p>
+                <p class="p-texto">1. Usando signos (+, -, =)</p>
+                    <code><strong>chmod +r archivo.tx</strong></code>
+                    <p class="p-texto">→ Da permiso de lectura a todos.</p>
+
+                    <code><strong>chmod g-w archivo.txt</strong></code>
+                    <p class="p-texto">→ Quita permiso de escritura al grupo.</p>
+
+                    <code><strong>chmod u=rw archivo.txt</strong></code>
+                    <p class="p-texto">→ Da solo lectura y escritura al propietario.</p>
+
+                    <code><strong>chmod o= archivo.txt</strong></code>
+                    <p class="p-texto">→ Quita todos los permisos a los otros usuarios.</p>
+
+                <p class="p-texto">También puedes usar letras para cada grupo:</p>
+                    <code><strong>u = usuario</strong></code>
+                    <code><strong>g = grupo</strong></code>
+                    <code><strong>o = otros</strong></code>
+                    <code><strong>a = todos (all)</strong></code>
+
+                <p class="p-texto">Ejemplo:</p>
+                    <code><strong> chmod a+x script.sh</strong></code>
+
+                <p class="p-texto">→ Da permiso de ejecución a todos.</p>
+                <p class="p-texto">Nota: Si omites la letra del grupo, se asume que es a (todos).</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Tercera forma: con números (modo octal)</h3>
+                <p class="p-texto">Esta es una forma muy utilizada y rápida. Aquí usamos números en base octal (0–7) 
+                    para representar permisos.</p>
+                <p class="p-texto">Cada permiso tiene un valor:</p>
+                    <code><strong>r = 4</strong></code>
+                    <code><strong>w = 2</strong></code>
+                    <code><strong>x = 1</strong></code>
+
+                <p class="p-texto">Se suman los valores según los permisos que quieras otorgar:</p>
+                <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Permiso deseado</th>
+                        <th>Valor octal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>rwx</td>
+                        <td>4 + 2 + 1 = 7</td>
+                      </tr>
+                      <tr>
+                        <td>rw-</td>
+                        <td>4 + 2 = 6</td>
+                      </tr>
+                      <tr>
+                        <td>r--</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>---</td>
+                        <td>0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                
+                <p class="p-texto">Ejemplo práctico:</p>
+                <p class="p-texto">Queremos que:</p>
+                    <code><strong>El usuario tenga lectura y escritura → rw- → 6</strong></code>
+                    <code><strong>El grupo tenga solo lectura → r-- → 4</strong></code>
+                    <code><strong>Los otros no tengan permisos → --- → 0</strong></code>
+
+                <p class="p-texto">Entonces usamos:</p>
+                    <code><strong>chmod 640 archivo.txt</strong></code>
+                <p class="p-texto">Esto es equivalente a:</p>
+                    <code><strong>u=rw, g=r, o=</strong></code>
+                  
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Comparación: ¿cuándo usar letras y cuándo usar números?</h3>
+                <p class="p-texto">Usa letras (+, -, =) si quieres modificar permisos de forma específica sin afectar
+                    los demás.</p>            
+                    <code><strong>Ejemplo: chmod o+x archivo.sh</strong></code>
+
+                <p class="p-texto">Usa números (octal) si quieres definir todos los permisos de una vez.</p>
+                    <code><strong>Ejemplo: chmod 755 script.sh</strong></code>
+                    <code><strong>→ rwxr-xr-x</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>Ejemplos comunes con octal:</strong></h3>
+                <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Comando</th>
+                        <th>Descripción</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>chmod 777 file</code></td>
+                        <td>Todos tienen todos los permisos. <strong>(No recomendado en producción)</strong></td>
+                      </tr>
+                      <tr>
+                        <td><code>chmod 644 file</code></td>
+                        <td>Usuario puede leer y escribir; otros solo leer.</td>
+                      </tr>
+                      <tr>
+                        <td><code>chmod 700 file</code></td>
+                        <td>Solo el usuario tiene todos los permisos.</td>
+                      </tr>
+                      <tr>
+                        <td><code>chmod 000 file</code></td>
+                        <td>Nadie tiene permisos.</td>
+                      </tr>
+                    </tbody>
+                  </table>   
+            </article>
+        </section>
+        
+            <br><br><br><br>
+            <br><br><br><br>
+        
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>

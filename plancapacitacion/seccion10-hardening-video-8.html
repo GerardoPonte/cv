@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-8</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 8 de la sección 10: 
+                    Práctica: Usuarios y Grupos</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>📌 Práctica de administración de usuarios, grupos y contraseñas</strong></h3>
+
+                <p class="p-texto">Vamos a realizar una práctica un poco más completa, ya que hemos aprendido varios comandos 
+                    útiles para la administración de usuarios, grupos y contraseñas en Linux.</p>
+            </article>
+                
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>1. Creación de grupos</strong></h3>
+                <p class="p-texto">Siempre es recomendable crear primero los grupos, ya que al crear usuarios se puede 
+                    asignar directamente el grupo principal y los grupos secundarios.</p>
+
+                    <p class="p-texto">Ejemplo:</p>
+                    <code><strong>sudo groupadd alumnos</strong></code>
+                    <code><strong>sudo groupadd aula1</strong></code>
+                    <code><strong>sudo groupadd aula2</strong></code>
+                    <code><strong>sudo groupadd delegados</strong></code>
+            </article>   
+            
+            <article class="article-1">Incorrecto (reemplaza grupos):andos que requieren permisos de administrador, es importante 
+                    entender cómo obtener esos permisos.</p>
+                
+                <p class="p-texto">Una vez creados los grupos necesarios, comenzamos con la creación de los usuarios, 
+                    especificando:</p>
+                    <code><strong>Directorio home</strong></code>
+                    <code><strong>Grupo principal (-g)</strong></code>
+                    <code><strong>Grupos secundarios (-G)</strong></code>
+                    <code><strong>Creación del directorio home (-m)</strong></code>
+                    <code><strong>Shell opcionalmente</strong></code>
+
+                <p class="p-texto">Ejemplos:</p>
+                     
+                <p class="p-texto"># Usuario Mari, grupo principal: alumnos</p>
+                    <code><strong>sudo useradd -m -g alumnos -d /home/mari mari</strong></code>
+                
+                <p class="p-texto"># Usuario Juan, grupo principal: alumnos, grupo secundario: aula1</p>
+                    <code><strong>sudo useradd -m -g alumnos -G aula1 -d /home/juan juan</strong></code>
+                
+                <p class="p-texto"># Usuario Victoria, grupo principal: alumnos, grupos secundarios: aula1 y delegados</p>
+                    <code><strong>sudo useradd -m -g alumnos -G aula1,delegados -d /home/victoria victoria</strong></code>
+            </article>  
+
+            <article class="article-1">
+                <h3 class="h3-titulo">3. Modificación de usuarios existentes</h3>
+                <p class="p-texto">Si al crear un usuario olvidaste asignarle algún grupo secundario, puedes usar usermod:</p>
+                    <code><strong>sudo usermod -aG aula1 mari</strong></code>
+                
+                <p class="p-texto">⚠️ Importante: Si usas -G sin la opción -a, reemplazas todos los grupos secundarios 
+                    existentes.</p>
+
+                <p class="p-texto">Incorrecto (reemplaza grupos):</p>
+                    <code><strong>sudo usermod -G delegados mari</strong></code>
+
+                <p class="p-texto">Correcto (añade sin quitar):</p>
+                    <code><strong>sudo usermod -aG delegados mari</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">4. Comprobación de grupos de un usuario</h3>
+                    <code><strong>id mari</strong></code>
+
+                <p class="p-texto">Esto te mostrará su grupo principal y los secundarios.</p>
+            </article>
+
+    
+            <article class="article-1">
+                <h3 class="h3-titulo">5. Eliminación de usuarios y sus archivos</h3>
+                <p class="p-texto">Para eliminar un usuario y su directorio home:</p>
+                  <code><strong>sudo userdel -r juan</strong></code>
+                 <p class="p-texto">El parámetro -r asegura que se elimine también el directorio /home/juan.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">6. Eliminación de grupos</h3>
+                <p class="p-texto">Si un grupo no está siendo usado como grupo principal por ningún usuario, 
+                    puede eliminarse fácilmente:</p> 
+                    <code><strong>sudo groupdel aula1</strong></code>
+                
+                <p class="p-texto">Si un grupo es grupo principal de algún usuario, debes eliminar al usuario antes:</p>
+                    <code><strong>su root</strong></code>
+                
+                <p class="p-texto">Después de ingresar la contraseña correcta, el prompt cambiará a algo como:</p>                    
+                    <code><strong>sudo userdel -r mari</strong></code>
+                    <code><strong>sudo groupdel alumnos</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">7. Ver contenido de /etc/group</h3>
+                <p class="p-texto">Para revisar a qué grupos secundarios pertenecen los usuarios:</p>
+                <code><strong>tail -n 5 /etc/group</strong></code>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">8. Uso de plantillas para nuevos usuarios</h3>
+                <p class="p-texto">El contenido del directorio /etc/skel se copia automáticamente al home de 
+                    los nuevos usuarios.</p>
+
+                <p class="p-texto">Si deseas usar otra plantilla personalizada:</p>
+                <code><strong>mkdir plantilla</strong></code>
+                <code><strong>touch plantilla/fichero_usuario</strong></code>
+
+                <p class="p-texto">Crear un usuario usando esa plantilla:</p>
+                    <code><strong>sudo useradd -m -k plantilla alfredo</strong></code>    
+
+                <p class="p-texto">Esto creará el usuario alfredo con el contenido del directorio plantilla.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">9. Consultas rápidas sobre usuarios</h3>
+                <p class="p-texto">Puedes usar getent para obtener información de los usuarios desde /etc/passwd o 
+                    fuentes similares.</p>
+                    <code><strong>getent passwd alfredo</strong></code>
+            </article>
+        </section>
+        
+            <br><br><br><br>
+            <br><br><br><br>
+        
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>

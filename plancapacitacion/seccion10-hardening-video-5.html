@@ -49,14 +49,14 @@
     <main>
         <section class="section-titulo">
             <article class="article-titulo">
-                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 5 de la Seccion 10: Práctica: 
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 5 de la Sección 10: Práctica: 
                     Administración de usuarios</strong></h1>
             </article>
         </section>
 
         <section class="section-1">
             <article class="article-1">
-                <h3 class="h3-titulo"><strong>📁 Explorando el archivo /etc/passwd y la gestión de usuarios en Linux</p>
+                <h3 class="h3-titulo"><strong>📁 Explorando el archivo /etc/passwd y la gestión de usuarios en Linux</h3>
                 
                 <p class="p-texto">Ahora vamos a analizar el contenido del archivo /etc/passwd, que almacena información
                     sobre los usuarios del sistema.</p>
@@ -69,7 +69,7 @@
             </article>
                 
             <article class="article-1">
-                <h3 class="h3-titulo"><strong>📁 Usuarios del sistema y su estructura en /etc/passwd</p>
+                <h3 class="h3-titulo"><strong>📁 Usuarios del sistema y su estructura en /etc/passwd</h3>
                 <p class="p-texto">Cada línea en /etc/passwd tiene la siguiente estructura:</p>
                     <code><strong>usuario:x:UID:GID:información:home:shell</strong></code>
 
@@ -113,13 +113,13 @@
                 <p class="p-texto">Ejemplo:</p>
                     <code><strong>nobody:x:65534:65534:Nobody:/nonexistent:/usr/sbin/nologin</strong></code>
                 <p class="p-texto">Esto significa que nobody es un usuario del sistema sin acceso de inicio de sesión.</p>
-                    
             </article>  
 
             <article class="article-1">
                 <h3 class="h3-titulo">Permisos de /etc/passwd y /etc/shadow</h3>
                 <p class="p-texto">Los permisos de estos archivos son clave para la seguridad del sistema:</p>
-                    <code><strong>/etc/passwd → Permite lectura a todos los usuarios, pero solo root puede modificarlo:</strong></code>
+                    <code><strong>/etc/passwd → Permite lectura a todos los usuarios, pero solo root puede
+                        modificarlo:</strong></code>
                 
                 <p class="p-texto">/etc/shadow → Solo root y el grupo shadow pueden leerlo, garantizando la seguridad de las 
                     contraseñas cifradas:</p>
@@ -162,7 +162,7 @@
 
                 <p class="p-texto">Para comprobar que alex pertenece a clase:</p>
                     <code><strong>id alex</strong></code>
-                1
+                
                 <p class="p-texto">Salida esperada:</p>
                     <code><strong>uid=1008(alex) gid=1007(clase) groups=1007(clase)</strong></code>
             </article>
@@ -359,8 +359,10 @@
                     </ul>
             </article>
         </section>
-<br><br><br><br>
-<br><br><br><br>
+
+        <br><br><br><br>
+        <br><br><br><br>
+        
         <section class="section-button">
             <article class="article-button">
                 <!-- Botón para regresar a la página principal -->

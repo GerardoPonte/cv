@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>sección2-hardening-video-11</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sitio Wen Profesional Curricular">
+    <meta name="keywords" content="Soporte tecnico, TI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../normalize/normalize.css">
+
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssmovil.css">
+    <link rel="stylesheet" href="../plancapacitacion/planredesinformcss/planredesinformcssdesktop.css">
+
+    <link rel="stylesheet" href="../slider/slidermovil.css">
+    <link rel="stylesheet" href="../slider/sliderdesktop.css">
+
+    <link rel="stylesheet" href="../slick/slick/slick.css"/>
+    <link rel="stylesheet" href="../slick/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <!-- INICIA SLIDER -->
+        <div class="slider"> <!-- Clase 'slider' para el carrusel -->
+            <div class="img-containner">
+                <img src="../slider/01.jpg" title="" alt="img-1 con texto 'Bienvenido a tu mejor" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/02.jpg" title="" alt="img de bienvenida sin texto" />
+                <div class="div-caption">
+                    <p class="p-caption">Tu mejor opción</p>
+                </div>
+            </div>
+            <div class="img-containner">
+                <img src="../slider/03.jpg" title="" alt="img con texto 'Bienvenido a tu mejor opción" />
+                <div class="div-caption">
+                    <p class="p-caption">Bienvenido a tu<span class="line-break">mejor opción</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-titulo">
+            <article class="article-titulo">
+                <h1 class="h1-titulo-principal">🎓<strong>Bienvenidos, Bienvenidos al Video 11 de la sección 10: 
+                    Los permisos en los directorios de Linux</strong></h1>
+            </article>
+        </section>
+
+        <section class="section-1">
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>Explicación de los permisos en directorios</strong></h3>
+                <p class="p-texto">Ahora vamos a explicar los permisos aplicados a los directorios. En el video anterior vimos 
+                    los permisos para los ficheros, pero en los directorios esos permisos tienen un significado ligeramente 
+                    distinto.</p>
+            </article>   
+            
+            <article class="article-1">
+                
+                <h3 class="h3-titulo"><strong>Tipo de elemento en el sistema de archivos</strong></h3>
+                
+                <p class="p-texto">Lo primero que hay que observar es la primera letra que aparece cuando usamos ls -l:</p>
+                    <code><strong>Si aparece un guion (-), significa que es un fichero regular.</strong></code>
+                    <code><strong>Si aparece una "d", indica que es un directorio</strong></code>
+                    <code><strong>También podrías ver una "l", que representa un enlace simbólico (link), aunque eso no
+                        lo abordaremos por ahora.</strong></code>
+            </article>  
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Grupos de permisos</h3>
+                <p class="p-texto">Después del tipo, vienen tres grupos de tres letras, cada uno con posibles combinaciones 
+                    de r, w y x:</p>
+                    <code><strong>El primer grupo corresponde al usuario propietari</strong></code>
+                    <code><strong>El segundo grupo al grupo de usuarios.</strong></code>
+                    <code><strong>El tercer grupo a otros usuarios.</strong></code>
+
+                <p class="p-texto">Si aparece un guion en alguna posición, quiere decir que ese permiso no está concedido. 
+                    Si aparece la letra (r, w, o x), entonces sí se ha otorgado ese permiso.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo">En los ficheros ya dijimos:</h3>
+                    <code><strong>r: permite leer el contenido.</strong></code>
+                    <code><strong>w: permite escribir o modificar el contenido.</strong></code>
+                    <code><strong>x: permite ejecutar el fichero.</strong></code>
+
+                <p class="p-texto">Pero en los directorios, esos mismos permisos tienen otro significado:</p>
+            </article>
+
+
+            <article class="article-1">
+                <h3 class="h3-titulo">Significado de permisos en directorios</h3>
+                    <code><strong>r (read) → Permite listar los contenidos del directorio (usar ls).</strong></code>
+                    <code><strong>w (write) → Permite modificar el contenido del directorio, es decir, crear o eliminar
+                        archivos/directorios dentro de él.</strong></code>
+                    <code><strong>x (execute) → Permite acceder al directorio, por ejemplo, hacer cd para entrar.</strong></code>
+
+                <p class="p-texto">Importante: Tener w no implica poder modificar el contenido de los archivos dentro, 
+                    solo permite agregar o quitar elementos. Para modificar un archivo específico, hay que tener permiso w 
+                    sobre ese archivo en particular.</p>
+            </article>
+
+
+
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>Ejemplos prácticos</strong></h3>
+                <p class="p-texto">Imagina que estás en tu terminal y tienes un directorio llamado documentos. Si haces:</p>
+                    <code><strong>cd documentos</strong></code>
+                    
+                <p class="p-texto">Y luego:</p>
+                    <code><strong>ls</strong></code>
+                    <code><strong>x (execute) → Permite acceder al directorio, por ejemplo, hacer cd para entrar.</strong></code>
+
+                <p class="p-texto">Puede suceder que tengas permisos w y x sobre el directorio, pero no r. En ese caso:</p>
+                <code><strong>Podrás entrar al directorio (x).</strong></code>
+                <code><strong>Podrás crear o borrar archivos (w)</strong></code>
+                <code><strong>No podrás listar los archivos que contiene (r).</strong></code>
+                
+                <p class="p-texto">Ejemplo:</p>
+                <code><strong>touch archivo1  # Funciona</strong></code>
+                <code><strong>ls # Permiso denegad</strong></code>
+
+                <p class="p-texto">Aunque no puedas ver el archivo con ls, el archivo sí se ha creado.</p>
+
+
+                <p class="p-texto">Otro caso: si un directorio no tiene x, no podrás entrar en él ni ver su contenido 
+                    directamente, aunque tengas r.</p>
+                <p class="p-texto">Ahora imagina otro directorio con solo permisos r (sin x):</p>
+                    <code><strong>Podrás ver los nombres de los elementos que contiene.</strong></code>
+                    <code><strong>No podrás acceder a esos elementos, ni ver sus detalles completos.</strong></code>
+
+                <p class="p-texto">Ejemplo:</p>
+                    <code><strong>ls directorio_lectura  # Muestra los nombres</strong></code>
+                    <code><strong>ls -l directorio_lectura  # Permiso denegado
+                    </strong></code>
+
+                <p class="p-texto">Esto puede parecer confuso, pero tiene sentido: el permiso r te deja ver la lista de 
+                    nombres de archivos, pero como no tienes x, no puedes acceder a ellos para ver más información.</p>
+            </article>
+
+            <article class="article-1">
+                <h3 class="h3-titulo"><strong>Resumen</strong></h3>
+                <p class="p-texto">Los permisos para directorios funcionan así:</p>
+
+                <table border="1">
+                    <thead>
+                      <tr>
+                        <th>Permiso</th>
+                        <th>Significado en directorios</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>r</code></td>
+                        <td>Listar el contenido (nombres de archivos/directorios)</td>
+                      </tr>
+                      <tr>
+                        <td><code>w</code></td>
+                        <td>Crear o borrar elementos dentro del directorio</td>
+                      </tr>
+                      <tr>
+                        <td><code>x</code></td>
+                        <td>Acceder al directorio (cd, entrar, recorrer)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+        </section>
+        
+            <br><br><br><br>
+            <br><br><br><br>
+        
+        <section class="section-button">
+            <article class="article-button">
+                <!-- Botón para regresar a la página principal -->
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer-logo">
+        <div>
+            <section class="section-1-footer">
+                <article class="article-1-footer">
+                    <h2 class="h2-gps-footer">Gerardo Ponte</h2>
+                </article>
+
+                <article class="article-2-footer">
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Desarrollo</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Bases de datos</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Windows Server</h4>
+                    </div>
+                    <div class="h4-wrapper-footer">
+                        <h4 class="h4-footer">Redes</h4>
+                    </div>
+                </article>
+            </section>
+
+            <figure class="figure-img-linux">
+                <img class="img-linux" src="../logofooter/logo.png" alt="Linux" />
+            </figure>
+
+            <small class="reservados">
+                <span class="footer-span">2025</span> Dante Digital &copy<span class="line-break">
+                    Miguel Hidalgo, CDMX <span class="footer-span">Abril</span>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Agregar jQuery y Slick JS -->
+    <script src="../slider/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick/slick.min.js"></script>
+
+    <!-- Inicialización de Slick Slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Inicializamos el slider
+            $('.slider').slick({
+                dots: true,  // Habilita los puntos de navegación
+                arrows: false,  // Habilita las flechas de navegación
+                autoplay: true,  // Activa la reproducción automática
+                autoplaySpeed: 2500,  // Intervalo de tiempo entre cambios de imagen
+                fade: true,  // Aplica un efecto de desvanecimiento en lugar de deslizamiento
+                speed: 550,  // Tiempo de la transición entre las imágenes
+            });
+        });
+    </script>
+
+    <script src="../plancapacitacion/js/soporteslider.js"></script>
+
+    <!-- Botón para regresar a la página principal -->
+    <script>
+        function goBack() {
+            // Cambia 'index.html' por el nombre o ruta de tu página principal
+            window.location.href = "../plancapacitacion.html";
+        }
+    </script>
+
+</body>
+
+</html>
